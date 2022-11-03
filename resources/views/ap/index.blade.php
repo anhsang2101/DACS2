@@ -47,7 +47,7 @@
 </head>
 
 <body>
-    @include('navbar')
+    @include('ap.navbar')
     <div id="welcome-page">
         <section id="box-search-job">
             <div class="container">
@@ -58,7 +58,7 @@
                             <form id="frm-search-job" method="GET" onsubmit="return false;">
                                 <div class="box-search">
                                     <input class="form-control input-search ui-autocomplete-input border-hover" value="" placeholder="Tên công việc, vị trí bạn muốn ứng tuyển" id="keyword" autocomplete="off">
-                                    <button class="btn btn-search-job"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm việc ngay</span></button>
+                                    <button type="submit" class="btn btn-search-job"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm việc ngay</span></button>
                                 </div>
                             </form>
                         </div>

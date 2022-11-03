@@ -15,32 +15,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/signup', [
-    SignUpController::class ,
-    'index'
-]);
+Route::prefix('bs')->group(function(){
 
-Route::get('/signup', function () {
-    return view('signup');
+    
+    Route::get('/signin', function () {
+        return view('bs.signin');
+    });
+   
 });
 
-Route::post('/signin', [
-    SignInController::class ,
-    'index'
-]);
-
-Route::get('/signin', function () {
-    return view('signin');
+Route::prefix('ap')->group(function(){
+    
+    Route::post('/signup', [
+        SignUpController::class ,
+        'index'
+    ]);
+    
+    Route::get('/signup', function () {
+        return view('ap.signup');
+    });
+    
+    Route::post('/signin', [
+        SignInController::class ,
+        'index'
+    ]);
+    
+    Route::get('/signin', function () {
+        return view('ap.signin');
+    });
+    
+    Route::get('/', function () {
+        return view('ap.index');
+    });
+     
 });
-
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-
 
 Route::get('/', function () {
-    return view('index');
+    return view('ap.index');
 });
-
+ 

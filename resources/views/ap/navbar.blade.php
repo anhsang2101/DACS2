@@ -14,8 +14,8 @@
 </script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/"><img class="logo" style="background-image:none"
-            src="{{ url('img/horizontal_on_white_by_logaster-removebg-preview.png')}}" title="TopCV tuyển dụng tại TopCV"
-            alt="TopCV tuyển dụng tại TopCV"></a>
+            src="{{ url('img/horizontal_on_white_by_logaster-removebg-preview.png') }}"
+            title="TopCV tuyển dụng tại TopCV" alt="TopCV tuyển dụng tại TopCV"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,18 +45,19 @@
                 <a class="nav-link" href="#">Công ty</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Phát triển sự nghiệp</a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">Công cụ</a>
+            </li>
+                <a class="nav-link" href="bs/index">Version for bussiness</a>
             </li>
         </ul>
 
         <ul class="nav_menu_right">
-            <li><a class="dangnhap" style="color: #df3e39;" href="/signin">
+            <li><a class="dangnhap" style="color: #df3e39;" href="/ap/signin">
                     Đăng nhập
                 </a></li>
-            <li> <a class="dangky" style="color: #ffff;"href="/signup" >
+            <li> <a class="dangky" style="color: #ffff;"href="/ap/signup">
                     Đăng ký
                 </a></li>
         </ul>
