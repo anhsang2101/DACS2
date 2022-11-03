@@ -57,7 +57,7 @@
                         <div class="form-search">
                             <form id="frm-search-job" method="GET" onsubmit="return false;">
                                 <div class="box-search">
-                                    <input class="form-control input-search ui-autocomplete-input border-hover" value="" placeholder="Bạn muốn làm người Serbia không ?" id="keyword" autocomplete="off">
+                                    <input class="form-control input-search ui-autocomplete-input border-hover" value="" placeholder="Tên công việc, vị trí bạn muốn ứng tuyển" id="keyword" autocomplete="off">
                                     <button class="btn btn-search-job"><i class="fa-solid fa-magnifying-glass"></i> <span>Tìm việc ngay</span></button>
                                 </div>
                             </form>
