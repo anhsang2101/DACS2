@@ -135,8 +135,8 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
 
                     <div class="logo">
-                        <a href="index.php">
-                            <img src="../img/horizontal_on_white_by_logaster-removebg-preview.png" width="150px"
+                        <a href="/">
+                            <img src="/img/horizontal_on_white_by_logaster-removebg-preview.png" width="150px"
                                 height="auto">
                         </a>
                     </div>
