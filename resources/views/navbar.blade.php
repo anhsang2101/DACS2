@@ -13,7 +13,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img class="logo" style="background-image:none"
+    <a class="navbar-brand" href="/"><img class="logo" style="background-image:none"
             src="{{ url('img/horizontal_on_white_by_logaster-removebg-preview.png')}}" title="TopCV tuyển dụng tại TopCV"
             alt="TopCV tuyển dụng tại TopCV"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Trang chủ<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Trang chủ<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Việc làm</a>
@@ -53,10 +53,10 @@
         </ul>
 
         <ul class="nav_menu_right">
-            <li><a class="dangnhap" style="color: #df3e39;">
+            <li><a class="dangnhap" style="color: #df3e39;" href="/signin">
                     Đăng nhập
                 </a></li>
-            <li> <a class="dangky" style="color: #ffff;">
+            <li> <a class="dangky" style="color: #ffff;"href="/signup" >
                     Đăng ký
                 </a></li>
         </ul>
