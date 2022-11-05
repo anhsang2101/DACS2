@@ -1,5 +1,5 @@
 <html>
-<link rel="stylesheet" type="text/css" href="{{ url('css/style1.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('css/app.css') }}">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,7 +14,7 @@
 </script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/"><img class="logo" style="background-image:none"
-            src="{{ url('img/horizontal_on_white_by_logaster-removebg-preview.png') }}"
+            src="{{ url('img/img/horizontal_on_white_by_logaster-removebg-preview.png') }}"
             title="TopCV tuyển dụng tại TopCV" alt="TopCV tuyển dụng tại TopCV"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,38 +26,28 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">Trang chủ<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Việc làm</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Hồ sơ & CV
+                    Tuyển dụng
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Mẫu CV</a>
-                    <a class="dropdown-item" href="#">Quản lí CV</a>
+                    <a class="dropdown-item" href="#">Đăng tin tuyển dụng</a>
+                    <a class="dropdown-item" href="#">Quản tí tin tuyển dụng</a>
                     <!-- <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Công ty</a>
-            </li>
-            <li class="nav-item">
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Công cụ</a>
-            </li>
-                <a class="nav-link" href="bs/">Version for bussiness</a>
+                <a class="nav-link" href="/ap">Version for applicants</a>
             </li>
         </ul>
 
         <ul class="nav_menu_right">
-            <li><a class="dangnhap" style="color: #df3e39;" href="/ap/signin">
+            <li><a class="dangnhap" style="color: #df3e39;" href="/bs/signin">
                     Đăng nhập
                 </a></li>
-            <li> <a class="dangky" style="color: #ffff;"href="/ap/signup">
+            <li> <a class="dangky" style="color: #ffff;"href="/bs/signup">
                     Đăng ký
                 </a></li>
         </ul>

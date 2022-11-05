@@ -17,18 +17,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('bs')->group(function(){
 
-    
+    Route::post('/signin', [
+        SignInController::class ,
+        'signInBs'
+    ]);
     Route::get('/signin', function () {
         return view('bs.signin');
     });
-   
+    Route::post('/signup', [
+        SignUpController::class ,
+        'signUpBs'
+    ]);
+    Route::get('/signup', function () {
+        return view('bs.signup');
+    });
+    Route::get('/', function () {
+        return view('bs.index');
+    });
 });
 
 Route::prefix('ap')->group(function(){
     
     Route::post('/signup', [
         SignUpController::class ,
-        'index'
+        'signUpAp'
     ]);
     
     Route::get('/signup', function () {
@@ -37,7 +49,7 @@ Route::prefix('ap')->group(function(){
     
     Route::post('/signin', [
         SignInController::class ,
-        'index'
+        'signInAp'
     ]);
     
     Route::get('/signin', function () {

@@ -72,7 +72,7 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
 
                     <div class="logo">
-                        <a href="index.php">
+                        <a href="/bs">
                             <img src="../img/logo-business.png" width="200px" height="auto">
                         </a>
                     </div>
@@ -90,14 +90,13 @@
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
                             <form action="" method="post" id="form-login">
-                                <input type="hidden" name="_token" value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
                                 <div class="form-group mb-3">
                                     <label for="email" class="mb-1">Email</label>
                                     <div class="input-group ">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
                                         </div>
-                                        <input type="email" name="email" class="form-control" placeholder="Nhập email của bạn" aria-label="Nhập email của bạn" value="">
+                                        <input type="text" name="email" class="form-control" placeholder="Nhập email của bạn" aria-label="Nhập email của bạn" value="">
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
@@ -115,15 +114,16 @@
                                 <div class="form-group mt-3">
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng nhập</button>
                                 </div>
+                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                             </form>
                             <div class="mt-3 d-flex justify-content-between option-auth">
                                 <div>
                                     <span>Chưa có tài khoản?</span>
-                                    <a class="text-primary font-weight-bold" href="signup.php">
+                                    <a class="text-primary font-weight-bold" href="/bs/signup">
                                         Đăng ký ngay
                                     </a>
                                 </div>
-                                <a class="text-primary font-weight-bold" href="forgotpassword.php">
+                                <a class="text-primary font-weight-bold" href="">
                                     Quên mật khẩu?
                                 </a>
                             </div>

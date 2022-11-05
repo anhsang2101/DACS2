@@ -8,7 +8,12 @@ class SignUpController extends Controller
 {
     //
 
-    public function index(Request $request){
+    public function signUpAp(Request $request){
+
+        dd($request->all());
+    }
+
+    public function signUpBs(Request $request){
 
         dd($request->all());
     }

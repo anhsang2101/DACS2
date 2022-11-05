@@ -31,6 +31,7 @@
 <link rel="manifest" href="../img/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
 <style>
     button {
         background-color: #00b14f !important;
@@ -85,58 +86,31 @@
     }
 
     h1 {
-        font-size: 65px !important;
-    }
-
-    #form-register .btn:hover {
-        background-color: #00c558 !important;
-        border-top: 1px solid #00c558 !important;
-        border-left: 1px solid #00c558 !important;
-        border-right: 1px solid #00c558 !important;
-        border-bottom: 1px solid #00c558 !important;
+        font-size: 55px !important;
     }
 </style>
 <!-- Section: Design Block -->
+<header class="bg-primary bg-gradient" style="background: #e9fbe9 !important; height: 30%;">
+    <div class="container px-4 text-center">
+        <br>
+        <h1 class="fw-bolder">Tạo tài khoản dành cho nhà tuyển dụng</h1>
+        <p class="font-weight-bold">Cùng tạo dựng lợi thế cho doanh nghiệp bằng trải nghiệm
+            công nghệ tuyển dụng ứng dụng sâu <span class="text-hightlight">AI & Hiring Funne</span> </p>
+    </div>
+</header>
 <section class="">
     <!-- Jumbotron -->
-    <div class="px-4 py-5 px-md-5 text-lg-start" style="background-color: hsl(0, 0%, 97%); height: 100vh;">
+    <div class="px-4 px-md-5 text-lg-start" style="background-color: hsl(0, 0%, 100%); height: 100vh;">
         <div class="container">
             <div class="row gx-lg-5 align-items-center" style="margin-top: 0.5%;">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-
-                    <div class="logo">
-                        <a href="/">
-                            <img src="/img/horizontal_on_white_by_logaster-removebg-preview.png" width="150px"
-                                height="auto">
-                        </a>
-                    </div>
-
-                    <h1 class="my-5 display-3 fw-bold ls-tight">
-                        Chào mừng bạn đến với
-                        <span class="text-primary" style="font-size: 85px; font-weight: normal;">EZCV</span>
-                    </h1>
-                    <p style="color: hsl(217, 10%, 50.8%)">
-                        Bạn muốn tìm việc làm, bạn muốn tuyển dụng ? Hãy đến với chúng tôi, EZCV hân hạnh được tài trợ
-                    </p>
-                </div>
-                <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="col-lg-12 mb-5 mb-lg-0">
                     <div class="card">
-                        <div class="card-body py-5 px-md-5">
+                        <div class="card-body px-md-5">
                             <form action="signup" method="POST" id="form-register">
-                                
+                                <span class="font-weight-bold">TÀI KHOÁN</span>
+                                <input type="hidden" name="_token" value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
                                 <div class="form-group mb-3">
-                                    <label for="fullname" class="mb-1">Họ và tên</label>
-                                    <div class="input-group ">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                                        </div>
-                                        <input type="text" name="fullname" class="form-control"
-                                            placeholder="Nhập họ và tên của bạn"
-                                            aria-label="Nhập họ và tên của bạn" value="">
-                                    </div>
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="email" class="mb-1">Email</label>
+                                    <label for="email" class="mb-1">Email đăng nhập</label>
                                     <div class="input-group ">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
@@ -173,30 +147,91 @@
                                         </div> -->
                                     </div>
                                 </div>
-                                <div class="form-group mt-3">
-                                    <p class="agree-term">
-                                        Bằng việc đăng ký tài khoản, bạn đã đồng ý với <span
-                                            class="text-highlight">Điều khoản dịch vụ</span> và <span
-                                            class="text-highlight">Chính sách bảo
-                                            mật</span> của chúng tôi
-                                    </p>
+                                <span class="font-weight-bold">THÔNG TIN NHÀ TUYỂN DỤNG</span>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="mb-1">Họ và tên</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+                                        </div>
+                                        <input type="text" name="fullname" class="form-control"
+                                            placeholder="Họ tên" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="mb-1">Số điện thoại cá nhân</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                        </div>
+                                        <input type="text" name="phone1" class="form-control"
+                                            placeholder="Số điện thoại cá nhân" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="mb-1">Số điện thoại công ty</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                        </div>
+                                        <input type="text" name="phone2" class="form-control"
+                                            placeholder="Số điện thoại công ty" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="mb-1">Giới tính</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa-solid fa-neuter"></i></span>
+                                        </div>
+                                        <select name="gender" id="gender">
+                                            <option value="male">Nam</option>
+                                            <option value="female">Nữ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="email" class="mb-1">Công ty</label>
+                                    <div class="input-group ">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                                        </div>
+                                        <input type="text" name="company" class="form-control"
+                                            placeholder="Tên công ty" value="">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- <p class="agree-term">
+                                Bằng việc đăng ký tài khoản, bạn đã đồng ý với <span class="text-highlight">Điều khoản dịch vụ</span> và <span class="text-highlight">Chính sách bảo
+                                    mật</span> của chúng tôi
+                            </p> -->
+                            <div class="row">
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2"></div>
+                                <div class="col-lg-2">
+                                    <button type="reset" class="btn btn-reset btn-block mb-4">Nhập lại</button>
+                                </div>
+                                <div class="col-lg-2">
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng ký</button>
                                 </div>
-                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                            </form>
-
-                            <div>
-                                <span>Bạn đã có tài khoản?</span>
-                                <a class="text-success font-weight-bold" href="signin">
-                                    Đăng nhập ngay
-                                </a>
                             </div>
-
                         </div>
+                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                        </form>
+
+                        <!-- <div>
+                            <span>Bạn đã có tài khoản?</span>
+                            <a class="text-success font-weight-bold" href="signin">
+                                Đăng nhập ngay
+                            </a>
+                        </div> -->
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Jumbotron -->
 </section>
