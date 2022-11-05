@@ -14,7 +14,7 @@
 </script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/"><img class="logo" style="background-image:none"
-            src="{{ url('img/img/horizontal_on_white_by_logaster-removebg-preview.png') }}"
+            src="{{ url('img/logo-business.png') }}"
             title="TopCV tuyển dụng tại TopCV" alt="TopCV tuyển dụng tại TopCV"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
