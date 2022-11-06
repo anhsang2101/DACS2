@@ -89,6 +89,7 @@
         font-size: 55px !important;
     }
 </style>
+@include('bs.navbar')
 <!-- Section: Design Block -->
 <header class="bg-primary bg-gradient" style="background: #e9fbe9 !important; height: 30%;">
     <div class="container px-4 text-center">
