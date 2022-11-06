@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,85 +45,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
     <style>
-    input,
-    select,
-    input[type=number] {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 2px;
-        box-shadow: none;
-        color: #333;
-        font-size: 14px;
-        font-weight: 400;
-        height: 40px;
-        line-height: 24px;
-        padding: 11px 0 11px 20px;
-        width: 380px;
-    }
+        input,
+        select,
+        input[type=number] {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 2px;
+            box-shadow: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 400;
+            height: 40px;
+            line-height: 24px;
+            padding: 11px 0 11px 20px;
+            width: 380px;
+        }
 
-    textarea {
-        background: #fff;
-        border: 1px solid #eee;
-        border-radius: 2px;
-        box-shadow: none;
-        color: #333;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 24px;
-        padding: 11px 0 11px 20px;
-    }
+        textarea {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 2px;
+            box-shadow: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            padding: 11px 0 11px 20px;
+        }
 
-    .fullsize {
-        width: 1140px;
-    }
+        .fullsize {
+            width: 1140px;
+        }
 
-    * {
-        font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-        ;
-    }
+        * {
+            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+            ;
+        }
 
-    .table tbody tr {
-        background: #fff;
-    }
+        .table tbody tr {
+            background: #fff;
+        }
 
-    .table tbody th,
-    .table tbody td {
-        border: none;
-        padding: 20px 30px;
-        font-size: 14px;
-        vertical-align: middle;
-        text-align: left !important;
-    }
+        .table tbody th,
+        .table tbody td {
+            border: none;
+            padding: 20px 30px;
+            font-size: 14px;
+            vertical-align: middle;
+            text-align: left !important;
+        }
 
-    th {
-        text-align: left !important;
-    }
+        th {
+            text-align: left !important;
+        }
 
-    .btn {
-        width: 200px;
-    }
-    .btn1{
-        background-color: #00b14f;
-    color: #fff !important;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 10px 20px !important;
-    text-align: center;
-    width: 40px;;
-    }
+        .btn {
+            width: 200px;
+        }
 
-    .btn-search {
-        background-color: #333;
-    }
+        .btn1 {
+            background-color: #00b14f;
+            color: #fff !important;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 10px 20px !important;
+            text-align: center;
+            width: 40px;
+            ;
+        }
 
-    .btn-edit {
-        background-color: blue;
-    }
+        .btn-search {
+            background-color: #333;
+        }
 
-    .btn-del {
-        background-color: red;
-    }
-</style>
+        .btn-edit {
+            background-color: blue;
+        }
+
+        .btn-del {
+            background-color: red;
+        }
+    </style>
 </head>
 
 
