@@ -1,5 +1,6 @@
 <html>
 <title>Đăng nhập tài khoản Online - EZCV</title>
+<head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -28,6 +29,7 @@
 <link rel="manifest" href="../img/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+</head>
 <style>
     button {
         background-color: #00b14f !important;
@@ -127,6 +129,7 @@
     }
 </style>
 <!-- Section: Design Block -->
+<body>
 <section class="">
     <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-lg-start" style="background-color: hsl(0, 0%, 97%); height: 100vh;">
@@ -226,5 +229,6 @@
     <!-- Jumbotron -->
 </section>
 <!-- Section: Design Block -->
+</body>
 
 </html>

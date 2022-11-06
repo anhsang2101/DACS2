@@ -1,4 +1,5 @@
 <html>
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,6 +32,7 @@
 <link rel="manifest" href="../img/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+</head>
 <style>
     button {
         background-color: #00b14f !important;
@@ -97,6 +99,7 @@
     }
 </style>
 <!-- Section: Design Block -->
+<body>
 <section class="">
     <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-lg-start" style="background-color: hsl(0, 0%, 97%); height: 100vh;">
@@ -201,5 +204,6 @@
     <!-- Jumbotron -->
 </section>
 <!-- Section: Design Block -->
+</body>
 
 </html>
