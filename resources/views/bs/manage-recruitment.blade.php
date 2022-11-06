@@ -60,7 +60,6 @@
             padding: 11px 0 11px 20px;
             width: 380px;
         }
-
         textarea {
             background: #fff;
             border: 1px solid #eee;
@@ -72,20 +71,16 @@
             line-height: 24px;
             padding: 11px 0 11px 20px;
         }
-
         .fullsize {
             width: 1140px;
         }
-
         * {
             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
             ;
         }
-
         .table tbody tr {
             background: #fff;
         }
-
         .table tbody th,
         .table tbody td {
             border: none;
@@ -94,15 +89,12 @@
             vertical-align: middle;
             text-align: left !important;
         }
-
         th {
             text-align: left !important;
         }
-
         .btn {
             width: 200px;
         }
-
         .btn1 {
             background-color: #00b14f;
             color: #fff !important;
@@ -113,15 +105,12 @@
             width: 40px;
             ;
         }
-
         .btn-search {
             background-color: #333;
         }
-
         .btn-edit {
             background-color: blue;
         }
-
         .btn-del {
             background-color: red;
         }
