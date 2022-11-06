@@ -200,7 +200,6 @@
                                             placeholder="Tên công ty" value="">
                                     </div>
                                 </div>
-                        </div>
                         <div class="form-group">
                             <!-- <p class="agree-term">
                                 Bằng việc đăng ký tài khoản, bạn đã đồng ý với <span class="text-highlight">Điều khoản dịch vụ</span> và <span class="text-highlight">Chính sách bảo
@@ -219,6 +218,7 @@
                         </div>
                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                         </form>
+                        </div>
 
                         <!-- <div>
                             <span>Bạn đã có tài khoản?</span>

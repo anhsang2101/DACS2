@@ -43,7 +43,7 @@
 
     <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/style1.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
 </head>
 
 <body>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-12 box-search-job-image">
-                        <img src="../img/img/home-removebg-preview.png" title="Nhân viên tuyển dụng tại EzCV" alt="Nhan vien tuyen dung tai EzCV" class="img-responsive">
+                        <img src="{{ url('img/home-removebg-preview.png') }}" title="Nhân viên tuyển dụng tại EzCV" alt="Nhan vien tuyen dung tai EzCV" class="img-responsive">
                     </div>
                 </div>
             </div>
