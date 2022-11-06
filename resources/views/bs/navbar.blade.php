@@ -13,7 +13,7 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/"><img class="logo" style="background-image:none"
+    <a class="navbar-brand" href="/bs"><img class="logo" style="background-image:none"
             src="{{ url('img/logo-business.png') }}"
             title="TopCV tuyển dụng tại TopCV" alt="TopCV tuyển dụng tại TopCV"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -24,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Trang chủ<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/bs">Trang chủ<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -32,8 +32,8 @@
                     Tuyển dụng
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Đăng tin tuyển dụng</a>
-                    <a class="dropdown-item" href="#">Quản tí tin tuyển dụng</a>
+                    <a class="dropdown-item" href="/bs/create-new-job">Đăng tin tuyển dụng</a>
+                    <a class="dropdown-item" href="/bs/manage-recruitment">Quản tí tin tuyển dụng</a>
                     <!-- <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>

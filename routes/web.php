@@ -34,12 +34,6 @@ Route::prefix('bs')->group(function(){
     Route::get('/', function () {
         return view('bs.index');
     });
-    Route::get('/recruit', function () {
-        return view('bs.recruit');
-    });
-    Route::get('/dashboard', function () {
-        return view('bs.dashboard');
-    });
     Route::get('/create-new-job', function () {
         return view('bs.create-new-job');
     });

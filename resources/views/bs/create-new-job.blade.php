@@ -66,8 +66,7 @@
 
 <body>
 
-    @include('bs.navbar-dashboard')
-
+    @include('bs.navbar')
     <div class="page-wrapper chiller-theme ml-0 mt-3 bg-white">
         <div class="container">
             <h2 class="h2">Đăng tin tuyển dụng mới</h2>

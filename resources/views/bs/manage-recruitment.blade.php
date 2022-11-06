@@ -98,7 +98,7 @@
 
 <body>
 
-    @include('bs.navbar-dashboard')
+    @include('bs.navbar')
 
 
     <div class="row">
