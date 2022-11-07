@@ -48,10 +48,10 @@
 
 <body>
     @include('bs.navbar')
-    <header class="bg-primary bg-gradient" style="background: #e9fbe9 !important; height: 30%;">
+    <header class="bg-primary bg-gradient" style=" background: transparent linear-gradient(67deg,#68ffa2,#f6f3ff) 0 0 no-repeat padding-box;">
         <div class="container px-4 text-center">
             <br>
-            <h1 class="fw-bolder">Chào mừng đến với phiên bản dành cho nhà tuyển dụng</h1>
+            <h1 class="fw-bolder" style="color: #df3e39;">Chào mừng đến với phiên bản dành cho nhà tuyển dụng</h1>
             <p class="font-weight-bold">Đăng tin tuyển dụng miễn phí, tìm CV ứng viên và <span
                     class="text-hightlight">hơn thế nữa</span> </p>
         </div>
