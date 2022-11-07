@@ -12,7 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
     <a class="navbar-brand" href="/"><img class="logo" style="background-image:none"
             src="{{ url('img/horizontal_on_white_by_logaster-removebg-preview.png') }}"
             title="TopCV tuyển dụng tại TopCV" alt="TopCV tuyển dụng tại TopCV"></a>

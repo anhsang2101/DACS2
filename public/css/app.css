@@ -594,8 +594,8 @@ a {
     padding: 2px 9px;
 }
 .feature-job-item .col-job-info .salary, .feature-job-item .col-job-info .address {
-    background: #ffe2e2;
-    color: #1a2531;
+    background: #a06887;
+    color: #ffff;
     opacity: .8;
 }
 .feature-job-item .col-job-info .address {
@@ -603,7 +603,7 @@ a {
 }
 
 .carousel .carousel-indicators li {
-    background-color: #fff;
+    background-color: rgb(202, 255, 204);
     background-color: rgba(70, 70, 70, 0.25);
   }
   
@@ -617,7 +617,62 @@ a {
     font-size: 16px;
     padding: 12px 17px 16px;
 }
+.box-header {
+    border-radius: 3px 3px 0 0;
+    color: #212f3f;
+    display: flex;
+    font-size: 16px;
+    padding: 18px 16px 11px;
+    position: relative;
+}
 .box-header h2 {
     font-size: 24px;
     font-weight: bold;
+}
+.box-smart {
+    align-items: center;
+    display: flex;
+}
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 23px;
+}
+.prev-button, .next-button{
+    color: #00b14f;
+}
+.prev-button{
+    margin-left: 15px;
+}
+.next-button{
+    margin-right: 15px;
+}
+.box-smart-list-button {
+    cursor: pointer !important;
+    position: relative;
+    transition: all .2s;
+    white-space: nowrap;
+    width: 100%;
+}
+.carousel-control-next,
+.carousel-control-prev
+
+/*, .carousel-indicators */
+    {
+    filter: invert(100%);
+}
+
+#indicators {
+    background-color: #4a4a4a !important;
+}
+
+.carousel-indicators {
+    bottom: -50px !important;
+}
+
+#indicators {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
 }
