@@ -100,6 +100,8 @@ ul.nav_menu_right li {
 
 body {
     margin: 0px;
+    background: url("../img/background-linear.jpg") repeat center;
+    background-size: contain, cover;
 }
 
 .dangnhap {
@@ -230,7 +232,7 @@ body {
     display: inline-block;
 }
 .img-home{
-    width: 200px;
+    width: 100%;
     height: auto;
 }
 #img_search {
@@ -361,6 +363,8 @@ body {
 #box-search-job h2 {
     font-size: 24px;
     font-weight: bold;
+    margin-top: 48px;
+    margin-bottom: 32px;
 }
 #box-search-job input {
     border: 1px solid #fff;
@@ -377,6 +381,13 @@ body {
 }
 #frm-search-job .btn-search-job {
     background-color: #ad005f !important;
+}
+.form-search {
+    background: rgba(255, 255, 255, 0.219);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 24px;
+    transition: height .4s;
 }
 
 /* .btn {
@@ -526,12 +537,18 @@ a {
     width: 45px;
 }
 .feature-job-item {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     box-shadow: -1px 1px 4px rgb(0 0 0 / 10%);
     margin: 6px 0;
     padding: 16px;
     transition: box-shadow .2s;
+}
+.carousel-item{
+    background-color: rgba(255, 255, 255, 0.986);
+}
+.col-md-4 {
+    background-color: rgba(255, 255, 255, 0.994);
 }
 .col-like button {
     background: #fff 0 0 no-repeat padding-box;
@@ -611,7 +628,7 @@ a {
     background-color: #444;
   }
   .box-header {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.994);
     color: #212f3f;
     display: flex;
     font-size: 16px;
@@ -632,6 +649,10 @@ a {
 .box-smart {
     align-items: center;
     display: flex;
+    background-color:rgba(255, 255, 255, 0.994);
+}
+.col-md-12{
+    background-color: rgba(255, 255, 255, 0.994);
 }
 .fa-solid, .fas {
     font-family: "Font Awesome 6 Free";
