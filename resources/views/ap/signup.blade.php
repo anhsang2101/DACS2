@@ -125,18 +125,26 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
+                            @if (session('msg'))                                
+                            <div class="alert alert-sucsess">{{ session('msg') }}</div>                            
+                            @endif
+                            {{-- @if ($errors->any())                                
+                            <div class="alert alert-danger">Dữ liệu không hợp lệ</div>                            
+                            @endif --}}
                             <form action="signup" method="POST" id="form-register">
-                                
                                 <div class="form-group mb-3">
                                     <label for="fullname" class="mb-1">Họ và tên</label>
                                     <div class="input-group ">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                                         </div>
-                                        <input type="text" name="fullname" class="form-control"
+                                        <input type="text" name="name" class="form-control"
                                             placeholder="Nhập họ và tên của bạn"
                                             aria-label="Nhập họ và tên của bạn" value="">
                                     </div>
+                                    @error('name')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="email" class="mb-1">Email</label>
@@ -148,6 +156,9 @@
                                             placeholder="Nhập email của bạn" aria-label="Nhập email của bạn"
                                             value="">
                                     </div>
+                                    @error('email')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="password" class="mb-1">Mật khẩu</label>
@@ -161,20 +172,26 @@
                                             <button type="button" tabindex="-1" data-input-target="#password" class="input-group-text toggle-password"></button>
                                         </div> -->
                                     </div>
+                                    @error('password')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label for="password_confirmation" class="mb-1">Xác nhận mật khẩu</label>
+                                    <label for="confirmPassword" class="mb-1">Xác nhận mật khẩu</label>
                                     <div class="input-group ">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                                         </div>
-                                        <input type="password" id="password_confirmation"
-                                            name="password_confirmation" class="form-control"
+                                        <input type="password" id="confirmPassword"
+                                            name="confirmPassword" class="form-control"
                                             placeholder="Nhập lại mật khẩu" aria-label="Nhập lại mật khẩu">
                                         <!-- <div class="input-group-prepend">
-                                            <button type="button" tabindex="-1" data-input-target="#password_confirmation" class="input-group-text toggle-password"></button>
+                                            <button type="button" tabindex="-1" data-input-target="#confirmPassword" class="input-group-text toggle-password"></button>
                                         </div> -->
                                     </div>
+                                    @error('confirmPassword')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mt-3">
                                     <p class="agree-term">
@@ -185,16 +202,16 @@
                                     </p>
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng ký</button>
                                 </div>
-                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                {{-- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> --}}
+                                @csrf
                             </form>
-
                             <div>
                                 <span>Bạn đã có tài khoản?</span>
                                 <a class="text-success font-weight-bold" href="signin">
                                     Đăng nhập ngay
                                 </a>
                             </div>
-
+                            
                         </div>
                     </div>
                 </div>

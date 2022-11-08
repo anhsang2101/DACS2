@@ -156,6 +156,9 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
+                            @if (session('msg'))                                
+                            <div class="alert alert-danger">{{ session('msg') }}</div>                            
+                            @endif
                             <form action="signin" method="POST" id="form-login">
                                 <input type="hidden" name="_token" value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
                                 <div class="form-group mb-3">
@@ -168,6 +171,9 @@
                                             placeholder="Nhập email của bạn" aria-label="Nhập email của bạn"
                                             value="">
                                     </div>
+                                    @error('email')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="password" class="mb-1">Password</label>
@@ -181,6 +187,9 @@
                                             <button type="button" tabindex="-1" data-input-target="#password" class="input-group-text toggle-password"></button>
                                         </div> -->
                                     </div>
+                                    @error('password')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mt-3">
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng nhập</button>
@@ -203,7 +212,8 @@
                                         <i class="fab fa-github"></i>
                                     </button>
                                 </div>
-                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                {{-- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> --}}
+                                @csrf
                             </form>
 
                             <br>

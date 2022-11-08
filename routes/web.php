@@ -42,7 +42,7 @@ Route::prefix('bs')->group(function(){
     });
 });
 
-Route::prefix('ap')->group(function(){
+Route::prefix('ap')->name('ap.')->group(function(){
     
     Route::post('/signup', [
         SignUpController::class ,
@@ -51,7 +51,7 @@ Route::prefix('ap')->group(function(){
     
     Route::get('/signup', function () {
         return view('ap.signup');
-    });
+    })->name('signup');
     
     Route::post('/signin', [
         SignInController::class ,
@@ -60,11 +60,11 @@ Route::prefix('ap')->group(function(){
     
     Route::get('/signin', function () {
         return view('ap.signin');
-    });
+    })->name('signin');
     
     Route::get('/', function () {
         return view('ap.index');
-    });
+    })->name('index');
      
 });
 
