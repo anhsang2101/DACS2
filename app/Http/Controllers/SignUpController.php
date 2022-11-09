@@ -35,7 +35,7 @@ class SignUpController extends Controller
         ];
 
         $this->ap->signUp($dataInsert);
-        return redirect()->route('ap.signup')->with('msg', 'Them thanh cong');
+        return redirect()->route('ap.signup')->with('msg', 'Đăng ký thành công');
     }
 
     public function signUpBs(Request $request){

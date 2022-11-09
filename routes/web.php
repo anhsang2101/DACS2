@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SignInController;
+use App\Http\Controllers\SignOutController;
 use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,11 @@ Route::prefix('bs')->group(function(){
 
 Route::prefix('ap')->name('ap.')->group(function(){
     
+    Route::get('/signout', [
+        SignOutController::class ,
+        'signOutAp'
+    ]);
+
     Route::post('/signup', [
         SignUpController::class ,
         'signUpAp'

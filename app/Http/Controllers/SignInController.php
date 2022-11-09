@@ -28,11 +28,16 @@ class SignInController extends Controller
             $request->password,
         ];
 
+
+
         if(!empty($this->ap->signIn($dataInsert))){
+            $nameSessionAcccount = $this->ap->signIn($dataInsert)[0]->name;
+            
+            session()->put('nameSession', $nameSessionAcccount);
             return redirect()->route('ap.index')->with('msg',$request->email);
         }
         else{
-            return redirect()->route('ap.signin')->with('msg','sai mat khau');
+            return redirect()->route('ap.signin')->with('msg','Sai mật khẩu');
         }
         
         // dd($this->ap->signIn($dataInsert));

@@ -10,6 +10,11 @@ class Applicants extends Model
 {
     use HasFactory;
 
+    // public function getName($dataInsert){
+    //     $name = DB::select('SELECT name FROM applicants WHERE email=? and password=?', $dataInsert);
+    //     return $name;
+    // }
+
     public function signIn($dataInsert){
         $ap = DB::select('SELECT * FROM applicants WHERE email=? and password=?', $dataInsert);
         return $ap;

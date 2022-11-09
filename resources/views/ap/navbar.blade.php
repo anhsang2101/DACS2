@@ -49,17 +49,33 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Công cụ</a>
             </li>
-                <a class="nav-link" href="bs/">Version for bussiness</a>
+            <a class="nav-link" href="bs/">Version for bussiness</a>
             </li>
         </ul>
 
         <ul class="nav_menu_right">
-            <li><a class="dangnhap" style="color: #df3e39;" href="/ap/signin">
-                    Đăng nhập
-                </a></li>
-            <li> <a class="dangky" style="color: #ffff;"href="/ap/signup">
-                    Đăng ký
-                </a></li>
+            @if (session()->has('nameSession'))
+                <li>
+                    <div class="alert alert-info" role="alert">
+                        Xin chào: {{ Session::get('nameSession') }}
+
+                    </div>
+                </li>
+                <li>
+                    <button class="btn btn-danger">
+                        <a href="/ap/signout" >Đăng Xuất
+                        </a>
+                    </button>
+                </li>
+            @else
+                <li><a class="dangnhap" style="color: #df3e39;" href="/ap/signin">
+                        Đăng nhập
+                    </a></li>
+                <li> <a class="dangky" style="color: #ffff;"href="/ap/signup">
+                        Đăng ký
+                    </a></li>
+            @endif
+
         </ul>
 
     </div>

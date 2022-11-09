@@ -126,11 +126,11 @@
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
                             @if (session('msg'))                                
-                            <div class="alert alert-sucsess">{{ session('msg') }}</div>                            
+                            <div class="alert alert-success">{{ session('msg') }}</div>                            
                             @endif
-                            {{-- @if ($errors->any())                                
-                            <div class="alert alert-danger">Dữ liệu không hợp lệ</div>                            
-                            @endif --}}
+                            @if ($errors->any())                                
+                            <div class="alert alert-danger">Đăng ký không thành công</div>                            
+                            @endif
                             <form action="signup" method="POST" id="form-register">
                                 <div class="form-group mb-3">
                                     <label for="fullname" class="mb-1">Họ và tên</label>
