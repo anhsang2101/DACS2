@@ -58,14 +58,11 @@
                 <li>
                     <div class="alert alert-info" role="alert">
                         Xin chào: {{ Session::get('nameSession') }}
-
                     </div>
                 </li>
                 <li>
-                    <button class="btn btn-danger">
-                        <a href="/ap/signout" >Đăng Xuất
-                        </a>
-                    </button>
+                    <a class="dangxuat" href="/ap/signout" >Đăng Xuất
+                    </a>
                 </li>
             @else
                 <li><a class="dangnhap" style="color: #df3e39;" href="/ap/signin">
