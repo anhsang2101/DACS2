@@ -195,24 +195,7 @@
                                 @if (session('msg'))                                
                             <div class="alert alert-danger">{{ session('msg') }}</div>                            
                             @endif
-                                <!-- <div class="text-center">
-                                    <button type="button" class="btn btn-link btn-facebook btn-floating mx-1">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-google btn-floating mx-1">
-                                        <i class="fab fa-google"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-link btn-twitter btn-floating mx-1">
-                                        <i class="fab fa-twitter"></i>
-                                    </button>
-
-                                    <button type="button" class="btn btn-github btn-link btn-floating mx-1">
-                                        <i class="fab fa-github"></i>
-                                    </button>
-                                </div> -->
-                                {{-- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> --}}
+                    
                                 @csrf
                                 
                             </form>

@@ -13,4 +13,10 @@ class SignOutController extends Controller
         $request->session()->forget('nameSession');
         return redirect()->route('ap.index');
     }
+    public function signOutBs(Request $request){
+
+        $request->session()->forget('nameSessionBs');
+        
+        return redirect()->route('bs.index');
+    }
 }

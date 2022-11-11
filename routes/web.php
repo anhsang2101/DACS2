@@ -16,25 +16,35 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('bs')->group(function(){
+Route::prefix('bs')->name('bs.')->group(function () {
 
+    Route::get('/signout', [
+        SignOutController::class,
+        'signOutBs'
+    ]);
+    Route::get('/create-new-job', function () {
+        return view('bs.create-new-job');
+    });
+    Route::get('/manage-recruitment', function () {
+        return view('bs.manage-recruitment');
+    });
     Route::post('/signin', [
-        SignInController::class ,
+        SignInController::class,
         'signInBs'
     ]);
     Route::get('/signin', function () {
         return view('bs.signin');
-    });
+    })->name('signin');
     Route::post('/signup', [
-        SignUpController::class ,
+        SignUpController::class,
         'signUpBs'
     ]);
     Route::get('/signup', function () {
         return view('bs.signup');
-    });
+    })->name('signup');
     Route::get('/', function () {
         return view('bs.index');
-    });
+    })->name('index');
     Route::get('/create-new-job', function () {
         return view('bs.create-new-job');
     });
@@ -43,38 +53,36 @@ Route::prefix('bs')->group(function(){
     });
 });
 
-Route::prefix('ap')->name('ap.')->group(function(){
-    
+Route::prefix('ap')->name('ap.')->group(function () {
+
     Route::get('/signout', [
-        SignOutController::class ,
+        SignOutController::class,
         'signOutAp'
     ]);
 
     Route::post('/signup', [
-        SignUpController::class ,
+        SignUpController::class,
         'signUpAp'
     ]);
-    
+
     Route::get('/signup', function () {
         return view('ap.signup');
     })->name('signup');
-    
+
     Route::post('/signin', [
-        SignInController::class ,
+        SignInController::class,
         'signInAp'
     ]);
-    
+
     Route::get('/signin', function () {
         return view('ap.signin');
     })->name('signin');
-    
+
     Route::get('/', function () {
         return view('ap.index');
     })->name('index');
-     
 });
 
 Route::get('/', function () {
     return view('ap.index');
 });
- 

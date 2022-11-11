@@ -45,12 +45,24 @@
         </ul>
 
         <ul class="nav_menu_right">
-            <li><a class="dangnhap" style="color: #df3e39;" href="/bs/signin">
-                    Đăng nhập
-                </a></li>
-            <li> <a class="dangky" style="color: #ffff;"href="/bs/signup">
-                    Đăng ký
-                </a></li>
+            @if (session()->has('nameSessionBs'))
+                <li>
+                    <div class="alert alert-info" role="alert">
+                        Xin chào: {{ Session::get('nameSessionBs') }}
+                    </div>
+                </li>
+                <li>
+                    <a class="dangxuat" href="/bs/signout" >Đăng Xuất
+                    </a>
+                </li>
+            @else
+                <li><a class="dangnhap" style="color: #df3e39;" href="/bs/signin">
+                        Đăng nhập
+                    </a></li>
+                <li> <a class="dangky" style="color: #ffff;"href="/bs/signup">
+                        Đăng ký
+                    </a></li>
+            @endif
         </ul>
 
     </div>

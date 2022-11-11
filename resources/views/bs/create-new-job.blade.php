@@ -209,8 +209,7 @@
                         <h3 class="h3">Thông tin chung</h3>
                         <div class="form-group">
 
-                            <label for="exampleInputPassword1" class="title">Số lượng tuyển</label>
-                            <input required type="number" class="form-control" id="number" placeholder="Nhập số lượng tuyển">
+    
 
 
                             <label for="exampleInputPassword1" class="title">Loại công việc</label> <br>
@@ -228,6 +227,7 @@
                             <select class="form-control" required name="gt" id="gt">
                                 <option value="1">Nam</option>
                                 <option value="2">Nữ</option>
+                                <option value="3">Không yêu cầu giới tính cụ thể</option>
                             </select>
 
                             <label for="exampleInputPassword1" class="title">Cấp bậc</label> <br>
@@ -275,23 +275,12 @@
                             <label for="name" class="title">Quyền lợi của ứng viên</label> <br>
                             <textarea class="form-control" required id="des" placeholder="Nhập nội dung quyền lợi của ứng viên" name="des" rows="4" cols="140"></textarea>
                         </div>
-                        <h3 class="h3">Thông tin nhận CV</h3>
-                        <div class="form-group">
+                        {{-- <h3 class="h3">Thông tin nhận CV</h3> --}}
+                        {{-- <div class="form-group">
                             <label for="name" class="title">Hạn chót nhận CV</label> <br>
                             <input required name="date" type="date" class="form-control" id="datepicker">
-                        </div>
-                        <h4 class="title">Thông tin người nhận CV</h4>
-                        <div class="form-group">
-
-                            <label for="name" class="title">Họ và tên</label> <br>
-                            <input class="form-control" required name="fullname" type="text" id="fullname">
-
-                            <label for="name" class="title">Số điện thoại</label> <br>
-                            <input class="form-control" required name="phone" type="text" id="phone">
-
-                            <label for="name" class="title">Email</label> <br>
-                            <input class="form-control" required name="email" type="email" id="email">
-                        </div>
+                        </div> --}}
+                       
                         <br>
                         <div class="form-group">
                             <!-- <p class="agree-term">

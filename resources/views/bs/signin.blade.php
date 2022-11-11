@@ -98,8 +98,11 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
                                         </div>
-                                        <input type="text" name="email" class="form-control" placeholder="Nhập email của bạn" aria-label="Nhập email của bạn" value="">
+                                        <input type="text" name="email" class="form-control" placeholder="Nhập email doanh nghiệp" aria-label="Nhập email doanh nghiệp" value="">
                                     </div>
+                                    @error('email')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="password" class="mb-1">Mật khẩu</label>
@@ -112,11 +115,17 @@
                                             <button type="button" tabindex="-1" data-input-target="#password" class="input-group-text toggle-password"></button>
                                         </div> -->
                                     </div>
+                                    @error('password')
+                                    <span style="color: red">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group mt-3">
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng nhập</button>
                                 </div>
-                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                @if (session('msg'))
+                                        <div class="alert alert-danger">{{ session('msg') }}</div>
+                                    @endif
+                                @csrf
                             </form>
                             <div class="mt-3 d-flex justify-content-between option-auth">
                                 <div>
