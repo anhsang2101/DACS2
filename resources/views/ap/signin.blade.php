@@ -156,9 +156,6 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
-                            @if (session('msg'))                                
-                            <div class="alert alert-danger">{{ session('msg') }}</div>                            
-                            @endif
                             <form action="signin" method="POST" id="form-login">
                                 <input type="hidden" name="_token" value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
                                 <div class="form-group mb-3">
@@ -193,9 +190,12 @@
                                 </div>
                                 <div class="form-group mt-3">
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng nhập</button>
-                                    <p class="or text-center mb-0 fz-12px">Hoặc</p>
+                                    <!-- <p class="or text-center mb-0 fz-12px">Hoặc</p> -->
                                 </div>
-                                <div class="text-center">
+                                @if (session('msg'))                                
+                            <div class="alert alert-danger">{{ session('msg') }}</div>                            
+                            @endif
+                                <!-- <div class="text-center">
                                     <button type="button" class="btn btn-link btn-facebook btn-floating mx-1">
                                         <i class="fab fa-facebook-f"></i>
                                     </button>
@@ -211,9 +211,10 @@
                                     <button type="button" class="btn btn-github btn-link btn-floating mx-1">
                                         <i class="fab fa-github"></i>
                                     </button>
-                                </div>
+                                </div> -->
                                 {{-- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> --}}
                                 @csrf
+                                
                             </form>
 
                             <br>

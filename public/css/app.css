@@ -100,7 +100,7 @@ ul.nav_menu_right li {
 
 body {
     margin: 0px;
-    background: url("../img/background-linear.jpg") repeat center;
+    background: transparent linear-gradient(67deg,#8effb9,#f6f3ff) 0 0 no-repeat padding-box;;
     background-size: contain, cover;
 }
 
@@ -170,7 +170,9 @@ body {
     border-bottom: 1px solid #df3e39;
     border-left: 1px solid #df3e39;
 }
-
+.page-wrapper{
+    background: transparent linear-gradient(67deg,#8effb9,#f6f3ff) 0 0 no-repeat padding-box;;
+}
 .dangtuyen {
     background-color: #491b1b;
     border-color: #491b1b;

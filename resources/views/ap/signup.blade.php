@@ -125,12 +125,6 @@
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-body py-5 px-md-5">
-                            @if (session('msg'))                                
-                            <div class="alert alert-success">{{ session('msg') }}</div>                            
-                            @endif
-                            @if ($errors->any())                                
-                            <div class="alert alert-danger">Đăng ký không thành công</div>                            
-                            @endif
                             <form action="signup" method="POST" id="form-register">
                                 <div class="form-group mb-3">
                                     <label for="fullname" class="mb-1">Họ và tên</label>
@@ -201,6 +195,12 @@
                                             mật</span> của chúng tôi
                                     </p>
                                     <button type="submit" class="btn btn-primary btn-block mb-4">Đăng ký</button>
+                                    @if (session('msg'))                                
+                            <div class="alert alert-success">{{ session('msg') }}</div>                            
+                            @endif
+                            @if ($errors->any())                                
+                            <div class="alert alert-danger">Đăng ký không thành công</div>                            
+                            @endif
                                 </div>
                                 {{-- <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> --}}
                                 @csrf
