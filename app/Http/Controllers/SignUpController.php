@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SignUpController extends Controller
 {
     //
-    private $ap;
+    private $ap,$bs;
     public function __construct(){
         $this->ap = new Applicants();
         $this->bs = new Business();
