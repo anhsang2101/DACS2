@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostRecruitmentController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignOutController;
 use App\Http\Controllers\SignUpController;
@@ -22,12 +23,20 @@ Route::prefix('bs')->name('bs.')->group(function () {
         SignOutController::class,
         'signOutBs'
     ]);
+
+    Route::post('/postRecruitment', [
+        PostRecruitmentController::class,
+        'index'
+    ]);
+
     Route::get('/create-new-job', function () {
         return view('bs.create-new-job');
-    });
+    })->name('postRecruitment');
+
     Route::get('/manage-recruitment', function () {
         return view('bs.manage-recruitment');
     });
+    
     Route::post('/signin', [
         SignInController::class,
         'signInBs'
@@ -42,15 +51,14 @@ Route::prefix('bs')->name('bs.')->group(function () {
     Route::get('/signup', function () {
         return view('bs.signup');
     })->name('signup');
+
     Route::get('/', function () {
         return view('bs.index');
     })->name('index');
-    Route::get('/create-new-job', function () {
-        return view('bs.create-new-job');
-    });
-    Route::get('/manage-recruitment', function () {
-        return view('bs.manage-recruitment');
-    });
+
+
+
+
 });
 
 Route::prefix('ap')->name('ap.')->group(function () {

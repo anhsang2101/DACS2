@@ -13,47 +13,58 @@ class PostRecruitmentController extends Controller
         $this->recruitment = new Recruitment();
     }
 
-    // public function index(Request $request){
-    //     $request->validate([
-    //         'email' => 'required|unique:businesses',
-    //         'password' => 'required',
-    //         'confirmPassword' => 'required',
+    public function index(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'position' => 'required',
 
-    //         'namePersonal' => 'required',
-    //         // 'phonePersonal' => 'required|regex:/(0)[0-9]{9}/',
-    //         // 'phoneBusiness' => 'required|regex:/(0)[0-9]{9}/',
-    //         'phonePersonal' => 'required|',
-    //         'phoneBusiness' => 'required|',
-    //         'nameBusiness' => 'required',
-    //     ],[
+            'title' => 'required',
 
-    //         'password.required' => 'Vui lòng nhập mật khẩu',
-    //         'email.required' => 'Vui lòng nhập email',
-    //         'email.unique' => 'Email đã tồn tại',
-    //         'confirmPassword.required' => 'Vui lòng nhập lại mật khẩu',
-    //         'namePersonal.required' => 'Vui lòng nhập họ tên nhà tuyển dụng',
-    //         'phonePersonal.required' => 'Vui lòng nhập số điện thoại cá nhân',
-    //         'phoneBusiness.required' => 'Vui lòng nhập số điện thoại công ty',
-    //         'nameBusiness.required' => 'Vui lòng nhập tên công ty',
-    //         'phonePersonal.regex' => 'Định dạng sai',
-    //         'phoneBusiness.regex' => 'Định dạng sai',
+            'wage' => 'required|numeric',
+
+            'detail' => 'required',
+            'require' => 'required',
+            'benefit' => 'required',
+
+            // 'email' => 'required|unique:businesses',
+            // 'phonePersonal' => 'required|regex:/(0)[0-9]{9}/',
+            // 'phoneBusiness' => 'required|regex:/(0)[0-9]{9}/',
+
+        ],[
+            'name.required' => 'Vui long nhập tên chiến dịch tuyển dụng',
+            'position.required' => 'Vui lòng nhập vị trí tuyển dung',
+            'title.required' => 'Vui lòng nhập tiêu đề',
+            'wage.required' => 'Vui lòng nhập số lương',
+            'wage.numeric' => 'Sai định dạng',
+            'detail.required' => 'Vui lòng mô tả công việc',
+            'require.required' => 'Vui lòng nhập yêu cầu ứng viên',
+            'benefit.required' => 'Vui long nhập quyền lợi ứng viên',
             
-    //     ]);
+    
+        ]);
         
 
-    //     $dataInsert = [
-    //         $request->email,
-    //         $request->password,
-    //         $request->namePersonal,
-    //         $request->phonePersonal,
-    //         $request->phoneBusiness,
-    //         $request->gender,
-    //         $request->nameBusiness,
-    //     ];
+        $dataInsert = [
+            $request->name,
+            $request->position,
+            $request->area,
+            $request->title,
+            $request->major,
+            $request->type,
+            $request->gender,
+            $request->rank,
+            $request->exp,
+            $request->currency,
+            $request->wage,
+            $request->detail,
+            $request->require,
+            $request->benefit,
+        ];
 
-    //     $this->bs->signUp($dataInsert);
-    //     return redirect()->route('bs.signup')->with('msg', 'Đăng ký thành công');
-    //     // dd($request->all());
-    // }
+        $this->recruitment->post($dataInsert);
+        return redirect()->route('bs.postRecruitment')->with('msg', 'Đăng tin thành công');
+        
+        dd($request->all());
+    }
 
 }
