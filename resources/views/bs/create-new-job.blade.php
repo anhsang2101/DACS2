@@ -98,7 +98,7 @@
 </style>
 
 <body>
-
+    <div class="preloading"></div>
     @include('bs.navbar')
     <div class="page-wrapper chiller-theme ml-0 mt-3 bg-white">
         <div class="container">
@@ -356,6 +356,16 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+    $(".preloading").fadeOut("slow");
+});
+var loader = document.getElementById("preloading");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+})
+    </script>
 </body>
 
 </html>

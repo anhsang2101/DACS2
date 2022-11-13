@@ -47,6 +47,7 @@
 </head>
 
 <body>
+    <div class="preloading"></div>
     @include('bs.navbar')
     <header class="bg-primary bg-gradient" style=" background: transparent linear-gradient(67deg,#68ffa2,#f6f3ff) 0 0 no-repeat padding-box;">
         <div class="container px-4 text-center">
@@ -86,6 +87,16 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+    $(".preloading").fadeOut("slow");
+});
+var loader = document.getElementById("preloading");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+})
+    </script>
 </body>
 
 </html>

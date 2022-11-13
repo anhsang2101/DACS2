@@ -93,6 +93,9 @@ Route::prefix('ap')->name('ap.')->group(function () {
     Route::get('/', function () {
         return view('ap.index');
     })->name('index');
+    Route::get('/detail-job', function () {
+        return view('ap.detail-job');
+    })->name('detail-job');
 });
 
 Route::get('/', function () {

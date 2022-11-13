@@ -107,6 +107,7 @@
 </style>
 
 <body>
+    <div class="preloading"></div>
     @include('bs.navbar')
     <!-- Section: Design Block -->
     <header class="bg-primary bg-gradient" style="background: #e9fbe9 !important; height: 30%;">
@@ -228,7 +229,7 @@
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Giới tính</label>
-                                        <div class="input-group ">
+                                        <div class="input-group" style="flex-wrap: nowrap">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i
                                                         class="fa-solid fa-neuter"></i></span>
@@ -292,6 +293,16 @@
         <!-- Jumbotron -->
     </section>
     <!-- Section: Design Block -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+    $(".preloading").fadeOut("slow");
+});
+var loader = document.getElementById("preloading");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+})
+    </script>
 </body>
 
 </html>

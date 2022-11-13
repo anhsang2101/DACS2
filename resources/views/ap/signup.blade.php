@@ -98,10 +98,24 @@
         border-right: 1px solid #00c558 !important;
         border-bottom: 1px solid #00c558 !important;
     }
+    .preloading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff url(../img/preloading.gif) no-repeat center center !important;
+    background-size: 15% !important;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 </style>
 <!-- Section: Design Block -->
 
 <body>
+    <div class="preloading"></div>
     <section class="">
         <!-- Jumbotron -->
         <div class="px-4 py-5 px-md-5 text-lg-start" style="background-color: hsl(0, 0%, 97%); height: 100vh;">
@@ -227,6 +241,16 @@
         <!-- Jumbotron -->
     </section>
     <!-- Section: Design Block -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+    $(".preloading").fadeOut("slow");
+});
+var loader = document.getElementById("preloading");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+})
+    </script>
 </body>
 
 </html>

@@ -64,8 +64,35 @@
         border-bottom: 1px solid #fd534d !important;
         /* transition: background-color 0.5s ; */
     }
+    .preloading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff url(../img/preloading.gif) no-repeat center center !important;
+    background-size: 15% !important;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none !important;
+}
+.text-primary:hover{
+    color: #d6140e !important;
+}
+body > section > div > div > div > div:nth-child(2) > div > div > div > div > a:hover{
+    color: #d6140e !important;
+}
+body > section > div > div > div > div:nth-child(2) > div > div > div > a:hover{
+    color: #d6140e !important;
+}
 </style>
 <!-- Section: Design Block -->
+<body>
+    <div class="preloading"></div>
 <section class="">
     <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-lg-start" style="background-color: hsl(0, 0%, 97%); height: 100vh;">
@@ -148,5 +175,16 @@
     <!-- Jumbotron -->
 </section>
 <!-- Section: Design Block -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(window).on("load", function () {
+    $(".preloading").fadeOut("slow");
+});
+var loader = document.getElementById("preloading");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+})
+    </script>
+</body>
 
 </html>
