@@ -54,7 +54,7 @@ class PostRecruitmentController extends Controller
             
     
             $dataInsert = [
-                session()->get('emaiSessionBs'),
+                session()->get('emailSessionBs'),
                 $request->name,
                 $request->position,
                 $request->area,

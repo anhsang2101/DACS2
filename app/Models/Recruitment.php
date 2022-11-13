@@ -16,7 +16,7 @@ class Recruitment extends Model
     // }
 
     public function post($dataInsert){
-        DB::insert('INSERT INTO recruitments (`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO recruitments (`email`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
 
     }
 }
