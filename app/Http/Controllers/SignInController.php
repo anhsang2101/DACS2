@@ -66,8 +66,10 @@ class SignInController extends Controller
 
         if (!empty($this->bs->signIn($dataInsert))) {
             $nameSessionAcccountBs = $this->bs->signIn($dataInsert)[0]->namePersonal;
-
+        
             session()->put('nameSessionBs', $nameSessionAcccountBs);
+            session()->put('emailSessionBs', $request->email);
+            
             return redirect()->route('bs.index')->with('msg', $request->email);
         } else {
             return redirect()->route('bs.signin')->with('msg', 'Sai mật khẩu');
