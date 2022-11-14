@@ -49,7 +49,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Công cụ</a>
             </li>
-            <a class="nav-link" href="bs/">Version for bussiness</a>
+            <a class="nav-link" href="/bs">Version for bussiness</a>
             </li>
         </ul>
 

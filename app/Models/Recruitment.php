@@ -10,13 +10,13 @@ class Recruitment extends Model
 {
     use HasFactory;
 
-    // public function signIn($dataInsert){
-    //     $ap = DB::select('SELECT * FROM applicants WHERE email=? and password=?', $dataInsert);
-    //     return $ap;
-    // }
+    public function listAll(){
+        $listAll = DB::select('SELECT * FROM recruitments');
+        return $listAll;
+    }
 
     public function post($dataInsert){
-        DB::insert('INSERT INTO recruitments (`email`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
 
     }
 }

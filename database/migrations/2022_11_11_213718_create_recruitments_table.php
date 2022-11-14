@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('recruitments', function (Blueprint $table) {
             $table->increments('id');
+
             $table->string('email');
+            $table->string('nameBusiness');
+            
             $table->string('name');
             $table->string('position');
             $table->string('area');
