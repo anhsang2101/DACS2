@@ -15,8 +15,8 @@ class ViewDetailController extends Controller
     
     public function index($id){
 
-        $getOne = $this->recruitment->getDetail($id);
+        $detail = $this->recruitment->getDetail($id);
         
-        return view('ap.detail-job')->with(compact('getOne'));
+        return view('ap.detail-job')->with(compact('detail'));
     }
 }

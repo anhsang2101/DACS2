@@ -137,7 +137,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
                                 <li class="breadcrumb-item"><a href="#">Tìm việc làm</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Séc bi</li>
+                                <li class="breadcrumb-item active" aria-current="page">Chi tiết</li>
                             </ol>
                         </nav>
                         <div class="box-white box-detail-job">
@@ -149,7 +149,7 @@
                                 </a>
                                 <div class="box-info-job">
                                     <h1 class="job-title text-highlight bold" style="overflow-wrap:break-word;">
-                                        Lập Trình Viên Frontend - <a href="https://www.topcv.vn/tim-viec-lam-frontend-developer" class="text-highlight" target="_blank">Frontend Developer</a> (Vuejs, Reactjs - Từ 6 Tháng Kinh Nghiệm)
+                                        {{ $detail[0]->title }} - {{ $detail[0]->position }}
                                         <span class="icon-verified-employer level-five">
                                             <i class="fa-solid fa-circle-check" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-original-title="
   <b>Nhà tuyển dụng</b><span> đã được xác thực:</span><br>
@@ -160,11 +160,11 @@
   <span><i class='fa-solid fa-circle-check color-green'></i> Chưa có lịch sử bị báo cáo tin đăng</span><br>"></i></span>
                                     </h1>
                                     <div class="company-title">
-                                        <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" class="text-dark-blue">Công ty Cổ phần MISA</a>
+                                        <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" class="text-dark-blue">{{ $detail[0]->nameBusiness }}</a>
                                     </div>
 
                                     <div class="job-deadline">
-                                        <i class="fa-regular fa-clock"></i> Hạn nộp hồ sơ: 23/11/2022
+                                        <i class="fa-regular fa-clock"></i>Ngành nghề & lĩnh vực: {{ $detail[0]->major }}
                                     </div>
                                 </div>
                                 <div class="box-apply-current">
@@ -209,48 +209,48 @@
                                     <div>
                                         <strong>Mức lương </strong> <br>
                                         <span>
-                                            Thoả thuận
+                                            {{ $detail[0]->wage }} {{ $detail[0]->currency }}
                                         </span>
                                     </div>
                                 </div>
                                 <div class="box-item">
-                                    <i class="fa-solid fa-people-group"></i>
+                                    <i class="fa-solid fa-map-marker"></i>
                                     <div>
-                                        <strong>Số lượng tuyển </strong> <br>
-                                        <span>10 người</span>
+                                        <strong>Khu vực</strong> <br>
+                                        <span>{{ $detail[0]->area }}</span>
                                     </div>
                                 </div>
                                 <div class="box-item">
                                     <i class="fa-solid fa-briefcase"></i>
                                     <div>
                                         <strong>Hình thức làm việc </strong> <br>
-                                        <span>Toàn thời gian</span>
+                                        <span>{{ $detail[0]->type }}</span>
                                     </div>
                                 </div>
                                 <div class="box-item">
                                     <i class="fa-solid fa-medal"></i>
                                     <div>
                                         <strong>Cấp bậc </strong> <br>
-                                        <span>Trưởng nhóm</span>
+                                        <span>{{ $detail[0]->rank }}</span>
                                     </div>
                                 </div>
                                 <div class="box-item">
                                     <i class="fa-solid fa-venus-mars"></i>
                                     <div>
                                         <strong>Giới tính </strong> <br>
-                                        <span>Không yêu cầu</span>
+                                        <span>{{ $detail[0]->gender }}</span>
                                     </div>
                                 </div>
                                 <div class="box-item">
                                     <i class="fa-solid fa-ranking-star"></i>
                                     <div>
                                         <strong>Kinh nghiệm </strong> <br>
-                                        <span>1 năm</span>
+                                        <span>{{ $detail[0]->exp }}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="box-address">
+                        {{-- <div class="box-address">
                             <p>Địa điểm làm việc</p>
                             <div>
                                 <div style="margin-bottom: 10px">- Quảng Nam: Tiên Phước</div>
@@ -267,19 +267,19 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="job-data">
                             <h3>Mô tả công việc</h3>
                             <div class="content-tab">
-                                <p>- Quản lý công việc, ca làm việc cho đội ngũ nhân viên giao hàng, và nhân viên tại trạm;<br>- Quản lý quá trình giao, nhận, trả của hàng hóa thuộc khu vực quản lý<br>- Kiểm tra trạng thái chuyển khoản và cập nhật công nợ - COD của nhân viên/đối tác giao nhận;<br>- Xử lý các quy trình phát sinh của người mua trong quá trình giao nhận;<br>- Báo cáo hiện trạng, hoạt động giao hàng hàng tuần, đề xuất hướng giải quyết.</p>
+                                <p>{{ $detail[0]->detail }}</p>
                             </div>
                             <h3>Yêu cầu ứng viên</h3>
                             <div class="content-tab">
-                                <p>- Hiểu biết về vận hành giao và nhận;<br>- Có ít nhất 1 năm kinh nghiệm ở vị trí quản lý;<br>- Có khả năng làm việc nhóm cũng như độc lập tốt trong môi trường nhanh và năng động;<br>- Kinh nghiệm về việc quản lý, xử lý và phân tích số liệu;<br>- Có kinh nghiệm làm kho thương mại điện tử.</p>
+                                <p>{{ $detail[0]->require }}</p>
                             </div>
                             <h3>Quyền lợi</h3>
                             <div class="content-tab">
-                                <p>- Lương tháng 13;<br>- Hỗ trợ ăn trưa, phụ cấp điện thoại, laptop;<br>- Tham gia đầy đủ chế độ BHXH, BHYT, BHTN<br>- Gói bảo hiểm chăm sóc sức khỏe PTI<br>- Cơ hội được đào tạo bài bản, thăng tiến theo năng lực<br>- Môi trường làm việc trẻ trung, năng động, đồng nghiệp thân thiện, giúp đỡ.<br>- Tham gia các hoạt động nội bộ của công ty với nhiều giải thưởng hấp dẫn;&nbsp;<br>- Chính sách đặc biệt từ Shopee (voucher, quà tặng campaign, tết,...).</p>
+                                <p>{{ $detail[0]->benefit }}</p>
                             </div>
                             <h3>Cách thức ứng tuyển</h3>
                             <div class="box-how-to-apply">
@@ -291,7 +291,7 @@
                                                 <i class="fa-regular fa-paper-plane"></i> ỨNG TUYỂN NGAY
                                             </button>
                                         </div>
-                                        <p>Hạn nộp hồ sơ: 12/12/2022</p>
+                                        {{-- <p>Hạn nộp hồ sơ: 12/12/2022</p> --}}
                                     </div>
                                 </div>
                             </div>

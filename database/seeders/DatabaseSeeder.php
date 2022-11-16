@@ -36,9 +36,9 @@ class DatabaseSeeder extends Seeder
             'exp'=> Str::random(10),
             'currency'=> Str::random(10),
             'wage'=> Str::random(10),
-            'detail'=> Str::random(10),
-            'require'=> Str::random(10),
-            'benefit'=> Str::random(10),
+            'detail'=> Str::random(200),
+            'require'=> Str::random(200),
+            'benefit'=> Str::random(200),
         ]);
     }
 }
