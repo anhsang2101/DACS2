@@ -15,6 +15,11 @@ class Recruitment extends Model
         return $listAll;
     }
 
+    public function getDetail($id){
+        $detail = DB::select('SELECT * FROM recruitments WHERE `id` = ?', [$id]);
+        return $detail;
+    }
+
     public function post($dataInsert){
         DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
 

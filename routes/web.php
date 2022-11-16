@@ -5,6 +5,7 @@ use App\Http\Controllers\PostRecruitmentController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignOutController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\ViewDetailController;
 use App\Http\Controllers\ViewHomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -68,8 +69,8 @@ Route::prefix('bs')->name('bs.')->group(function () {
 
 Route::prefix('ap')->name('ap.')->group(function () {
 
-    Route::get('/detail-job', [
-        ViewHomeController::class,
+    Route::get('/detail-job/{id}', [
+        ViewDetailController::class,
         'index'
     ])->name('detail-job');
 
@@ -104,6 +105,7 @@ Route::prefix('ap')->name('ap.')->group(function () {
     
 });
 
-Route::get('/', function () {
-    return view('ap.index');
-});
+Route::get('/', [
+    ViewHomeController::class,
+    'index'
+]);

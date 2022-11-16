@@ -129,7 +129,7 @@
                                         @foreach ($listAll as $key => $item)
                                             <div class="col-md-4 col-sm-6 feature-job job-ta">
                                                 <div class="feature-job-item">
-                                                    <div class="cvo-flex"><a href="/ap/detail/{{ $item->id }}"
+                                                    <div class="cvo-flex"><a href="/ap/detail-job/{{ $item->id }}"
                                                             tabindex="-1">
                                                             <div class="box-company-logo"><img
                                                                     title="CÔNG TY CỔ PHẦN CÔNG NGHỆ &amp; SÁNG TẠO TRẺ TEKY HOLDINGS tuyển dụng tại TopCV"
@@ -139,7 +139,7 @@
                                                         </a>
                                                         <div class="col-title cvo-flex-grow"><a data-toggle="tooltip"
                                                                 title="" data-placement="top"
-                                                                href="/ap/detail/{{ $item->id }}" target="_blank"
+                                                                href="/ap/detail-job/{{ $item->id }}" target="_blank"
                                                                 class="title text_ellipsis"
                                                                 data-original-title="Nhân Viên Vận Hành Lớp Học (Làm Ca Linh Hoạt, Thu Nhập 7-9M)"
                                                                 tabindex="-1">
@@ -147,7 +147,7 @@
                                                                     style="font-weight: bold;">
                                                                     {{ $item->title }}
                                                                 </strong>
-                                                            </a> <a href="/ap/detail/{{ $item->id }}"
+                                                            </a> <a href="/ap/detail-job/{{ $item->id }}"
                                                                 data-toggle="tooltip" title=""
                                                                 data-placement="top" data-container="body"
                                                                 class="text-silver company text_ellipsis underline-box-job"
