@@ -18,5 +18,10 @@ class Business extends Model
     public function signUp($dataInsert){
         DB::insert('INSERT INTO businesses (email,password,namePersonal,phonePersonal,phoneBusiness,gender,nameBusiness) VALUES (?,?,?,?,?,?,?)', $dataInsert);
 
+    } 
+
+    public function getBusinessByEmail($email){
+        $bs = DB::select('SELECT * FROM businesses WHERE email=?', [$email]);
+        return $bs;
     }
 }

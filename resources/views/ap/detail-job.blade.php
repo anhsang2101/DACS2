@@ -75,16 +75,16 @@
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="post" action="">
+                <form method="post" action="/ap/submitted">
                     <div class="modal-header">
-                        <h5 class="modal-title bold" id="exampleModalLongTitle"><span class="text-highlight">Ứng tuyển đóng phim</span></h5>
+                        <h5 class="modal-title bold" id="exampleModalLongTitle"><span class="text-highlight">Thông tin ứng tuyển</span></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div id="frm-upload">
-                            <div class="row form-group">
+                            {{-- <div class="row form-group">
                                 <div class="col-sm-12 col-xs-12">
                                     <strong class="input-label text-dark-gray">Tải lên CV từ máy tính</strong><br>
                                     <span class="text-gray text-small">File doc, docx, pdf. Tối đa 5MB.</span>
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label>Họ và tên<span class="text-danger">*</span> :</label>
                                 <input type="text" value="" placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname" class="form-control input-sm" style="font-size: 12px">
@@ -117,7 +117,33 @@
                                         <input type="text" value="" placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone" class="form-control input-sm" style="font-size: 12px">
                                     </div>
                                 </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Học vấn<span class="text-danger">*</span> :</label>
+                                        <input type="text" value="" placeholder="Học vấn" name="education" class="form-control input-sm" style="font-size: 12px">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Kinh nghiệm<span class="text-danger">*</span> :</label>
+                                        <input type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp" class="form-control input-sm" style="font-size: 12px">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Kỹ năng<span class="text-danger">*</span> :</label>
+                                        <input type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm" style="font-size: 12px">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Mục tiêu nghề nghiệp<span class="text-danger">*</span> :</label>
+                                        <input type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="objectives" class="form-control input-sm" style="font-size: 12px">
+                                    </div>
+                                </div>
+                                @csrf
                             </div>
+                            
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -297,7 +323,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-box-right">
+                    {{-- <div class="col-md-4 col-box-right">
                         <div class="box-share-job">
                             <h3>Chia sẻ tin tuyển dụng</h3>
                             <p>Sao chép đường dẫn</p>
@@ -331,7 +357,7 @@
                             </div>
                             <p>Chia sẻ qua mạng xã hội</p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -339,7 +365,7 @@
         <div class="container  mt-16" id="tab-info-company">
             <div class="box-info-company box-white">
                 <div class="box-title">
-                    <h2 class="box-name">Thông tin Công ty TNHH Shopee Express</h2>
+                    <h2 class="box-name">{{ $detailbusiness[0]->nameBusiness }}</h2>
                     <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-shopee-express/51172.html" target="_blank">Xem trang công ty <i class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
                 <div class="box-info">

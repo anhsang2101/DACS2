@@ -69,6 +69,15 @@ Route::prefix('bs')->name('bs.')->group(function () {
 
 Route::prefix('ap')->name('ap.')->group(function () {
 
+    
+    Route::get('/submitted', function () {
+        return view('ap.submitted');
+    });
+
+    Route::post('/submitted', function () {
+        return 'zxc';
+    });
+
     Route::get('/detail-job/{id}', [
         ViewDetailController::class,
         'index'

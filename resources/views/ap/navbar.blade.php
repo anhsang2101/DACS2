@@ -47,7 +47,7 @@
             <li class="nav-item">
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Công cụ</a>
+                <a class="nav-link" href="/ap/submitted">Đơn ứng tuyển</a>
             </li>
             <a class="nav-link" href="/bs">Version for bussiness</a>
             </li>
