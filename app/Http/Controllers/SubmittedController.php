@@ -31,8 +31,8 @@ class SubmittedController extends Controller
 
         $dataInsert = [
             Session::get('sessionAccount')[0]->id,
-            Session::get('detailbusiness')[0]->id,
-            Session::get('detail')[0]->id,
+            // Session::get('detailbusiness')[0]->id,
+            // Session::get('detail')[0]->id,
             $request->edu,
             $request->exp,
             $request->skill,
