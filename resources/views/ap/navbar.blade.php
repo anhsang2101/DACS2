@@ -54,10 +54,13 @@
         </ul>
 
         <ul class="nav_menu_right">
-            @if (session()->has('nameSession'))
+            @if (session()->has('sessionAccount'))
                 <li>
                     <div class="alert alert-info" role="alert">
-                        Xin chào: {{ Session::get('nameSession') }}
+                        Xin chào: {{ Session::get('sessionAccount')[0]->name }}
+                        {{-- Xin chào: @foreach(Session::get('sessionAccount') as $test)
+                        {{$test->name}}
+                        @endforeach --}}
                     </div>
                 </li>
                 <li>

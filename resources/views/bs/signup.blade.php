@@ -144,7 +144,7 @@
                                                         class="fa-solid fa-envelope"></i></span>
                                             </div>
                                             <input type="text" name="email" class="form-control"
-                                                placeholder="Nhập email của bạn" aria-label="Nhập email của bạn"
+                                                placeholder="Nhập email của bạn" aria-label="Nhập email đăng nhập"
                                                 value="">
                                         </div>
                                         @error('email')
@@ -214,6 +214,34 @@
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
+                                        <label for="email" class="mb-1">Giới tính</label>
+                                        <div class="input-group" style="flex-wrap: nowrap">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="fa-solid fa-neuter"></i></span>
+                                            </div>
+                                            <select name="gender" id="gender">
+                                                <option value="male">Nam</option>
+                                                <option value="female">Nữ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <span class="font-weight-bold">THÔNG TIN CÔNG TY</span>
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="mb-1">Công ty</label>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="fa-solid fa-building"></i></span>
+                                            </div>
+                                            <input type="text" name="nameBusiness" class="form-control"
+                                                placeholder="Tên công ty" value="">
+                                        </div>
+                                        @error('nameBusiness')
+                                            <span style="color: red">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Số điện thoại công ty</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
@@ -228,29 +256,45 @@
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for="email" class="mb-1">Giới tính</label>
-                                        <div class="input-group" style="flex-wrap: nowrap">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-neuter"></i></span>
-                                            </div>
-                                            <select name="gender" id="gender">
-                                                <option value="male">Nam</option>
-                                                <option value="female">Nữ</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="email" class="mb-1">Công ty</label>
+                                        <label for="email" class="mb-1">Giới thiệu</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i
-                                                        class="fa-solid fa-building"></i></span>
+                                                        class="fa-solid fa-info-circle "></i></span>
                                             </div>
-                                            <input type="text" name="nameBusiness" class="form-control"
-                                                placeholder="Tên công ty" value="">
+                                            <textarea name="introduceBusiness" class="form-control"
+                                                placeholder="Giới thiệu về công ty"></textarea>
+                                                
                                         </div>
-                                        @error('nameBusiness')
+                                        @error('introduceBusiness')
+                                            <span style="color: red">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="mb-1">Quy mô</label>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="fa-solid fa-users"></i></span>
+                                            </div>
+                                            <input type="text" name="personnelSize" class="form-control"
+                                                placeholder="Quy mô nhân sự công ty" value="">
+                                        </div>
+                                        @error('personnelSize')
+                                            <span style="color: red">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="mb-1">Địa điểm</label>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i
+                                                        class="fa-solid fa-map-marker"></i></span>
+                                            </div>
+                                            <input type="text" name="location" class="form-control"
+                                                placeholder="Địa điểm" value="">
+                                        </div>
+                                        @error('location')
                                             <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>

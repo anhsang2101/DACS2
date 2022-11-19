@@ -5,6 +5,7 @@ use App\Http\Controllers\PostRecruitmentController;
 use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignOutController;
 use App\Http\Controllers\SignUpController;
+use App\Http\Controllers\SubmittedController;
 use App\Http\Controllers\ViewDetailController;
 use App\Http\Controllers\ViewHomeController;
 use Illuminate\Support\Facades\Route;
@@ -74,9 +75,11 @@ Route::prefix('ap')->name('ap.')->group(function () {
         return view('ap.submitted');
     });
 
-    Route::post('/submitted', function () {
-        return 'zxc';
-    });
+    Route::post('/submitted', [
+        SubmittedController::class,
+        'index'
+    ]);
+
 
     Route::get('/detail-job/{id}', [
         ViewDetailController::class,

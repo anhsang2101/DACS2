@@ -101,44 +101,44 @@
                             </div> --}}
                             <div class="form-group">
                                 <label>Họ và tên<span class="text-danger">*</span> :</label>
-                                <input type="text" value="" placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname" class="form-control input-sm" style="font-size: 12px">
+                                <input disabled type="text" value="{{ Session::get('sessionAccount')[0]->name }}" placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname" class="form-control input-sm" style="font-size: 12px">
                                 <p class="text-small text-danger italic" id="fullnameErrorMessage" style="margin-top: 5px; display: none"></p>
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Email<span class="text-danger">*</span> :</label>
-                                        <input type="text" value="" placeholder="Email hiển thị với Nhà tuyển dụng" name="email" class="form-control input-sm" style="font-size: 12px">
+                                        <input required disabled type="text" value="{{ Session::get('sessionAccount')[0]->email }}" placeholder="Email hiển thị với Nhà tuyển dụng" name="email" class="form-control input-sm" style="font-size: 12px">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Số điện thoại<span class="text-danger">*</span> :</label>
-                                        <input type="text" value="" placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone" class="form-control input-sm" style="font-size: 12px">
+                                        <input required type="text" value="" placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone" class="form-control input-sm" style="font-size: 12px">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Học vấn<span class="text-danger">*</span> :</label>
-                                        <input type="text" value="" placeholder="Học vấn" name="education" class="form-control input-sm" style="font-size: 12px">
+                                        <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm" style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Kinh nghiệm<span class="text-danger">*</span> :</label>
-                                        <input type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp" class="form-control input-sm" style="font-size: 12px">
+                                        <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp" class="form-control input-sm" style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Kỹ năng<span class="text-danger">*</span> :</label>
-                                        <input type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm" style="font-size: 12px">
+                                        <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm" style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Mục tiêu nghề nghiệp<span class="text-danger">*</span> :</label>
-                                        <input type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="objectives" class="form-control input-sm" style="font-size: 12px">
+                                        <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj" class="form-control input-sm" style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 @csrf
@@ -186,7 +186,7 @@
   <span><i class='fa-solid fa-circle-check color-green'></i> Chưa có lịch sử bị báo cáo tin đăng</span><br>"></i></span>
                                     </h1>
                                     <div class="company-title">
-                                        <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" class="text-dark-blue">{{ $detail[0]->nameBusiness }}</a>
+                                        <a href="" class="text-dark-blue">{{ $detailbusiness[0]->nameBusiness }}</a>
                                     </div>
 
                                     <div class="job-deadline">
@@ -374,13 +374,7 @@
                         <div>
                             <p class="title">Giới thiệu</p>
                             <span class="content">
-                                <p>Shopee là nền tảng thương mại điện tử ở Đông Nam Á và Đài Loan.
-                                </p>
-                                <p>Ra mắt năm 2015, nền tảng thương mại Shopee được xây dựng nhằm cung cấp cho người sử dùng những trải nghiệm dễ dàng, an toàn và nhanh chóng khi mua sắm trực tuyến thông qua hệ thống hỗ trợ thanh toán và vận hành vững mạnh.
-                                </p>
-                                <p>Chúng tôi có niềm tin mạnh mẽ rằng trải nghiệm mua sắm trực tuyến phải đơn giản, dễ dàng và mang đến cảm xúc vui thích. Niềm tin này truyền cảm hứng và thúc đẩy chúng tôi mỗi ngày tại Shopee.</p>
-                                <p>
-                                </p>
+                                <p>{{ $detailbusiness[0]->introduceBusiness }}</p>
                             </span>
                         </div>
                     </div>
@@ -388,14 +382,14 @@
                         <i class="fa-solid fa-people-group"></i>
                         <div>
                             <p class="title">Quy mô</p>
-                            <span class="content">1000+ nhân viên</span>
+                            <span class="content">{{ $detailbusiness[0]->personnelSize}}</span>
                         </div>
                     </div>
                     <div class="box-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
                             <p class="title">Địa điểm</p>
-                            <span class="content">Việt Nam</span>
+                            <span class="content">{{ $detailbusiness[0]->location }}</span>
                         </div>
                     </div>
                 </div>

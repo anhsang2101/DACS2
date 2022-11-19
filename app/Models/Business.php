@@ -16,7 +16,7 @@ class Business extends Model
     }
 
     public function signUp($dataInsert){
-        DB::insert('INSERT INTO businesses (email,password,namePersonal,phonePersonal,phoneBusiness,gender,nameBusiness) VALUES (?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO businesses (email,`password`,namePersonal,phonePersonal,gender,nameBusiness,phoneBusiness,introduceBusiness,personnelSize,`location`) VALUES (?,?,?,?,?,?,?,?,?,?)', $dataInsert);
 
     } 
 

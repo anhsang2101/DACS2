@@ -14,7 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('submitteds', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+
+            $table->string('jobid');
+            $table->string('appid');
+            $table->string('businessid');
+
+            $table->string('edu');
+            $table->string('exp');
+            $table->string('skill');
+            $table->string('obj');
             $table->timestamps();
         });
     }

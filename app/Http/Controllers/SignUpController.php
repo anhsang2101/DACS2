@@ -49,9 +49,13 @@ class SignUpController extends Controller
             'namePersonal' => 'required',
             // 'phonePersonal' => 'required|regex:/(0)[0-9]{9}/',
             // 'phoneBusiness' => 'required|regex:/(0)[0-9]{9}/',
-            'phonePersonal' => 'required|',
-            'phoneBusiness' => 'required|',
+            'phonePersonal' => 'required',
+            'phoneBusiness' => 'required',
             'nameBusiness' => 'required',
+            'introduceBusiness' => 'required',
+            'personnelSize' => 'required',
+            'location' => 'required',
+
         ],[
 
             'password.required' => 'Vui lòng nhập mật khẩu',
@@ -64,6 +68,9 @@ class SignUpController extends Controller
             'nameBusiness.required' => 'Vui lòng nhập tên công ty',
             'phonePersonal.regex' => 'Định dạng sai',
             'phoneBusiness.regex' => 'Định dạng sai',
+            'introduceBusiness.required' => 'Vui lòng nhập mô tả công ty',
+            'personnelSize.required' => 'vui lòng nhập quy mô',
+            'location.required' => 'Vui lòng nhập địa điểm',
             
         ]);
         
@@ -73,9 +80,12 @@ class SignUpController extends Controller
             $request->password,
             $request->namePersonal,
             $request->phonePersonal,
-            $request->phoneBusiness,
             $request->gender,
             $request->nameBusiness,
+            $request->phoneBusiness,
+            $request->introduceBusiness,
+            $request->personnelSize,
+            $request->location,
         ];
 
         $this->bs->signUp($dataInsert);
