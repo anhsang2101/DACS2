@@ -41,8 +41,11 @@
     <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
     <link href="vendors/magnifc-popup/magnific-popup.css" rel="stylesheet">
     <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
     <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
@@ -71,13 +74,15 @@
     </div>
 
     @include('ap.navbar')
-
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form method="post" action="/ap/submitted">
                     <div class="modal-header">
-                        <h5 class="modal-title bold" id="exampleModalLongTitle"><span class="text-highlight">Thông tin ứng tuyển</span></h5>
+                        <h5 class="modal-title bold" id="exampleModalLongTitle"><span class="text-highlight">Thông
+                                tin ứng tuyển</span></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -101,49 +106,67 @@
                             </div> --}}
                             <div class="form-group">
                                 <label>Họ và tên<span class="text-danger">*</span> :</label>
-                                <input disabled type="text" value="{{ Session::get('sessionAccount')[0]->name }}" placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname" class="form-control input-sm" style="font-size: 12px">
-                                <p class="text-small text-danger italic" id="fullnameErrorMessage" style="margin-top: 5px; display: none"></p>
+                                <input disabled type="text" value="{{ Session::get('sessionAccount')[0]->name }}"
+                                    placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname"
+                                    class="form-control input-sm" style="font-size: 12px">
+                                <p class="text-small text-danger italic" id="fullnameErrorMessage"
+                                    style="margin-top: 5px; display: none"></p>
                             </div>
                             <div class="row">
+
+                                <input hidden type="text" value="{{ $detail[0]->id }}" placeholder=""
+                                    name="jobid" class="form-control input-sm" style="font-size: 12px">
+                                <input hidden type="text" value="{{ $detailbusiness[0]->id }}" placeholder=""
+                                    name="businessid" class="form-control input-sm" style="font-size: 12px">
+
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Email<span class="text-danger">*</span> :</label>
-                                        <input required disabled type="text" value="{{ Session::get('sessionAccount')[0]->email }}" placeholder="Email hiển thị với Nhà tuyển dụng" name="email" class="form-control input-sm" style="font-size: 12px">
+                                        <input required disabled type="text"
+                                            value="{{ Session::get('sessionAccount')[0]->email }}"
+                                            placeholder="Email hiển thị với Nhà tuyển dụng" name="email"
+                                            class="form-control input-sm" style="font-size: 12px">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Số điện thoại<span class="text-danger">*</span> :</label>
-                                        <input required type="text" value="" placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone" class="form-control input-sm" style="font-size: 12px">
+                                        <input required type="text" value=""
+                                            placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone"
+                                            class="form-control input-sm" style="font-size: 12px">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Học vấn<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                        <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm"
+                                            style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Kinh nghiệm<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                        <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp"
+                                            class="form-control input-sm" style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Kỹ năng<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                        <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm"
+                                            style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Mục tiêu nghề nghiệp<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                        <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj"
+                                            class="form-control input-sm" style="font-size: 12px"></textarea>
                                     </div>
                                 </div>
                                 @csrf
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -168,16 +191,20 @@
                         </nav>
                         <div class="box-white box-detail-job">
                             <div class="box-header">
-                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" title="Công ty Cổ phần MISA" class="company-logo">
+                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html"
+                                    title="Công ty Cổ phần MISA" class="company-logo">
                                     <div class="box-company-logo">
-                                        <img src="https://cdn.topcv.vn/80/company_logos/YVVFSY05ZUhqjlVHtBl2kOD1a189WFj0_1652947920____d78c5dd2ab820dcbb9a367b40e712067.jpg" alt="Công ty Cổ phần MISA" class="img-responsive">
+                                        <img src="https://cdn.topcv.vn/80/company_logos/YVVFSY05ZUhqjlVHtBl2kOD1a189WFj0_1652947920____d78c5dd2ab820dcbb9a367b40e712067.jpg"
+                                            alt="Công ty Cổ phần MISA" class="img-responsive">
                                     </div>
                                 </a>
                                 <div class="box-info-job">
                                     <h1 class="job-title text-highlight bold" style="overflow-wrap:break-word;">
                                         {{ $detail[0]->title }} - {{ $detail[0]->position }}
                                         <span class="icon-verified-employer level-five">
-                                            <i class="fa-solid fa-circle-check" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-original-title="
+                                            <i class="fa-solid fa-circle-check" data-toggle="tooltip"
+                                                data-html="true" title="" data-placement="top"
+                                                data-original-title="
   <b>Nhà tuyển dụng</b><span> đã được xác thực:</span><br>
   <span><i class='fa-solid fa-circle-check color-green'></i> Đã xác thực email tên miền công ty</span><br>
   <span><i class='fa-solid fa-circle-check color-green'></i> Đã xác thực số điện thoại</span><br>
@@ -186,16 +213,19 @@
   <span><i class='fa-solid fa-circle-check color-green'></i> Chưa có lịch sử bị báo cáo tin đăng</span><br>"></i></span>
                                     </h1>
                                     <div class="company-title">
-                                        <a href="" class="text-dark-blue">{{ $detailbusiness[0]->nameBusiness }}</a>
+                                        <a href=""
+                                            class="text-dark-blue">{{ $detailbusiness[0]->nameBusiness }}</a>
                                     </div>
 
                                     <div class="job-deadline">
-                                        <i class="fa-regular fa-clock"></i>Ngành nghề & lĩnh vực: {{ $detail[0]->major }}
+                                        <i class="fa-regular fa-clock"></i>Ngành nghề & lĩnh vực:
+                                        {{ $detail[0]->major }}
                                     </div>
                                 </div>
                                 <div class="box-apply-current">
                                     <div class="text-center">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#exampleModalLong">
                                             <i class="fa-regular fa-paper-plane"></i> ỨNG TUYỂN NGAY
                                         </button>
 
@@ -206,8 +236,14 @@
                                 </div>
                                 <div class="box-apply-success">
                                     <div class="text-center">
-                                        <p><a href="#" class="btn btn-topcv-primary btn-primary-hover open-apply-modal" data-toggle="modal"><i class="fa-solid fa-arrow-rotate-right"></i> ỨNG TUYỂN LẠI</a></p>
-                                        <p><a target="_blank" href="http://candidate.topcvconnect.com/conversations/new/10649" class="btn btn-connect btn-outline-hover"><i class="fa-solid fa-comments"></i> NHẮN TIN</a></p>
+                                        <p><a href="#"
+                                                class="btn btn-topcv-primary btn-primary-hover open-apply-modal"
+                                                data-toggle="modal"><i class="fa-solid fa-arrow-rotate-right"></i> ỨNG
+                                                TUYỂN LẠI</a></p>
+                                        <p><a target="_blank"
+                                                href="http://candidate.topcvconnect.com/conversations/new/10649"
+                                                class="btn btn-connect btn-outline-hover"><i
+                                                    class="fa-solid fa-comments"></i> NHẮN TIN</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -309,11 +345,13 @@
                             </div>
                             <h3>Cách thức ứng tuyển</h3>
                             <div class="box-how-to-apply">
-                                <p>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm <strong class="text-highlight">Ứng tuyển ngay</strong> dưới đây.</p>
+                                <p>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm <strong class="text-highlight">Ứng tuyển
+                                        ngay</strong> dưới đây.</p>
                                 <div class="">
                                     <div class="">
                                         <div class="d-flex box-btn">
-                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#exampleModalLong">
                                                 <i class="fa-regular fa-paper-plane"></i> ỨNG TUYỂN NGAY
                                             </button>
                                         </div>
@@ -366,7 +404,8 @@
             <div class="box-info-company box-white">
                 <div class="box-title">
                     <h2 class="box-name">{{ $detailbusiness[0]->nameBusiness }}</h2>
-                    <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-shopee-express/51172.html" target="_blank">Xem trang công ty <i class="fa-solid fa-arrow-up-right"></i></a>
+                    <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-shopee-express/51172.html" target="_blank">Xem
+                        trang công ty <i class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
                 <div class="box-info">
                     <div class="box-item">
@@ -382,7 +421,7 @@
                         <i class="fa-solid fa-people-group"></i>
                         <div>
                             <p class="title">Quy mô</p>
-                            <span class="content">{{ $detailbusiness[0]->personnelSize}}</span>
+                            <span class="content">{{ $detailbusiness[0]->personnelSize }}</span>
                         </div>
                     </div>
                     <div class="box-item">
@@ -407,6 +446,19 @@
             loader.style.display = "none";
         })
     </script>
+    @if(Session::has('alertSuccess'))
+    <script>       
+            var alertSuccess = '{{Session::get('alertSuccess')}}';
+          alert(alertSuccess);
+      </script>
+    @endif
+    {{-- <script>
+        var msg = '{{Session::get('alertSuccess')}}';
+        var exist = '{{Session::has('alertSuccess')}}';
+        if(exist){
+          alert(msg);
+        }
+      </script> --}}
 </body>
 
 </html>

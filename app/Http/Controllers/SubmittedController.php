@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Submitted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class SubmittedController extends Controller
 {
+
+    private $submitted;
+    public function __construct()
+    {
+        $this->submitted = new Submitted();
+    }
+
     public function index(Request $request){
 
         // $request->validate([
@@ -30,9 +38,9 @@ class SubmittedController extends Controller
         
 
         $dataInsert = [
+            $request->jobid,
             Session::get('sessionAccount')[0]->id,
-            // Session::get('detailbusiness')[0]->id,
-            // Session::get('detail')[0]->id,
+            $request->businessid,
             $request->edu,
             $request->exp,
             $request->skill,
@@ -41,9 +49,12 @@ class SubmittedController extends Controller
 
 
 
-        var_dump($dataInsert);
-        // $this->bs->signUp($dataInsert);
+
+        $this->submitted->submittedApplicant($dataInsert);
+        
+        return redirect()->back()->with('alertSuccess','Ứng tuyển thành công');
         // return redirect()->route('/ap.detail-job')->with('msg', 'Đăng ký thành công');
         // dd($request->all());
+        // var_dump($dataInsert);
     }
 }
