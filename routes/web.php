@@ -8,6 +8,7 @@ use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\SubmittedController;
 use App\Http\Controllers\ViewDetailController;
 use App\Http\Controllers\ViewHomeController;
+use App\Http\Controllers\ViewSubmittedController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +56,7 @@ Route::prefix('bs')->name('bs.')->group(function () {
         SignUpController::class,
         'signUpBs'
     ]);
+
     Route::get('/signup', function () {
         return view('bs.signup');
     })->name('signup');
@@ -71,9 +73,10 @@ Route::prefix('bs')->name('bs.')->group(function () {
 Route::prefix('ap')->name('ap.')->group(function () {
 
     
-    Route::get('/submitted', function () {
-        return view('ap.submitted');
-    });
+    Route::get('/submitted', [
+        ViewSubmittedController::class,
+        'index'
+    ]);
 
     Route::post('/submitted', [
         SubmittedController::class,

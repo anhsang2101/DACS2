@@ -141,23 +141,19 @@
                     <tbody>
                         <tr>
                             <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
+                            <td>{{ $listAllSubmitteds[0]->exp }}</td>
                             <td>22/10/2022</td>
                             <td>100</td>
                             <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
+
+                            @if($listAllSubmitteds[0]->status=='2')
                             <td><a href="#" class="btn btn-success">Đã duyệt</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
-                            <td><a href="#" class="btn btn-success">Đã duyệt</a></td>
+                            @elseif($listAllSubmitteds[0]->status=='1')
+                            <td><a href="#" class="btn btn-warning">Đang chờ</a></td>
+                            @else
+                            <td><a href="#" class="btn btn-danger">Không thành công</a></td>
+                            @endif
+
                             <td><a href="#" class="btn1 btn-edit">Sửa</a>
                                 <a href="#" class="btn1 btn-del">Xóa</a>
                             </td>
@@ -175,19 +171,7 @@
                             </td>
                             </th>
                         </tr>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"> <i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
-                            <td><a href="#" class="btn btn-danger">Không thành công</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
 
-                            </th>>
-                        </tr>
                     </tbody>
                 </table>
             </div>

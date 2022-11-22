@@ -45,6 +45,7 @@ class SubmittedController extends Controller
             $request->exp,
             $request->skill,
             $request->obj,
+            '1',
         ];
 
 

@@ -19,11 +19,13 @@ return new class extends Migration
             $table->string('jobid');
             $table->string('appid');
             $table->string('businessid');
-
+            
             $table->string('edu');
             $table->string('exp');
             $table->string('skill');
             $table->string('obj');
+
+            $table->string('status');
             $table->timestamps();
         });
     }
