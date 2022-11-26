@@ -60,6 +60,7 @@
             padding: 11px 0 11px 20px;
             width: 380px;
         }
+
         textarea {
             background: #fff;
             border: 1px solid #eee;
@@ -71,16 +72,20 @@
             line-height: 24px;
             padding: 11px 0 11px 20px;
         }
+
         .fullsize {
             width: 1140px;
         }
+
         * {
             font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
             ;
         }
+
         .table tbody tr {
             background: #fff;
         }
+
         .table tbody th,
         .table tbody td {
             border: none;
@@ -89,12 +94,15 @@
             vertical-align: middle;
             text-align: left !important;
         }
+
         th {
             text-align: left !important;
         }
+
         .btn {
             width: 200px;
         }
+
         .btn1 {
             background-color: #00b14f;
             color: #fff !important;
@@ -105,12 +113,15 @@
             width: 40px;
             ;
         }
+
         .btn-search {
             background-color: #333;
         }
+
         .btn-edit {
             background-color: blue;
         }
+
         .btn-del {
             background-color: red;
         }
@@ -119,7 +130,7 @@
 
 
 <body>
-        <div class="preloading"></div>
+    <div class="preloading"></div>
     @include('ap.navbar')
 
 
@@ -129,49 +140,33 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Mã chiến dịch</th>
                             <th>Tên chiến dịch</th>
-                            <th>Ngày đăng</th>
-                            <th>Số người ứng tuyển</th>
-                            <th>Lọc CV</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>{{ $listAllSubmitteds[0]->exp }}</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
+                        @if (!empty($listAllSubmitteds))
+                            @foreach ($listAllSubmitteds as $key => $item)
+                                <tr>
+                                    <th> {{ $item->name }} - {{ $item->title }} - {{ $item->position }} </th>
 
-                            @if($listAllSubmitteds[0]->status=='2')
-                            <td><a href="#" class="btn btn-success">Đã duyệt</a></td>
-                            @elseif($listAllSubmitteds[0]->status=='1')
-                            <td><a href="#" class="btn btn-warning">Đang chờ</a></td>
-                            @else
-                            <td><a href="#" class="btn btn-danger">Không thành công</a></td>
-                            @endif
+                                    @if ($item->status == '2')
+                                        <td><a href="#" class="btn btn-success">Đã được duyệt</a></td>
+                                    @elseif($item->status == '1')
+                                        <td><a href="#" class="btn btn-warning">Đang chờ duyệt</a></td>
+                                    @else
+                                        <td><a href="#" class="btn btn-danger">Không được duyệt</a></td>
+                                    @endif
 
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
-                            <td><a href="#" class="btn btn-warning">Đang chờ</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
-                            </th>
-                        </tr>
-
+                                    <td><a href="#" class="btn1 btn-info">Chi tiết</a>
+                                        <a href="#" class="btn1 btn-edit">Sửa</a>
+                                        <a href="#" class="btn1 btn-del">Xóa</a>
+                                    </td>
+                                    </th>
+                                </tr>
+                            @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>
@@ -179,13 +174,13 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(window).on("load", function () {
-    $(".preloading").fadeOut("slow");
-});
-var loader = document.getElementById("preloading");
-window.addEventListener("load", function () {
-    loader.style.display = "none";
-})
+        $(window).on("load", function() {
+            $(".preloading").fadeOut("slow");
+        });
+        var loader = document.getElementById("preloading");
+        window.addEventListener("load", function() {
+            loader.style.display = "none";
+        })
     </script>
 </body>
 

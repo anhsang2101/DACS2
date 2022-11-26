@@ -16,44 +16,34 @@ class SubmittedController extends Controller
     }
 
     public function index(Request $request){
+        $array = $this->submitted->validate(Session::get('sessionAccount')[0]->id,$request->jobid);
+        if(empty($array)){
 
-        // $request->validate([
-        //     // 'phonel' => 'required|regex:/(0)[0-9]{9}/',
-        //     'phone' => 'required',
-        //     'edu' => 'required',
-        //     'exp' => 'required',
-        //     'skill' => 'required',
-        //     'obj' => 'required',
-
-        // ],[
-
-        //     'phone.required' => 'Vui lòng nhập số điện thoại',
-        //     'phone.regex' => 'Định dạng sai',
-        //     'edu.required' => 'Vui lòng nhập học vấn của bạn',
-        //     'exp.required' => 'Vui lòng nhập kinh nghiệp thực tế của bạn',
-        //     'skill.required' => 'Vui lòng nhập kỹ năng',
-        //     'obj.required' => 'Vui lòng nhập mục tiêu',
+            $dataInsert = [
+                $request->jobid,
+                Session::get('sessionAccount')[0]->id,
+                $request->businessid,
+                $request->edu,
+                $request->exp,
+                $request->skill,
+                $request->obj,
+                '1',
+            ];
+    
+    
+    
+    
+            $this->submitted->submittedApplicant($dataInsert);
             
-        // ]);
+            return redirect()->back()->with('alertSuccess','Ứng tuyển thành công');
+        }
+        else{
+            return redirect()->back()->with('alertSuccess','Bạn đã ứng tuyển tin này rồi');
+        }
+        
         
 
-        $dataInsert = [
-            $request->jobid,
-            Session::get('sessionAccount')[0]->id,
-            $request->businessid,
-            $request->edu,
-            $request->exp,
-            $request->skill,
-            $request->obj,
-            '1',
-        ];
-
-
-
-
-        $this->submitted->submittedApplicant($dataInsert);
         
-        return redirect()->back()->with('alertSuccess','Ứng tuyển thành công');
         // return redirect()->route('/ap.detail-job')->with('msg', 'Đăng ký thành công');
         // dd($request->all());
         // var_dump($dataInsert);

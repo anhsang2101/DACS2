@@ -11,8 +11,14 @@ class Submitted extends Model
 {
     use HasFactory;
 
+
+    public function validate($appid, $jobid){
+        $list = DB::select('SELECT * FROM submitteds WHERE appid = ? and jobid = ?', [$appid, $jobid]);
+        return $list;
+    }
+
     public function listAll($id){
-        $listAll = DB::select('SELECT * FROM submitteds WHERE appid = ?', [$id]);
+        $listAll = DB::select('SELECT * FROM submitteds INNER JOIN recruitments ON submitteds.jobid=recruitments.id WHERE appid = ?', [$id]);
         return $listAll;
     }
 
