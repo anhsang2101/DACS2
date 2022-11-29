@@ -134,6 +134,7 @@
     @include('ap.navbar')
 
 
+
     <div class="row">
         <div class="col-md-12">
             <div class="table-wrap">
@@ -148,29 +149,180 @@
                     <tbody>
                         @if (!empty($listAllSubmitteds))
                             @foreach ($listAllSubmitteds as $key => $item)
-                                <tr>
-                                    <th> {{ $item->name }} - {{ $item->title }} - {{ $item->position }} </th>
+                                {{-- hidden detail form --}}
+                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <form method="post" action="/ap/submitted">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title bold" id="exampleModalLongTitle"><span
+                                                            class="text-highlight">Thông
+                                                            tin chi tiết</span></h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div id="frm-upload">
 
-                                    @if ($item->status == '2')
-                                        <td><a href="#" class="btn btn-success">Đã được duyệt</a></td>
-                                    @elseif($item->status == '1')
-                                        <td><a href="#" class="btn btn-warning">Đang chờ duyệt</a></td>
-                                    @else
-                                        <td><a href="#" class="btn btn-danger">Không được duyệt</a></td>
-                                    @endif
 
-                                    <td><a href="#" class="btn1 btn-info">Chi tiết</a>
-                                        <a href="#" class="btn1 btn-edit">Sửa</a>
-                                        <a href="#" class="btn1 btn-del">Xóa</a>
-                                    </td>
-                                    </th>
-                                </tr>
-                            @endforeach
-                        @endif
-                    </tbody>
-                </table>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Số điện thoại<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <input required type="text"
+                                                                    value="{{ $item->name }}"
+                                                                    placeholder="Số điện thoại hiển thị với Nhà tuyển dụng"
+                                                                    name="phone" class="form-control input-sm"
+                                                                    style="font-size: 12px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Học vấn<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm"
+                                                                    style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Kinh nghiệm<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp"
+                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Kỹ năng<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm"
+                                                                    style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Mục tiêu nghề nghiệp<span
+                                                                        class="text-danger">*</span> :</label>
+                                                                <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj"
+                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        @csrf
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-cancel btn-sm"
+                                                        data-dismiss="modal">Đóng lại</button>
+                                                </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                {{-- end hidden detail form --}}
+
+                                {{-- hidden detail form --}}
+                                <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <form method="post" action="/ap/submitted">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title bold" id="exampleModalLongTitle"><span
+                                                            class="text-highlight">Thông
+                                                            tin chi tiết</span></h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div id="frm-upload">
+
+
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Số điện thoại<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <input required type="text"
+                                                                    value="Alo alo"
+                                                                    placeholder="Số điện thoại hiển thị với Nhà tuyển dụng"
+                                                                    name="phone" class="form-control input-sm"
+                                                                    style="font-size: 12px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Học vấn<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm"
+                                                                    style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Kinh nghiệm<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp"
+                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Kỹ năng<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm"
+                                                                    style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Mục tiêu nghề nghiệp<span
+                                                                        class="text-danger">*</span> :</label>
+                                                                <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj"
+                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        @csrf
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-cancel btn-sm"
+                                                        data-dismiss="modal">Đóng lại</button>
+                                                </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                {{-- end hidden detail form --}}
             </div>
+            <tr>
+                <th> {{ $item->name }} - {{ $item->title }} - {{ $item->position }} </th>
+
+                @if ($item->status == '2')
+                    <td><a href="#" class="btn btn-success">Đã được duyệt</a></td>
+                @elseif($item->status == '1')
+                    <td><a href="#" class="btn btn-warning">Đang chờ duyệt</a></td>
+                @else
+                    <td><a href="#" class="btn btn-danger">Không được duyệt</a></td>
+                @endif
+
+                <td><a href="#" data-target="#exampleModalLong" data-toggle="modal" class="btn1 btn-info">Chi
+                        tiết</a>
+                    <a href="#" data-target="#exampleModalLong2" data-toggle="modal" class="btn1 btn-edit">Sửa</a>
+                    <a href="#" class="btn1 btn-del">Xóa</a>
+                </td>
+                </th>
+            </tr>
+            @endforeach
+            @endif
+            </tbody>
+            </table>
         </div>
+    </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -182,6 +334,7 @@
             loader.style.display = "none";
         })
     </script>
+
 </body>
 
 </html>

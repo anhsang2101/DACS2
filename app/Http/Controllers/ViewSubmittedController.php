@@ -20,7 +20,7 @@ class ViewSubmittedController extends Controller
             $id = Session::get('sessionAccount')[0]->id;
 
             $listAllSubmitteds = $this->submitted->listAll($id);
-
+            
 
             return view('ap.submitted')->with(compact('listAllSubmitteds'));
         } else {
