@@ -27,4 +27,22 @@ class ViewSubmittedController extends Controller
             return redirect()->route('ap.signin')->with('msg', 'Bạn phải đăng nhập trước khi sử dụng chức năng này');
         }
     }
+    
+    public function delete($id){
+        $this->submitted->deleteSubmitted($id);
+        return redirect()->route('ap.submitted');
+    }
+
+    public function edit(Request $request){
+        $dataInsert = [
+            $request->edu,
+            $request->exp,
+            $request->skill,
+            $request->obj,
+            $request->id,
+        ];
+
+        $this->submitted->editSubmitted($dataInsert);
+        return redirect()->route('ap.submitted');
+    }
 }

@@ -150,13 +150,13 @@
                         @if (!empty($listAllSubmitteds))
                             @foreach ($listAllSubmitteds as $key => $item)
                                 {{-- hidden detail form --}}
-                                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal fade" id="detail{{ $item->id }}" tabindex="-1" role="dialog"
+                                    aria-labelledby="detail{{ $item->id }}Title" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <form method="post" action="/ap/submitted">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title bold" id="exampleModalLongTitle"><span
+                                                    <h5 class="modal-title bold" id="detail{{ $item->id }}Title"><span
                                                             class="text-highlight">Thông
                                                             tin chi tiết</span></h5>
                                                     <button type="button" class="close" data-dismiss="modal"
@@ -170,45 +170,99 @@
 
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-                                                                <label>Số điện thoại<span class="text-danger">*</span>
+                                                                <label>Tên doanh nghiệp<span
+                                                                        class="text-danger">*</span>
                                                                     :</label>
-                                                                <input required type="text"
-                                                                    value="{{ $item->name }}"
-                                                                    placeholder="Số điện thoại hiển thị với Nhà tuyển dụng"
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->nameBusiness }}" placeholder=""
                                                                     name="phone" class="form-control input-sm"
                                                                     style="font-size: 12px">
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-                                                                <label>Học vấn<span class="text-danger">*</span>
+                                                                <label>Email doanh nghiệp<span
+                                                                        class="text-danger">*</span>
                                                                     :</label>
-                                                                <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm"
-                                                                    style="font-size: 12px"></textarea>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->email }}" name="exp"
+                                                                    class="form-control input-sm"
+                                                                    style="font-size: 12px">
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-                                                                <label>Kinh nghiệm<span class="text-danger">*</span>
+                                                                <label>Vị trí tuyển dụng<span
+                                                                        class="text-danger">*</span>
                                                                     :</label>
-                                                                <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp"
-                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->position }}"
+                                                                    placeholder="Học vấn" name="edu"
+                                                                    class="form-control input-sm"
+                                                                    style="font-size: 12px">
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-                                                                <label>Kỹ năng<span class="text-danger">*</span>
+                                                                <label>Lĩnh vực<span class="text-danger">*</span>
                                                                     :</label>
-                                                                <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm"
-                                                                    style="font-size: 12px"></textarea>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->major }}"
+                                                                    placeholder="Kinh nghiệm làm việc của bạn"
+                                                                    name="exp" class="form-control input-sm"
+                                                                    style="font-size: 12px">
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-                                                                <label>Mục tiêu nghề nghiệp<span
+                                                                <label>Kinh nghiệm yêu cầu<span
+                                                                        class="text-danger">*</span>
+                                                                    :</label>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->exprequired }}" placeholder=""
+                                                                    name="exp" class="form-control input-sm"
+                                                                    style="font-size: 12px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Lương<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->wage }} {{ $item->currency }}"
+                                                                    placeholder="" name="skill"
+                                                                    class="form-control input-sm"
+                                                                    style="font-size: 12px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Loại hình<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->type }}" name="obj"
+                                                                    class="form-control input-sm"
+                                                                    style="font-size: 12px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Khu vực<span class="text-danger">*</span>
+                                                                    :</label>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->area }}" name="obj"
+                                                                    class="form-control input-sm"
+                                                                    style="font-size: 12px">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <label>Yêu cầu giới tính<span
                                                                         class="text-danger">*</span> :</label>
-                                                                <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj"
-                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                                <input disabled required type="text"
+                                                                    value="{{ $item->gender }}" name="obj"
+                                                                    class="form-control input-sm"
+                                                                    style="font-size: 12px">
                                                             </div>
                                                         </div>
                                                         @csrf
@@ -224,16 +278,16 @@
                                 </div>
                                 {{-- end hidden detail form --}}
 
-                                {{-- hidden detail form --}}
-                                <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                {{-- hidden edit form --}}
+                                <div class="modal fade" id="edit{{ $item->id }}" tabindex="-1" role="dialog"
+                                    aria-labelledby="edit{{ $item->id }}Title" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                            <form method="post" action="/ap/submitted">
+                                            <form method="post" action="/ap/submitted/edit">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title bold" id="exampleModalLongTitle"><span
-                                                            class="text-highlight">Thông
-                                                            tin chi tiết</span></h5>
+                                                    <h5 class="modal-title bold" id="edit{{ $item->id }}Title"><span
+                                                            class="text-highlight">Chỉnh sửa thông tin đã ứng
+                                                            tuyển</span></h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -245,59 +299,52 @@
 
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
-                                                                <label>Số điện thoại<span class="text-danger">*</span>
-                                                                    :</label>
-                                                                <input required type="text"
-                                                                    value="Alo alo"
-                                                                    placeholder="Số điện thoại hiển thị với Nhà tuyển dụng"
-                                                                    name="phone" class="form-control input-sm"
-                                                                    style="font-size: 12px">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-6">
-                                                            <div class="form-group">
                                                                 <label>Học vấn<span class="text-danger">*</span>
                                                                     :</label>
-                                                                <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm"
-                                                                    style="font-size: 12px"></textarea>
+                                                                <textarea required type="text" value="" name="edu" class="form-control input-sm"
+                                                                    style="font-size: 12px">{{ $item->edu }}</textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
                                                                 <label>Kinh nghiệm<span class="text-danger">*</span>
                                                                     :</label>
-                                                                <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp"
-                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                                <textarea required type="text" value="" name="exp" class="form-control input-sm"
+                                                                    style="font-size: 12px">{{ $item->exp }}</textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
                                                                 <label>Kỹ năng<span class="text-danger">*</span>
                                                                     :</label>
-                                                                <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm"
-                                                                    style="font-size: 12px"></textarea>
+                                                                <textarea required type="text" value="" name="skill" class="form-control input-sm"
+                                                                    style="font-size: 12px">{{ $item->skill }}</textarea>
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6">
                                                             <div class="form-group">
                                                                 <label>Mục tiêu nghề nghiệp<span
-                                                                        class="text-danger">*</span> :</label>
-                                                                <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj"
-                                                                    class="form-control input-sm" style="font-size: 12px"></textarea>
+                                                                        class="text-danger">*</span>
+                                                                    :</label>
+                                                                <textarea required type="text" value="" name="obj" class="form-control input-sm"
+                                                                    style="font-size: 12px">{{ $item->obj }}</textarea>
                                                             </div>
                                                         </div>
+                                                        <input hidden value="{{ $item->id }}" type="text" name="id" id="">
                                                         @csrf
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-cancel btn-sm"
                                                         data-dismiss="modal">Đóng lại</button>
+                                                    <button type="submit" class="btn btn-primary btn-sm">Hoàn
+                                                        tất</button>
                                                 </div>
                                         </div>
                                         </form>
                                     </div>
                                 </div>
-                                {{-- end hidden detail form --}}
+                                {{-- end hidden edit form --}}
             </div>
             <tr>
                 <th> {{ $item->name }} - {{ $item->title }} - {{ $item->position }} </th>
@@ -310,10 +357,12 @@
                     <td><a href="#" class="btn btn-danger">Không được duyệt</a></td>
                 @endif
 
-                <td><a href="#" data-target="#exampleModalLong" data-toggle="modal" class="btn1 btn-info">Chi
+                <td><a href="#" data-target="#detail{{ $item->id }}" data-toggle="modal" class="btn1 btn-info">Chi
                         tiết</a>
-                    <a href="#" data-target="#exampleModalLong2" data-toggle="modal" class="btn1 btn-edit">Sửa</a>
-                    <a href="#" class="btn1 btn-del">Xóa</a>
+                    <a data-target="#edit{{ $item->id }}"
+                        data-toggle="modal" class="btn1 btn-edit">Sửa</a>
+                    <a onclick="return confirm('Bạn có chắc chắn muốn xóa')"
+                        href="/ap/submitted/delete/{{ $item->id }}" class="btn1 btn-del">Xóa</a>
                 </td>
                 </th>
             </tr>

@@ -65,7 +65,7 @@ class SignInController extends Controller
 
 
         if (!empty($this->bs->signIn($dataInsert))) {
-            $nameSessionAcccountBs = $this->bs->signIn($dataInsert)[0]->namePersonal;
+            $nameSessionAcccountBs = $this->bs->signIn($dataInsert)[0]->nameBusiness;
         
             session()->put('nameSessionBs', $nameSessionAcccountBs);
             session()->put('emailSessionBs', $request->email);

@@ -273,7 +273,7 @@
 
                             <label for="exampleInputPassword1" class="title">Kinh nghiệm</label> <br>
                             <select class="form-control" name="exp" id="kinhnghiem">
-                                <option value="Chưa có kinh nghiệm">Chưa có kinh nghiệm</option>
+                                <option value="Chưa có kinh nghiệm">Không yêu cầu kinh nghiệm</option>
                                 <option value="Dưới 1 năm kinh nghiệm">Dưới 1 năm kinh nghiệm</option>
                                 <option value="1 năm kinh nghiệm">1 năm kinh nghiệm</option>
                                 <option value="2 năm kinh nghiệm">2 năm kinh nghiệm</option>

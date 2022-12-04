@@ -73,10 +73,20 @@ Route::prefix('bs')->name('bs.')->group(function () {
 Route::prefix('ap')->name('ap.')->group(function () {
 
     
+    Route::get('/submitted/delete/{id}', [
+        ViewSubmittedController::class,
+        'delete'
+    ])->name('delete');
+
+    Route::post('/submitted/edit/', [
+        ViewSubmittedController::class,
+        'edit'
+    ]);
+
     Route::get('/submitted', [
         ViewSubmittedController::class,
         'index'
-    ]);
+    ])->name('submitted');
 
     Route::post('/submitted', [
         SubmittedController::class,
