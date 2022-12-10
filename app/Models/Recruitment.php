@@ -24,4 +24,9 @@ class Recruitment extends Model
         DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
 
     }
+
+    public function listByEmail($email){
+        $list = DB::select('SELECT * FROM recruitments WHERE `email` = ?', [$email]);
+        return $list;
+    }
 }

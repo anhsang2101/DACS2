@@ -131,19 +131,17 @@
                         <tr>
                             <th>Mã chiến dịch</th>
                             <th>Tên chiến dịch</th>
-                            <th>Ngày đăng</th>
-                            <th>Số người ứng tuyển</th>
                             <th>Lọc CV</th>
                             <th>Trạng thái</th>
                             <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @if (!empty($list))
+                        @foreach ($list as $key => $item)
                         <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
+                            <th scope="row">{{ $item->id}}</th>
+                            <td>{{ $item->name }} - {{ $item->title }} - {{ $item->position }}</td>
                             <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
                             <td><a href="#" class="btn btn-success">Đã duyệt</a></td>
                             <td><a href="#" class="btn1 btn-edit">Sửa</a>
@@ -151,43 +149,8 @@
                             </td>
                             </th>
                         </tr>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
-                            <td><a href="#" class="btn btn-success">Đã duyệt</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
-                            <td><a href="#" class="btn btn-warning">Đang chờ</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th scope="row">1001</th>
-                            <td>Đóng phim Serbia</td>
-                            <td>22/10/2022</td>
-                            <td>100</td>
-                            <td><a href="#"> <i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td>
-                            <td><a href="#" class="btn btn-danger">Không thành công</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
-                            </td>
-
-                            </th>>
-                        </tr>
+                        @endforeach
+                        @endif
                     </tbody>
                 </table>
             </div>
