@@ -18,8 +18,8 @@ class ViewCensorshipController extends Controller
     public function viewCensorship($id)
     {
         if (session()->has('emailSessionBs')) {
-
-            $list = $this->submitted->listAllByBsId1($id);
+            $emailBs=session()->get('emailSessionBs');
+            $list = $this->submitted->listAllByJobId1($id);
 
             return view('bs.censorship')->with(compact('list'));
         } else {
@@ -30,8 +30,8 @@ class ViewCensorshipController extends Controller
     public function viewCensorshipped($id)
     {
         if (session()->has('emailSessionBs')) {
-
-            $list = $this->submitted->listAllByBsId2($id);
+            $emailBs=session()->get('emailSessionBs');
+            $list = $this->submitted->listAllByJobId2($id);
 
             return view('bs.censorshipped')->with(compact('list'));
         } else {

@@ -52,7 +52,7 @@ class Submitted extends Model
         return $listAll;
     }
 
-    public function listAllByBsId1($id){
+    public function listAllByJobId1($id){
         $listAll = DB::select('SELECT
         submitteds.id,
         submitteds.jobid,
@@ -85,11 +85,11 @@ class Submitted extends Model
         submitteds
     INNER JOIN recruitments ON submitteds.jobid = recruitments.id INNER JOIN applicants ON applicants.id = submitteds.appid
     WHERE
-        businessid = ? and status = 1', [$id]);
+        jobid = ? and status = 1', [$id]);
         return $listAll;
     }
 
-    public function listAllByBsId2($id){
+    public function listAllByJobId2($id){
         $listAll = DB::select('SELECT
         submitteds.id,
         submitteds.jobid,
@@ -122,7 +122,7 @@ class Submitted extends Model
         submitteds
     INNER JOIN recruitments ON submitteds.jobid = recruitments.id INNER JOIN applicants ON applicants.id = submitteds.appid
     WHERE
-        businessid = ? and status = 2', [$id]);
+        jobid = ? and status = 2', [$id]);
         return $listAll;
     }
 
