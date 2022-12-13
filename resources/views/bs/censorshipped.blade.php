@@ -129,23 +129,92 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Mã chiến dịch</th>
-                            <th>Tên chiến dịch</th>
+                            <th>Mã uwsng</th>
+                            <th>Tên ứng viên</th>
                             <th>CV</th>
-                            <th>Hành động</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if (!empty($list))
                         @foreach ($list as $key => $item)
+                        {{-- hidden detail form --}}
+                        <div class="modal fade" id="detail{{ $item->id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="edit{{ $item->id }}Title" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <form method="post" action="/ap/submitted/edit">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title bold" id="edit{{ $item->id }}Title"><span
+                                                    class="text-highlight">Chỉnh sửa thông tin đã ứng
+                                                    tuyển</span></h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="frm-upload">
+
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <label>Email<span class="text-danger">*</span>
+                                                            :</label>
+                                                        <textarea disabled required type="text" value="" name="email" class="form-control input-sm"
+                                                            style="font-size: 12px">{{ $item->emailApp }}</textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <label>Học vấn<span class="text-danger">*</span>
+                                                            :</label>
+                                                        <textarea disabled required type="text" value="" name="edu" class="form-control input-sm"
+                                                            style="font-size: 12px">{{ $item->edu }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <label>Kinh nghiệm<span class="text-danger">*</span>
+                                                            :</label>
+                                                        <textarea disabled required type="text" value="" name="exp" class="form-control input-sm"
+                                                            style="font-size: 12px">{{ $item->exp }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <label>Kỹ năng<span class="text-danger">*</span>
+                                                            :</label>
+                                                        <textarea disabled required type="text" value="" name="skill" class="form-control input-sm"
+                                                            style="font-size: 12px">{{ $item->skill }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <div class="form-group">
+                                                        <label>Mục tiêu nghề nghiệp<span
+                                                                class="text-danger">*</span>
+                                                            :</label>
+                                                        <textarea disabled required type="text" value="" name="obj" class="form-control input-sm"
+                                                            style="font-size: 12px">{{ $item->obj }}</textarea>
+                                                    </div>
+                                                </div>
+                                                <input hidden value="{{ $item->id }}" type="text" name="id" id="">
+                                                @csrf
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-cancel btn-sm"
+                                                data-dismiss="modal">Đóng lại</button>
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{-- end hidden edit form --}}
                         <tr>
                             <th scope="row">{{ $item->id}}</th>
-                            <td>{{ $item->name }} - {{ $item->title }} - {{ $item->position }}</td>
+                            <td>{{ $item->nameApp }}</td>
                             {{-- <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td> --}}
-                            <td><a href="/bs/view-censorship/{{ $item->id }}" class="btn btn-success">Danh sách đang chờ</a>
-                                <a href="/bs/view-censorshipped/{{ $item->id }}" class="btn btn-success">Danh sách đã duyệt</a></td>
-                            <td><a href="#" class="btn1 btn-edit">Sửa</a>
-                                <a href="#" class="btn1 btn-del">Xóa</a>
+                            <td><a href="#" data-target="#detail{{ $item->id }}" data-toggle="modal" class="btn1 btn-edit">Chi tiết</a>
                             </td>
                             </th>
                         </tr>

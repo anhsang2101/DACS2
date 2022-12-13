@@ -6,6 +6,7 @@ use App\Http\Controllers\SignInController;
 use App\Http\Controllers\SignOutController;
 use App\Http\Controllers\SignUpController;
 use App\Http\Controllers\SubmittedController;
+use App\Http\Controllers\ViewCensorshipController;
 use App\Http\Controllers\ViewDetailController;
 use App\Http\Controllers\ViewHomeController;
 use App\Http\Controllers\ViewSubmittedController;
@@ -44,6 +45,26 @@ Route::prefix('bs')->name('bs.')->group(function () {
         'viewManageRecruitment'
     ])->name('mangageRecruitment');
     
+    Route::get('/view-censorship/{id}', [
+        ViewCensorshipController::class,
+        'viewCensorship'
+    ])->name('viewCensorship');
+
+    Route::get('/view-censorshipped/{id}', [
+        ViewCensorshipController::class,
+        'viewCensorshipped'
+    ])->name('viewCensorshipped');
+    
+    Route::get('/censorship-yes/{id}', [
+        ViewCensorshipController::class,
+        'censorshipYes'
+    ]);
+
+    Route::get('/censorship-no/{id}', [
+        ViewCensorshipController::class,
+        'censorshipNo'
+    ]);
+
     Route::post('/signin', [
         SignInController::class,
         'signInBs'
