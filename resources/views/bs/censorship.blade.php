@@ -138,6 +138,7 @@
                     <tbody>
                         @if (!empty($list))
                         @foreach ($list as $key => $item)
+                        {{-- hidden detail form --}}
                         <div class="modal fade" id="detail{{ $item->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="edit{{ $item->id }}Title" aria-hidden="true">
                             <div class="modal-dialog" role="document">

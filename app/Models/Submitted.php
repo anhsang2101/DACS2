@@ -85,7 +85,7 @@ class Submitted extends Model
         submitteds
     INNER JOIN recruitments ON submitteds.jobid = recruitments.id INNER JOIN applicants ON applicants.id = submitteds.appid
     WHERE
-        jobid = ? and status = 1', [$id]);
+        jobid = ? and recruitments.email=? and status = 1', [$id, session()->get('emailSessionBs')]);
         return $listAll;
     }
 

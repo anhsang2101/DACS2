@@ -142,7 +142,7 @@
                             <th scope="row">{{ $item->id}}</th>
                             <td>{{ $item->name }} - {{ $item->title }} - {{ $item->position }}</td>
                             {{-- <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td> --}}
-                            <td><a href="/bs/view-censorship/{{ $item->id }}" class="btn btn-success">Danh sách đang chờ</a>
+                            <td><a href="/bs/view-censorship/{{ $item->id }}" class="btn btn-warning">Danh sách đang chờ</a>
                                 <a href="/bs/view-censorshipped/{{ $item->id }}" class="btn btn-success">Danh sách đã duyệt</a></td>
                             <td><a href="#" class="btn1 btn-edit">Sửa</a>
                                 <a href="#" class="btn1 btn-del">Xóa</a>
