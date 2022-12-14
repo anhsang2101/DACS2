@@ -29,4 +29,13 @@ class Recruitment extends Model
         $list = DB::select('SELECT * FROM recruitments WHERE `email` = ?', [$email]);
         return $list;
     }
+
+    public function editRecruitment($dataInsert){
+        DB::update('UPDATE `recruitments` SET `position`= ?,`rank` = ? ,major = ? ,exp = ?, wage = ?, `type` = ?, area = ?, gender = ? WHERE `id` = ?', $dataInsert); // not yet
+    }
+
+    public function deleteRecruitment($id){
+        return DB::delete('DELETE FROM recruitments WHERE `id`=?',[$id]);
+    }
+
 }

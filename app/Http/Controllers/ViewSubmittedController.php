@@ -30,7 +30,7 @@ class ViewSubmittedController extends Controller
     
     public function delete($id){
         $this->submitted->deleteSubmitted($id);
-        return redirect()->route('ap.submitted');
+        return back();
     }
 
     public function edit(Request $request){
@@ -43,6 +43,6 @@ class ViewSubmittedController extends Controller
         ];
 
         $this->submitted->editSubmitted($dataInsert);
-        return redirect()->route('ap.submitted');
+        return back();
     }
 }
