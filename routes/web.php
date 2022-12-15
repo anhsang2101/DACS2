@@ -47,6 +47,16 @@ Route::prefix('bs')->name('bs.')->group(function () {
         'viewManageRecruitment'
     ])->name('mangageRecruitment');
 
+    Route::get('/delete-recruitment/{id}', [
+        ManageRecruitmentController::class,
+        'deleteRecruitment'
+    ])->name('deleteRecruitment');
+
+    Route::post('/edit-recruitment', [
+        ManageRecruitmentController::class,
+        'editRecruitment'
+    ]);
+
     Route::get('/view-censorship/{id}', [
         ViewCensorshipController::class,
         'viewCensorship'

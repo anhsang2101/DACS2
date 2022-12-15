@@ -41,7 +41,7 @@ class ManageRecruitmentController extends Controller
             $request->type,
             $request->area,
             $request->gender,
-            $request->id
+            $request->id,
         ];
 
         $this->recruitment->editRecruitment($dataInsert);

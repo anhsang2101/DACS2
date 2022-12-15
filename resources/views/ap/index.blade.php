@@ -134,7 +134,7 @@
                                                         <option value="10010">&nbsp;Cơ khí / Chế tạo / Tự động hóa</option>
                                                         <option value="10009">&nbsp;Công nghệ cao</option>
                                                         <option value="10052">&nbsp;Công nghệ Ô tô</option>
-                                                        <option value="10131">&nbsp;Công nghệ thông tin</option>
+                                                        <option value="Công nghệ thông tin">&nbsp;Công nghệ thông tin</option>
                                                         <option value="10012">&nbsp;Dầu khí/Hóa chất</option>
                                                         <option value="10013">&nbsp;Dệt may / Da giày</option>
                                                         <option value="10111">&nbsp;Địa chất / Khoáng sản</option>
