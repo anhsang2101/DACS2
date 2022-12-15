@@ -129,8 +129,7 @@
                                                 <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-kcc-viet-nam-nhon-trach/128012.html"
                                                     data-toggle="tooltip" title="" data-placement="top"
                                                     data-container="body" target="_blank" rel="nooppener noreferrer"
-                                                    data-original-title="CÔNG TY TNHH KCC (VIỆT NAM NHƠN TRẠCH">CÔNG TY
-                                                    TNHH KCC (VIỆT NAM NHƠN TRẠCH</a>
+                                                    data-original-title="CÔNG TY TNHH KCC (VIỆT NAM NHƠN TRẠCH">{{ $item->nameBusiness }}</a>
                                             </p>
                                         </div>
                                         <div class="mr-auto text-right">

@@ -9,7 +9,7 @@
                             <div class="col-md-4 col-sm-6 feature-job job-ta">
                                 <div class="feature-job-item">
                                     <div class="cvo-flex"><a href="/ap/detail-job/{{ $item->id }}" tabindex="-1">
-                                            <div class="box-company-logo"><img title="CÔNG TY CỔ PHẦN CÔNG NGHỆ &amp; SÁNG TẠO TRẺ TEKY HOLDINGS tuyển dụng tại TopCV" alt="CÔNG TY CỔ PHẦN CÔNG NGHỆ &amp; SÁNG TẠO TRẺ TEKY HOLDINGS tuyển dụng tại TopCV" src="{{ url('img/company1.png') }}" class="img-responsive"></div>
+                                            <div class="box-company-logo"><img title="" alt="CÔNG TY CỔ PHẦN CÔNG NGHỆ &amp; SÁNG TẠO TRẺ TEKY HOLDINGS tuyển dụng tại TopCV" src="{{ url('img/company1.png') }}" class="img-responsive"></div>
                                         </a>
                                         <div class="col-title cvo-flex-grow"><a data-toggle="tooltip" title="" data-placement="top" href="/ap/detail-job/{{ $item->id }}" target="_blank" class="title text_ellipsis" data-original-title="Nhân Viên Vận Hành Lớp Học (Làm Ca Linh Hoạt, Thu Nhập 7-9M)" tabindex="-1">
                                                 <strong class="underline-box-job" style="font-weight: bold;">
