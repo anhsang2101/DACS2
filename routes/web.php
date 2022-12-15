@@ -9,7 +9,9 @@ use App\Http\Controllers\SubmittedController;
 use App\Http\Controllers\ViewCensorshipController;
 use App\Http\Controllers\ViewDetailController;
 use App\Http\Controllers\ViewHomeController;
+use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\ViewSubmittedController;
+use App\Http\Controllers\SearchJobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,16 +46,6 @@ Route::prefix('bs')->name('bs.')->group(function () {
         ManageRecruitmentController::class,
         'viewManageRecruitment'
     ])->name('mangageRecruitment');
-    
-    Route::post('/edit-recruitment', [
-        ManageRecruitmentController::class,
-        'editRecruitment'
-    ])->name('editRecruitment');
-
-    Route::get('/delete-recruitment/{id}', [
-        ManageRecruitmentController::class,
-        'deleteRecruitment'
-    ])->name('deleteRecruitment');
 
     Route::get('/view-censorship/{id}', [
         ViewCensorshipController::class,
@@ -64,7 +56,7 @@ Route::prefix('bs')->name('bs.')->group(function () {
         ViewCensorshipController::class,
         'viewCensorshipped'
     ])->name('viewCensorshipped');
-    
+
     Route::get('/censorship-yes/{id}', [
         ViewCensorshipController::class,
         'censorshipYes'
@@ -95,15 +87,11 @@ Route::prefix('bs')->name('bs.')->group(function () {
     Route::get('/', function () {
         return view('bs.index');
     })->name('index');
-
-
-
-
 });
 
 Route::prefix('ap')->name('ap.')->group(function () {
 
-    
+
     Route::get('/submitted/delete/{id}', [
         ViewSubmittedController::class,
         'delete'
@@ -153,15 +141,29 @@ Route::prefix('ap')->name('ap.')->group(function () {
         return view('ap.signin');
     })->name('signin');
 
+    Route::get('/pagination', [
+        PaginationController::class,
+        'index'
+    ])->name('ap.pagination');
+
     Route::get('/', [
         ViewHomeController::class,
         'index'
     ])->name('index');
-    
-    
+
+    Route::get('/searchjob', [
+        SearchJobController::class,
+        'index'
+    ])->name('ap.searchjob');
 });
 
 Route::get('/', [
     ViewHomeController::class,
     'index'
+]);
+
+Route::get('/pagination', 'PaginationController@index');
+Route::get(('/searchjob'), [
+    'as'=>'ap.searchjob',
+    'uses'=>'App\Http\Controllers\SearchJobController@index'
 ]);
