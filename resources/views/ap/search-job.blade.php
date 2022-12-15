@@ -167,7 +167,7 @@
                         @endforeach
                     @endif
                 </div>
-                {!! $result->links() !!}
+                {!! $result->withQueryString()->links() !!}
             </div>
             <div class="col-md-3 right-box">
                 <div class="interested">

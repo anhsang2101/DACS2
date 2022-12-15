@@ -104,10 +104,10 @@
         <div class="container">
             <h2 class="h2">Đăng tin tuyển dụng mới</h2>
             @if (session('msg'))
-                <div class="alert alert-success">{{ session('msg') }}</div>
+            <div class="alert alert-success">{{ session('msg') }}</div>
             @endif
             @if ($errors->any())
-                <div class="alert alert-danger">Đăng tuyển không thành công</div>
+            <div class="alert alert-danger">Đăng tuyển không thành công</div>
             @endif
 
             <div class="row">
@@ -115,18 +115,16 @@
                     <form action="/bs/postRecruitment" method="POST">
                         <div class="form-group">
                             <label for="name" class="title">Tên chiến dịch tuyển dụng</label>
-                            <input name="name" type="text" class="form-control" id="name"
-                                aria-describedby="emailHelp" placeholder="VD: Tuyển dụng nhân viên Design tháng 12">
+                            <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="VD: Tuyển dụng nhân viên Design tháng 12">
                             @error('name')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="role" class="title">Vị trí tuyển dụng</label>
-                            <input name="position" type="text" class="form-control" id="role"
-                                placeholder="VD: Nhân viên Marketing, Designer, Sales">
+                            <input name="position" type="text" class="form-control" id="role" placeholder="VD: Nhân viên Marketing, Designer, Sales">
                             @error('role')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
@@ -199,38 +197,65 @@
                                 <option value="TP  HCM">TP HCM
                             </select>
                             @error('area')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <h3 class="h3">Thông tin đăng tuyển chi tiết</h3>
                         <div class="form-group">
                             <label for="title" class="title">Tiêu đề tin tuyển dụng</label>
-                            <input name="title" type="text" class="form-control" id="title"
-                                placeholder="VD: Nhân viên kinh doanh">
+                            <input name="title" type="text" class="form-control" id="title" placeholder="VD: Nhân viên kinh doanh">
                             @error('title')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="career" class="title">Ngành nghề & lĩnh vực</label> <br>
                             <select name="major" id="career" class="form-control">
-                                <option value="Kinh doanh / Bán hàng">Kinh doanh / Bán hàng</option>
-                                <option value="Biên / Phiên dịch">Biên / Phiên dịch</option>
-                                <option value="Báo chí / Truyền hình">Báo chí / Truyền hình</option>
-                                <option value="Bưu chính - Viễn thông">Bưu chính - Viễn thông</option>
-                                <option value="Bảo hiểm">Bảo hiểm</option>
-                                <option value="Bất động sản">Bất động sản</option>
-                                <option value="Chứng khoán / Vàng / Ngoại tệ">Chứng khoán / Vàng / Ngoại tệ</option>
-                                <option value="Công nghệ thông tin">Công nghệ thông tin</option>
-                                <option value="Thư ký / Trợ lý">Thư ký / Trợ lý</option>
-                                <option value="Phi chính phủ / Phi lợi nhuận">Phi chính phủ / Phi lợi nhuận</option>
-                                <option value="Công nghệ Ô tô">Công nghệ Ô tô</option>
-                                <option value="Quản lý điều hành">Quản lý điều hành</option>
-                                <option value="Mỹ thuật / Nghệ thuật / Điện ảnh">Mỹ thuật / Nghệ thuật / Điện ảnh
-                                </option>
+                                <option value="Dầu khí/Hóa chất">&nbsp;Dầu khí/Hóa chất</option>
+                                <option value="Dệt may / Da giày">&nbsp;Dệt may / Da giày</option>
+                                <option value="ịa chất / Khoáng sản">&nbsp;Địa chất / Khoáng sản</option>
+                                <option value="Dịch vụ khách hàng">&nbsp;Dịch vụ khách hàng</option>
+                                <option value="Điện / Điện tử / Điện lạnh">&nbsp;Điện / Điện tử / Điện lạnh</option>
+                                <option value="Điện tử viễn thông">&nbsp;Điện tử viễn thông</option>
+                                <option value="Du lịch">&nbsp;Du lịch</option>
+                                <option value="Dược phẩm / Công nghệ sinh học">&nbsp;Dược phẩm / Công nghệ sinh học</option>
+                                <option value="Giáo dục / Đào tạo">&nbsp;Giáo dục / Đào tạo</option>
+                                <option value="Hàng cao cấp">&nbsp;Hàng cao cấp</option>
+                                <option value="Hàng không">&nbsp;Hàng không</option>
+                                <option value="Hành chính / Văn phòng">&nbsp;Hành chính / Văn phòng</option>
+                                <option value="Hoá học / Sinh học">&nbsp;Hoá học / Sinh học</option>
+                                <option value="In ấn / Xuất bản">&nbsp;In ấn / Xuất bản</option>
+                                <option value="IT Phần cứng / Mạng<">&nbsp;IT Phần cứng / Mạng</option>
+                                <option value="IT phần mềm<">&nbsp;IT phần mềm</option>
+                                <option value="Kế toán / Kiểm toán">&nbsp;Kế toán / Kiểm toán</option>
+                                <option value="Khách sạn / Nhà hàng">&nbsp;Khách sạn / Nhà hàng</option>
+                                <option value="Kiến trúc">&nbsp;Kiến trúc</option>
+                                <option value="Logistics">&nbsp;Logistics</option>
+                                <option value="Luật/Pháp lý">&nbsp;Luật/Pháp lý</option>
+                                <option value="Marketing / Truyền thông / Quảng cáo">&nbsp;Marketing / Truyền thông / Quảng cáo</option>
+                                <option value="Môi trường / Xử lý chất thải">&nbsp;Môi trường / Xử lý chất thải</option>
+                                <option value="Mỹ thuật / Nghệ thuật / Điện ảnh">&nbsp;Mỹ thuật / Nghệ thuật / Điện ảnh</option>
+                                <option value="Ngân hàng / Tài chính<">&nbsp;Ngân hàng / Tài chính</option>
+                                <option value="NGO / Phi chính phủ / Phi lợi nhuận">&nbsp;NGO / Phi chính phủ / Phi lợi nhuận</option>
+                                <option value="Nhân sự">&nbsp;Nhân sự</option>
+                                <option value="Nông / Lâm / Ngư nghiệp">&nbsp;Nông / Lâm / Ngư nghiệp</option>
+                                <option value="Quản lý chất lượng (QA/QC)">&nbsp;Quản lý chất lượng (QA/QC)</option>
+                                <option value="Quản lý điều hành">&nbsp;Quản lý điều hành</option>
+                                <option value="Sản phẩm công nghiệp">&nbsp;Sản phẩm công nghiệp</option>
+                                <option value="Tài chính / Đầu tư">&nbsp;Tài chính / Đầu tư</option>
+                                <option value="Thiết kế đồ họa">&nbsp;Thiết kế đồ họa</option>
+                                <option value="Thiết kế nội thất">&nbsp;Thiết kế nội thất</option>
+                                <option value="Thời tran">&nbsp;Thời trang</option>
+                                <option value="Thư ký / Trợ lý<">&nbsp;Thư ký / Trợ lý</option>
+                                <option value="Thực phẩm / Đồ uống">&nbsp;Thực phẩm / Đồ uống</option>
+                                <option value="Tổ chức sự kiện / Quà tặng">&nbsp;Tổ chức sự kiện / Quà tặng</option>
+                                <option value="Vận tải / Kho vận">&nbsp;Vận tải / Kho vận</option>
+                                <option value="Xây dựng">&nbsp;Xây dựng</option>
+                                <option value="Xuất nhập khẩu">&nbsp;Xuất nhập khẩu</option>
+                                <option value="Y tế / Dược">&nbsp;Y tế / Dược</option>
                             </select>
                             @error('major')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <h3 class="h3">Thông tin chung</h3>
@@ -243,7 +268,7 @@
                                 <option value="Remote - Làm việc từ xa">Remote - Làm việc từ xa</option>
                             </select>
                             @error('type')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
@@ -255,7 +280,7 @@
                                 <option value="Không yêu cầu giới tính cụ thể">Không yêu cầu giới tính cụ thể</option>
                             </select>
                             @error('gender')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
 
                             <label for="exampleInputPassword1" class="title">Cấp bậc</label> <br>
@@ -268,7 +293,7 @@
                                 <option value="Nhân viên">Nhân viên</option>
                             </select>
                             @error('rank')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
 
                             <label for="exampleInputPassword1" class="title">Kinh nghiệm</label> <br>
@@ -283,7 +308,7 @@
                                 <option value="Trên 5 năm kinh nghiệm">Trên 5 năm kinh nghiệm</option>
                             </select>
                             @error('exp')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <h5 class="title">Mức lương</h5>
@@ -294,37 +319,34 @@
                                 <option value="VND">VND</option>
                             </select>
                             @error('currency')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                             <label for="exampleInputPassword1" class="title">Lương</label> <br>
                             <input name="wage" class="form-control" type="text">
                             @error('wage')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div> <br>
                         <h3 class="h3">Nội dung đăng tuyển chi tiết</h3>
                         <div class="form-group">
                             <label for="name" class="title">Mô tả công việc</label> <br>
-                            <textarea class="form-control" id="des" placeholder="Nhập nội dung mô tả công việc" name="detail"
-                                rows="4" cols="140"></textarea>
+                            <textarea class="form-control" id="des" placeholder="Nhập nội dung mô tả công việc" name="detail" rows="4" cols="140"></textarea>
                             @error('detail')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="name" class="title">Yêu cầu ứng viên</label> <br>
-                            <textarea class="form-control" id="des" placeholder="Nhập nội dung yêu cầu ứng tuyển" name="require"
-                                rows="4" cols="140"></textarea>
+                            <textarea class="form-control" id="des" placeholder="Nhập nội dung yêu cầu ứng tuyển" name="require" rows="4" cols="140"></textarea>
                             @error('require')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="name" class="title">Quyền lợi của ứng viên</label> <br>
-                            <textarea class="form-control" id="des" placeholder="Nhập nội dung quyền lợi của ứng viên" name="benefit"
-                                rows="4" cols="140"></textarea>
+                            <textarea class="form-control" id="des" placeholder="Nhập nội dung quyền lợi của ứng viên" name="benefit" rows="4" cols="140"></textarea>
                             @error('benefit')
-                                <span style="color: red">{{ $message }}</span>
+                            <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         {{-- <h3 class="h3">Thông tin nhận CV</h3> --}}
@@ -358,13 +380,13 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(window).on("load", function () {
-    $(".preloading").fadeOut("slow");
-});
-var loader = document.getElementById("preloading");
-window.addEventListener("load", function () {
-    loader.style.display = "none";
-})
+        $(window).on("load", function() {
+            $(".preloading").fadeOut("slow");
+        });
+        var loader = document.getElementById("preloading");
+        window.addEventListener("load", function() {
+            loader.style.display = "none";
+        })
     </script>
 </body>
 

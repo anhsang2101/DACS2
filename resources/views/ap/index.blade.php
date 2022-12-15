@@ -73,7 +73,7 @@
                         <br>
                         <h2>Tìm việc phù hợp với bạn</h2>
                         <div class="form-search">
-                            <form id="frm-search-job" method="GET" action="{{ route('ap.searchjob') }}"> {{ csrf_field() }}
+                            <form id="frm-search-job" method="GET" action="{{ route('ap.searchjob') }}">
                                 <div class="box-search">
                                     <div class="col-input">
                                         <input name="keyword" id="keyword" class="form-control input-search ui-autocomplete-input border-hover" value="" placeholder="Tên công việc, vị trí bạn muốn ứng tuyển" id="keyword" autocomplete="off" onfocus="show()" required>
@@ -116,78 +116,67 @@
                                                             Mức lương
                                                         </label>
                                                     </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="1" id="search6" onclick="showhide(6)">
+                                                        <label class="form-check-label" for="5">
+                                                            Kinh nghiệm
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                               
+
                                                 <div class="form-group" id="form-1" style="display: none;">
                                                     <select name="major" id="major" class="form-control" tabindex="-1" aria-hidden="true">
-                                                        <option value="">Ngành nghề</option>
-                                                        <option value="An toàn lao động">&nbsp;An toàn lao động</option>
+                                                        <option value="">Chọn ngành nghề</option>
                                                         <option value="Bán hàng kỹ thuật">&nbsp;Bán hàng kỹ thuật</option>
-                                                        <option value="0103">&nbsp;Bán lẻ / bán sỉ</option>
-                                                        <option value="10004">&nbsp;Báo chí / Truyền hình</option>
-                                                        <option value="Bảo hiểm">&nbsp;Bảo hiểm</option>
-                                                        <option value="10104">&nbsp;Bảo trì / Sữa chữa</option>
-                                                        <option value="Bất động sản">&nbsp;Bất động sản</option>
-                                                        <option value="10003">&nbsp;Biên / Phiên dịch</option>
-                                                        <option value="10005">&nbsp;Bưu chính - Viễn thông</option>
-                                                        <option value="10008">&nbsp;Chứng khoán / Vàng / Ngoại tệ</option>
-                                                        <option value="10010">&nbsp;Cơ khí / Chế tạo / Tự động hóa</option>
-                                                        <option value="10009">&nbsp;Công nghệ cao</option>
-                                                        <option value="10052">&nbsp;Công nghệ Ô tô</option>
-                                                        <option value="Công nghệ thông tin">&nbsp;Công nghệ thông tin</option>
-                                                        <option value="10012">&nbsp;Dầu khí/Hóa chất</option>
-                                                        <option value="10013">&nbsp;Dệt may / Da giày</option>
-                                                        <option value="10111">&nbsp;Địa chất / Khoáng sản</option>
-                                                        <option value="10014">&nbsp;Dịch vụ khách hàng</option>
-                                                        <option value="10016">&nbsp;Điện / Điện tử / Điện lạnh</option>
-                                                        <option value="10015">&nbsp;Điện tử viễn thông</option>
-                                                        <option value="10011">&nbsp;Du lịch</option>
-                                                        <option value="10110">&nbsp;Dược phẩm / Công nghệ sinh học</option>
-                                                        <option value="10017">&nbsp;Giáo dục / Đào tạo</option>
-                                                        <option value="10113">&nbsp;Hàng cao cấp</option>
-                                                        <option value="10020">&nbsp;Hàng gia dụng</option>
-                                                        <option value="10021">&nbsp;Hàng hải</option>
-                                                        <option value="10022">&nbsp;Hàng không</option>
-                                                        <option value="10117">&nbsp;Hàng tiêu dùng</option>
-                                                        <option value="10023">&nbsp;Hành chính / Văn phòng</option>
-                                                        <option value="10018">&nbsp;Hoá học / Sinh học</option>
-                                                        <option value="10019">&nbsp;Hoạch định/Dự án</option>
-                                                        <option value="10024">&nbsp;In ấn / Xuất bản</option>
-                                                        <option value="10025">&nbsp;IT Phần cứng / Mạng</option>
-                                                        <option value="10026">&nbsp;IT phần mềm</option>
-                                                        <option value="10028">&nbsp;Kế toán / Kiểm toán</option>
-                                                        <option value="10027">&nbsp;Khách sạn / Nhà hàng</option>
-                                                        <option value="10120">&nbsp;Kiến trúc</option>
-                                                        <option value="10001">&nbsp;Kinh doanh / Bán hàng</option>
-                                                        <option value="10048">&nbsp;Logistics</option>
-                                                        <option value="10036">&nbsp;Luật/Pháp lý</option>
-                                                        <option value="10029">&nbsp;Marketing / Truyền thông / Quảng cáo</option>
-                                                        <option value="10030">&nbsp;Môi trường / Xử lý chất thải</option>
-                                                        <option value="10031">&nbsp;Mỹ phẩm / Trang sức</option>
-                                                        <option value="10032">&nbsp;Mỹ thuật / Nghệ thuật / Điện ảnh</option>
-                                                        <option value="10033">&nbsp;Ngân hàng / Tài chính</option>
-                                                        <option value="11000">&nbsp;Ngành nghề khác</option>
-                                                        <option value="10132">&nbsp;NGO / Phi chính phủ / Phi lợi nhuận</option>
-                                                        <option value="10034">&nbsp;Nhân sự</option>
-                                                        <option value="10035">&nbsp;Nông / Lâm / Ngư nghiệp</option>
-                                                        <option value="10124">&nbsp;Phi chính phủ / Phi lợi nhuận</option>
-                                                        <option value="10037">&nbsp;Quản lý chất lượng (QA/QC)</option>
-                                                        <option value="10038">&nbsp;Quản lý điều hành</option>
-                                                        <option value="10125">&nbsp;Sản phẩm công nghiệp</option>
-                                                        <option value="10126">&nbsp;Sản xuất</option>
-                                                        <option value="10130">&nbsp;Spa / Làm đẹp</option>
-                                                        <option value="10127">&nbsp;Tài chính / Đầu tư</option>
-                                                        <option value="10039">&nbsp;Thiết kế đồ họa</option>
-                                                        <option value="10128">&nbsp;Thiết kế nội thất</option>
-                                                        <option value="10042">&nbsp;Thời trang</option>
-                                                        <option value="10129">&nbsp;Thư ký / Trợ lý</option>
-                                                        <option value="10043">&nbsp;Thực phẩm / Đồ uống</option>
-                                                        <option value="10046">&nbsp;Tổ chức sự kiện / Quà tặng</option>
-                                                        <option value="10045">&nbsp;Tư vấn</option>
-                                                        <option value="10047">&nbsp;Vận tải / Kho vận</option>
-                                                        <option value="10050">&nbsp;Xây dựng</option>
-                                                        <option value="10049">&nbsp;Xuất nhập khẩu</option>
-                                                        <option value="10051">&nbsp;Y tế / Dược</option>
+                                                        <option value="Kinh doanh / Bán hàng">Kinh doanh / Bán hàng</option>
+                                                        <option value="Biên / Phiên dịch">Biên / Phiên dịch</option>
+                                                        <option value="Báo chí / Truyền hình">Báo chí / Truyền hình</option>
+                                                        <option value="Bưu chính - Viễn thông">Bưu chính - Viễn thông</option>
+                                                        <option value="Bảo hiểm">Bảo hiểm</option>
+                                                        <option value="Bất động sản">Bất động sản</option>
+                                                        <option value="Chứng khoán / Vàng / Ngoại tệ">Chứng khoán / Vàng / Ngoại tệ</option>
+                                                        <option value="Dầu khí/Hóa chất">&nbsp;Dầu khí/Hóa chất</option>
+                                                        <option value="Dệt may / Da giày">&nbsp;Dệt may / Da giày</option>
+                                                        <option value="ịa chất / Khoáng sản">&nbsp;Địa chất / Khoáng sản</option>
+                                                        <option value="Dịch vụ khách hàng">&nbsp;Dịch vụ khách hàng</option>
+                                                        <option value="Điện / Điện tử / Điện lạnh">&nbsp;Điện / Điện tử / Điện lạnh</option>
+                                                        <option value="Điện tử viễn thông">&nbsp;Điện tử viễn thông</option>
+                                                        <option value="Du lịch">&nbsp;Du lịch</option>
+                                                        <option value="Dược phẩm / Công nghệ sinh học">&nbsp;Dược phẩm / Công nghệ sinh học</option>
+                                                        <option value="Giáo dục / Đào tạo">&nbsp;Giáo dục / Đào tạo</option>
+                                                        <option value="Hàng cao cấp">&nbsp;Hàng cao cấp</option>
+                                                        <option value="Hàng không">&nbsp;Hàng không</option>
+                                                        <option value="Hành chính / Văn phòng">&nbsp;Hành chính / Văn phòng</option>
+                                                        <option value="Hoá học / Sinh học">&nbsp;Hoá học / Sinh học</option>
+                                                        <option value="In ấn / Xuất bản">&nbsp;In ấn / Xuất bản</option>
+                                                        <option value="IT Phần cứng / Mạng<">&nbsp;IT Phần cứng / Mạng</option>
+                                                        <option value="IT phần mềm<">&nbsp;IT phần mềm</option>
+                                                        <option value="Kế toán / Kiểm toán">&nbsp;Kế toán / Kiểm toán</option>
+                                                        <option value="Khách sạn / Nhà hàng">&nbsp;Khách sạn / Nhà hàng</option>
+                                                        <option value="Kiến trúc">&nbsp;Kiến trúc</option>
+                                                        <option value="Logistics">&nbsp;Logistics</option>
+                                                        <option value="Luật/Pháp lý">&nbsp;Luật/Pháp lý</option>
+                                                        <option value="Marketing / Truyền thông / Quảng cáo">&nbsp;Marketing / Truyền thông / Quảng cáo</option>
+                                                        <option value="Môi trường / Xử lý chất thải">&nbsp;Môi trường / Xử lý chất thải</option>
+                                                        <option value="Mỹ thuật / Nghệ thuật / Điện ảnh">&nbsp;Mỹ thuật / Nghệ thuật / Điện ảnh</option>
+                                                        <option value="Ngân hàng / Tài chính<">&nbsp;Ngân hàng / Tài chính</option>
+                                                        <option value="NGO / Phi chính phủ / Phi lợi nhuận">&nbsp;NGO / Phi chính phủ / Phi lợi nhuận</option>
+                                                        <option value="Nhân sự">&nbsp;Nhân sự</option>
+                                                        <option value="Nông / Lâm / Ngư nghiệp">&nbsp;Nông / Lâm / Ngư nghiệp</option>
+                                                        <option value="Quản lý chất lượng (QA/QC)">&nbsp;Quản lý chất lượng (QA/QC)</option>
+                                                        <option value="Quản lý điều hành">&nbsp;Quản lý điều hành</option>
+                                                        <option value="Sản phẩm công nghiệp">&nbsp;Sản phẩm công nghiệp</option>
+                                                        <option value="Tài chính / Đầu tư">&nbsp;Tài chính / Đầu tư</option>
+                                                        <option value="Thiết kế đồ họa">&nbsp;Thiết kế đồ họa</option>
+                                                        <option value="Thiết kế nội thất">&nbsp;Thiết kế nội thất</option>
+                                                        <option value="Thời tran">&nbsp;Thời trang</option>
+                                                        <option value="Thư ký / Trợ lý<">&nbsp;Thư ký / Trợ lý</option>
+                                                        <option value="Thực phẩm / Đồ uống">&nbsp;Thực phẩm / Đồ uống</option>
+                                                        <option value="Tổ chức sự kiện / Quà tặng">&nbsp;Tổ chức sự kiện / Quà tặng</option>
+                                                        <option value="Vận tải / Kho vận">&nbsp;Vận tải / Kho vận</option>
+                                                        <option value="Xây dựng">&nbsp;Xây dựng</option>
+                                                        <option value="Xuất nhập khẩu">&nbsp;Xuất nhập khẩu</option>
+                                                        <option value="Y tế / Dược">&nbsp;Y tế / Dược</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group" id="form-2" style="display: none;">
@@ -283,16 +272,28 @@
                                                     <select name="wage" id="wage" class="form-control" tabindex="-1" aria-hidden="true">
                                                         <option value="">Mức lương</option>
                                                         <option value="3000000">&nbsp;&nbsp;Dưới 3 triệu</option>
-                                                        <option value="5000000">&nbsp;&nbsp;3 - 5 triệu</option>
-                                                        <option value="7000000">&nbsp;&nbsp;5 - 7 triệu</option>
-                                                        <option value="4">&nbsp;&nbsp;7 - 10 triệu</option>
-                                                        <option value="5">&nbsp;&nbsp;10 - 12 triệu</option>
-                                                        <option value="6">&nbsp;&nbsp;12 - 15 triệu</option>
-                                                        <option value="7">&nbsp;&nbsp;15 - 20 triệu</option>
-                                                        <option value="8">&nbsp;&nbsp;20 - 25 triệu</option>
-                                                        <option value="9">&nbsp;&nbsp;25 - 30 triệu</option>
+                                                        <option value="5000000">&nbsp;&nbsp;3 - 6 triệu</option>
+                                                        <option value="7000000">&nbsp;&nbsp;6 - 9 triệu</option>
+                                                        <option value="10000000">&nbsp;&nbsp;9 -12 triệu</option>
+                                                        <option value="120">&nbsp;&nbsp;12 - 15 triệu</option>
+                                                        <option value="6">&nbsp;&nbsp;18 - 21 triệu</option>
+                                                        <option value="7">&nbsp;&nbsp;24 - 27 triệu</option>
+                                                        <option value="8">&nbsp;&nbsp;27 - 30 triệu</option>
                                                         <option value="10">&nbsp;&nbsp;Trên 30 triệu</option>
                                                         <option value="Thỏa thuận">&nbsp;&nbsp;Thoả thuận</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group" id="form-6" style="display: none;">
+                                                    <select name="exp" id="exp" class="form-control" tabindex="-1" aria-hidden="true">
+                                                        <option value="">Kinh nghiệm</option>
+                                                        <option value="Chưa có kinh nghiệm">Không yêu cầu kinh nghiệm</option>
+                                                        <option value="Dưới 1 năm kinh nghiệm">Dưới 1 năm kinh nghiệm</option>
+                                                        <option value="1 năm kinh nghiệm">1 năm kinh nghiệm</option>
+                                                        <option value="2 năm kinh nghiệm">2 năm kinh nghiệm</option>
+                                                        <option value="3 năm kinh nghiệm">3 năm kinh nghiệm</option>
+                                                        <option value="4 năm kinh nghiệm">4 năm kinh nghiệm</option>
+                                                        <option value="5 năm kinh nghiệm">5 năm kinh nghiệm</option>
+                                                        <option value="Trên 5 năm kinh nghiệm">Trên 5 năm kinh nghiệm</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -382,12 +383,14 @@
             var rank = document.getElementById('form-3');
             var type = document.getElementById('form-4');
             var wage = document.getElementById('form-5');
+            var exp = document.getElementById('form-6');
             var input = document.getElementById('keyword');
             major.style.display = 'none';
             area.style.display = 'none';
             rank.style.display = 'none';
             type.style.display = 'none';
             wage.style.display = 'none';
+            exp.style.display = "none";
 
             input.addEventListener("focus", function() {
                 document.getElementById('search1').checked = false;
@@ -395,30 +398,33 @@
                 document.getElementById('search3').checked = false;
                 document.getElementById('search4').checked = false;
                 document.getElementById('search5').checked = false;
+                document.getElementById('search6').checked = false;
                 major.style.display = 'none';
                 area.style.display = 'none';
                 rank.style.display = 'none';
                 type.style.display = 'none';
                 wage.style.display = 'none';
-                major.disabled = true;
-                area.disabled = true;
-                rank.disabled = true;
-                type.disabled = true;
-                wage.disabled = true;
+                exp.style.display = 'none';
                 $("[name='major']").prop("required", false);
                 $("[name='area']").prop("required", false);
                 $("[name='rank']").prop("required", false);
                 $("[name='type']").prop("required", false);
                 $("[name='wage']").prop("required", false);
+                $("[name='exp']").prop("required", false);
 
 
+
+            });
+            input.addEventListener("focusout", function() {
+                $("#keyword").children().prop('disabled', true);
             });
 
             if (x == 1) {
                 major.style.display = 'block';
                 $("[name='major']").prop("required", true);;
                 $("[name='keyword']").prop("required", false);
-                input.value='';
+
+                input.value = '';
             } else {
                 major.style.display = 'none';
                 document.getElementById('major').value = "";
@@ -428,7 +434,7 @@
             if (x == 2) {
                 area.style.display = 'block';
                 $("[name='keyword']").prop("required", false);
-                input.value='';
+                input.value = '';
                 $("[name='area']").prop("required", true);
             } else {
                 area.style.display = 'none';
@@ -439,7 +445,7 @@
             if (x == 3) {
                 rank.style.display = 'block';
                 $("[name='keyword']").prop("required", false);
-                input.value='';
+                input.value = '';
                 $("[name='rank']").prop("required", true);
             } else {
                 rank.style.display = 'none';
@@ -450,7 +456,7 @@
             if (x == 4) {
                 type.style.display = 'block';
                 $("[name='keyword']").prop("required", false);
-                input.value='';
+                input.value = '';
                 $("[name='type']").prop("required", true);
             } else {
                 type.style.display = 'none';
@@ -461,12 +467,23 @@
             if (x == 5) {
                 wage.style.display = 'block';
                 $("[name='keyword']").prop("required", false);
-                input.value='';
+                input.value = '';
                 $("[name='wage']").prop("required", true);
             } else {
                 wage.style.display = 'none';
                 document.getElementById('wage').value = "";
                 $("[name='wage']").prop("required", false);
+
+            }
+            if (x == 6) {
+                exp.style.display = 'block';
+                $("[name='keyword']").prop("required", false);
+                input.value = '';
+                $("[name='exp']").prop("required", true);
+            } else {
+                exp.style.display = 'none';
+                document.getElementById('exp').value = "";
+                $("[name='exp']").prop("required", false);
 
             }
         }

@@ -17,6 +17,8 @@ class SearchJobController extends Controller
         $rank=$request->rank;
         $type=$request->type;
         $wage=$request->wage;
+        $exp=$request->exp;
+
         //dd($major);
         if (!empty($position)) {
             $result = DB::table('recruitments')->where('position', $request->keyword)->paginate(15);
@@ -34,7 +36,10 @@ class SearchJobController extends Controller
             $result = DB::table('recruitments')->where('type', $request->type)->paginate(15);
         }
         else if (!empty($wage)) {
-            $result = DB::table('recruitments')->where('wage', $request->wage)->paginate(15);
+            $result = DB::table('recruitments')->where('wage','>=',($request->wage)-2000000)->where('wage', '<', $request->wage)->paginate(15);
+        }
+        else if (!empty($exp)) {
+            $result = DB::table('recruitments')->where('exp', $request->exp)->paginate(15);
         }
         return view('ap.search-job', compact('result'));
     }
