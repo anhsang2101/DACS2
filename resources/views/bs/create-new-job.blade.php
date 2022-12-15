@@ -210,49 +210,28 @@
                         </div>
                         <div class="form-group">
                             <label for="career" class="title">Ngành nghề & lĩnh vực</label> <br>
-                            <select name="major" id="career" class="form-control">
-                                <option value="Dầu khí/Hóa chất">&nbsp;Dầu khí/Hóa chất</option>
-                                <option value="Dệt may / Da giày">&nbsp;Dệt may / Da giày</option>
-                                <option value="ịa chất / Khoáng sản">&nbsp;Địa chất / Khoáng sản</option>
-                                <option value="Dịch vụ khách hàng">&nbsp;Dịch vụ khách hàng</option>
-                                <option value="Điện / Điện tử / Điện lạnh">&nbsp;Điện / Điện tử / Điện lạnh</option>
-                                <option value="Điện tử viễn thông">&nbsp;Điện tử viễn thông</option>
-                                <option value="Du lịch">&nbsp;Du lịch</option>
-                                <option value="Dược phẩm / Công nghệ sinh học">&nbsp;Dược phẩm / Công nghệ sinh học</option>
-                                <option value="Giáo dục / Đào tạo">&nbsp;Giáo dục / Đào tạo</option>
-                                <option value="Hàng cao cấp">&nbsp;Hàng cao cấp</option>
-                                <option value="Hàng không">&nbsp;Hàng không</option>
-                                <option value="Hành chính / Văn phòng">&nbsp;Hành chính / Văn phòng</option>
-                                <option value="Hoá học / Sinh học">&nbsp;Hoá học / Sinh học</option>
-                                <option value="In ấn / Xuất bản">&nbsp;In ấn / Xuất bản</option>
-                                <option value="IT Phần cứng / Mạng<">&nbsp;IT Phần cứng / Mạng</option>
-                                <option value="IT phần mềm<">&nbsp;IT phần mềm</option>
-                                <option value="Kế toán / Kiểm toán">&nbsp;Kế toán / Kiểm toán</option>
-                                <option value="Khách sạn / Nhà hàng">&nbsp;Khách sạn / Nhà hàng</option>
-                                <option value="Kiến trúc">&nbsp;Kiến trúc</option>
-                                <option value="Logistics">&nbsp;Logistics</option>
-                                <option value="Luật/Pháp lý">&nbsp;Luật/Pháp lý</option>
-                                <option value="Marketing / Truyền thông / Quảng cáo">&nbsp;Marketing / Truyền thông / Quảng cáo</option>
-                                <option value="Môi trường / Xử lý chất thải">&nbsp;Môi trường / Xử lý chất thải</option>
-                                <option value="Mỹ thuật / Nghệ thuật / Điện ảnh">&nbsp;Mỹ thuật / Nghệ thuật / Điện ảnh</option>
-                                <option value="Ngân hàng / Tài chính<">&nbsp;Ngân hàng / Tài chính</option>
-                                <option value="NGO / Phi chính phủ / Phi lợi nhuận">&nbsp;NGO / Phi chính phủ / Phi lợi nhuận</option>
-                                <option value="Nhân sự">&nbsp;Nhân sự</option>
-                                <option value="Nông / Lâm / Ngư nghiệp">&nbsp;Nông / Lâm / Ngư nghiệp</option>
-                                <option value="Quản lý chất lượng (QA/QC)">&nbsp;Quản lý chất lượng (QA/QC)</option>
-                                <option value="Quản lý điều hành">&nbsp;Quản lý điều hành</option>
-                                <option value="Sản phẩm công nghiệp">&nbsp;Sản phẩm công nghiệp</option>
-                                <option value="Tài chính / Đầu tư">&nbsp;Tài chính / Đầu tư</option>
-                                <option value="Thiết kế đồ họa">&nbsp;Thiết kế đồ họa</option>
-                                <option value="Thiết kế nội thất">&nbsp;Thiết kế nội thất</option>
-                                <option value="Thời tran">&nbsp;Thời trang</option>
-                                <option value="Thư ký / Trợ lý<">&nbsp;Thư ký / Trợ lý</option>
-                                <option value="Thực phẩm / Đồ uống">&nbsp;Thực phẩm / Đồ uống</option>
-                                <option value="Tổ chức sự kiện / Quà tặng">&nbsp;Tổ chức sự kiện / Quà tặng</option>
-                                <option value="Vận tải / Kho vận">&nbsp;Vận tải / Kho vận</option>
-                                <option value="Xây dựng">&nbsp;Xây dựng</option>
-                                <option value="Xuất nhập khẩu">&nbsp;Xuất nhập khẩu</option>
-                                <option value="Y tế / Dược">&nbsp;Y tế / Dược</option>
+                            <select name="major" id="major" class="form-control">
+                                <option value="Kinh doanh / Bán hàng">Kinh doanh / Bán hàng</option>
+                                <option value="Biên / Phiên dịch">Biên / Phiên dịch</option>
+                                <option value="Báo chí / Truyền hình">Báo chí / Truyền hình</option>
+                                <option value="Bưu chính - Viễn thông">Bưu chính - Viễn thông</option>
+                                <option value="Bảo hiểm">Bảo hiểm</option>
+                                <option value="Bất động sản">Bất động sản</option>
+                                <option value="Chứng khoán / Vàng / Ngoại tệ">Chứng khoán / Vàng / Ngoại tệ</option>
+                                <option value="IT Phần cứng / Mạng">IT Phần cứng / Mạng</option>
+                                <option value="IT phần mềm">IT phần mềm</option>
+                                <option value="Thư ký / Trợ lý">Thư ký / Trợ lý</option>
+                                <option value="Phi chính phủ / Phi lợi nhuận">Phi chính phủ / Phi lợi nhuận</option>
+                                <option value="Công nghệ Ô tô">Công nghệ Ô tô</option>
+                                <option value="Quản lý điều hành">Quản lý điều hành</option>
+                                <option value="Mỹ thuật / Nghệ thuật / Điện ảnh">Mỹ thuật / Nghệ thuật / Điện ảnh
+                                <option value="Kiến trúc">Kiến trúc</option>
+                                <option value="Logistics">Logistics</option>
+                                <option value="Luật/Pháp lý">Luật/Pháp lý</option>
+                                <option value="Xây dựng">Xây dựng</option>
+                                <option value="Xuất nhập khẩu">Xuất nhập khẩu</option>
+                                <option value="Y tế / Dược">Y tế / Dược</option> 
+                                </option>
                             </select>
                             @error('major')
                             <span style="color: red">{{ $message }}</span>

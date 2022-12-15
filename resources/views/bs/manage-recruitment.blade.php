@@ -218,12 +218,19 @@
                                                                 <option <?php $temp='Bảo hiểm';echo $temp==$item->major?"selected":""?> value="Bảo hiểm">Bảo hiểm</option>
                                                                 <option <?php $temp='Bất động sản';echo $temp==$item->major?"selected":""?> value="Bất động sản">Bất động sản</option>
                                                                 <option <?php $temp='Chứng khoán / Vàng / Ngoại tệ';echo $temp==$item->major?"selected":""?> value="Chứng khoán / Vàng / Ngoại tệ">Chứng khoán / Vàng / Ngoại tệ</option>
-                                                                <option <?php $temp='Công nghệ thông tin';echo $temp==$item->major?"selected":""?> value="Công nghệ thông tin">Công nghệ thông tin</option>
+                                                                <option <?php $temp='IT Phần cứng / Mạng';echo $temp==$item->major?"selected":""?> value="IT Phần cứng / Mạng">IT Phần cứng / Mạng</option>
+                                                                <option <?php $temp='IT phần mềm';echo $temp==$item->major?"selected":""?> value="IT phần mềm">IT phần mềm</option>
                                                                 <option <?php $temp='Thư ký / Trợ lý';echo $temp==$item->major?"selected":""?> value="Thư ký / Trợ lý">Thư ký / Trợ lý</option>
                                                                 <option <?php $temp='Phi chính phủ / Phi lợi nhuận';echo $temp==$item->major?"selected":""?> value="Phi chính phủ / Phi lợi nhuận">Phi chính phủ / Phi lợi nhuận</option>
                                                                 <option <?php $temp='Công nghệ Ô tô';echo $temp==$item->major?"selected":""?> value="Công nghệ Ô tô">Công nghệ Ô tô</option>
                                                                 <option <?php $temp='Quản lý điều hành';echo $temp==$item->major?"selected":""?> value="Quản lý điều hành">Quản lý điều hành</option>
                                                                 <option <?php $temp='Mỹ thuật / Nghệ thuật / Điện ảnh';echo $temp==$item->major?"selected":""?> value="Mỹ thuật / Nghệ thuật / Điện ảnh">Mỹ thuật / Nghệ thuật / Điện ảnh
+                                                                <option <?php $temp='Kiến trúc';echo $temp==$item->major?"selected":""?> value="Kiến trúc">Kiến trúc</option>
+                                                                <option <?php $temp='Logistics';echo $temp==$item->major?"selected":""?> value="Logistics">Logistics</option>
+                                                                <option <?php $temp='Luật/Pháp lý';echo $temp==$item->major?"selected":""?> value="Luật/Pháp lý">Luật/Pháp lý</option>
+                                                                <option <?php $temp='Xây dựng';echo $temp==$item->major?"selected":""?> value="Xây dựng">Xây dựng</option>
+                                                                <option <?php $temp='Xuất nhập khẩu';echo $temp==$item->major?"selected":""?> value="Xuất nhập khẩu">Xuất nhập khẩu</option>
+                                                                <option <?php $temp='Y tế / Dược';echo $temp==$item->major?"selected":""?> value="Y tế / Dược">Y tế / Dược</option> 
                                                                 </option>
                                                             </select>
                                                     </div>
