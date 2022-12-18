@@ -26,29 +26,39 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">Trang chủ<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Việc làm</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Hồ sơ & CV
+                    Việc làm
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Mẫu CV</a>
-                    <a class="dropdown-item" href="#">Quản lí CV</a>
+                    <a class="dropdown-item" href="/ap/job"><i class="icon fa-light fa-radar"></i>Tìm việc làm</a>
+                    <a class="dropdown-item" href="/ap/submitted">Việc làm đã ứng tuyển</a>
+                    <a class="dropdown-item" href="/ap/favoritesjob">Việc làm đã lưu</a>
+                    <a class="dropdown-item" href="/ap/job-it">Việc làm IT</a>
+
                     <!-- <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Công ty</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Công cụ
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Tính lãi suất kép</a>
+                    <a class="dropdown-item" href="#">Tính lương GROSS - NET</a>
+                    <a class="dropdown-item" href="#">Lập kế hoạch tiết kiệm</a>
+                    <a class="dropdown-item" href="#">Tính bảo hiểm xã hội</a>
+                </div>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/ap/company">Công ty</a>
+            </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/ap/submitted">Đơn ứng tuyển</a>
-            </li>
             <a class="nav-link" href="/bs">Version for bussiness</a>
             </li>
         </ul>

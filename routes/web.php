@@ -12,6 +12,7 @@ use App\Http\Controllers\ViewHomeController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\ViewSubmittedController;
 use App\Http\Controllers\SearchJobController;
+use App\Http\Controllers\AdminRecruitmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -150,7 +151,12 @@ Route::prefix('ap')->name('ap.')->group(function () {
     Route::get('/signin', function () {
         return view('ap.signin');
     })->name('signin');
-
+    Route::get('/favoritesjob', function () {
+        return view('ap.favorites-job');
+    })->name('favorites-job');
+    Route::get('/job', function () {
+        return view('ap.job');
+    })->name('job');
     Route::get('/pagination', [
         PaginationController::class,
         'index'
@@ -172,8 +178,57 @@ Route::get('/', [
     'index'
 ]);
 
+
+
+Route::prefix('ad')->name('ad.')->group(function () {
+
+    Route::get('/', function () {
+        return view('ad.index');
+    })->name('index');
+    Route::get('/login', function () {
+        return view('ad.login');
+    })->name('login');
+
+    Route::get('/manage-recruitments-accept', function () {
+        return view('ad.manage-recruitments-accept');
+    })->name('manage-recruitments-accept');
+
+    Route::get('/manage-recruitments-accept', [
+        AdminRecruitmentController::class,
+        'viewAccept'
+    ])->name('manage-recruitments-accept');
+
+
+    Route::get('/manage-recruitments-wait', function () {
+        return view('ad.manage-recruitments-wait');
+    })->name('manage-recruitments-wait');
+
+    Route::get('/manage-recruitments-wait', [
+        AdminRecruitmentController::class,
+        'viewWait'
+    ])->name('manage-recruitments-accept');
+
+    Route::get('/manage-recruitments-reject', function () {
+        return view('ad.manage-recruitments-reject');
+    })->name('manage-recruitments-reject');
+
+    Route::get('/manage-recruitments-reject', [
+        AdminRecruitmentController::class,
+        'viewReject'
+    ])->name('manage-recruitments-accept');
+
+    Route::get('/accept/{id}', [
+        AdminRecruitmentController::class,
+        'accept'
+    ]);
+    Route::get('/reject/{id}', [
+        AdminRecruitmentController::class,
+        'reject'
+    ]);
+});
+
 Route::get('/pagination', 'PaginationController@index');
 Route::get(('/searchjob'), [
-    'as'=>'ap.searchjob',
-    'uses'=>'App\Http\Controllers\SearchJobController@index'
+    'as' => 'ap.searchjob',
+    'uses' => 'App\Http\Controllers\SearchJobController@index'
 ]);

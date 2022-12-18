@@ -41,10 +41,8 @@
     <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
     <link href="vendors/magnifc-popup/magnific-popup.css" rel="stylesheet">
     <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
     </script>
     <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -101,69 +99,49 @@
             <div class="col-md-9">
                 <div class="lists">
                     @if (!empty($result))
-                        @foreach ($result as $key => $item)
-                            <div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="886513"
-                                data-job-position="1" data-box="BoxSearchResult">
-                                <div class="avatar">
-                                    <a target="_blank"
-                                        href="https://www.topcv.vn/viec-lam/nhan-vien-ky-thuat-bao-tri-dien/886513.html?ta_source=JobSearchList"
-                                        class="company-logo" rel="nooppener noreferrer">
-                                        <img src="https://cdn.topcv.vn/80/company_logos/wJkIBg82x3ThF5dFWomXPzuME6KiGzVp_1670214125____d721696b3ff67a5ce6ab96de8fac9005.PNG"
-                                            class="w-100" alt="CÔNG TY TNHH KCC (VIỆT NAM NHƠN TRẠCH"
-                                            title="Nhân Viên Kỹ Thuật Bảo Trì Điện">
-                                    </a>
+                    @foreach ($result as $key => $item)
+                    <div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="886513" data-job-position="1" data-box="BoxSearchResult">
+                        <div class="avatar">
+                            <a target="_blank" href="/ap/detail-job/{{ $item->id }}" class="company-logo" rel="nooppener noreferrer">
+                                <img src="https://cdn.topcv.vn/80/company_logos/wJkIBg82x3ThF5dFWomXPzuME6KiGzVp_1670214125____d721696b3ff67a5ce6ab96de8fac9005.PNG" class="w-100" alt="CÔNG TY TNHH KCC (VIỆT NAM NHƠN TRẠCH" title="Nhân Viên Kỹ Thuật Bảo Trì Điện">
+                            </a>
+                        </div>
+                        <div class="body">
+                            <div class="content">
+                                <div class="ml-auto">
+                                    <h3 class="title">
+                                        <a target="_blank" class="underline-box-job" href="/ap/detail-job/{{ $item->id }}" rel="nooppener noreferrer">
+                                            <span class="bold transform-job-title" data-toggle="tooltip" title="" data-placement="top" data-container="body" data-original-title="">{{ $item->title }}</span>
+                                        </a>
+                                    </h3>
+                                    <p class="company underline-box-job">
+                                        <a href="/ap/detail-job/{{ $item->id }}" data-toggle="tooltip" title="" data-placement="top" data-container="body" target="_blank" rel="nooppener noreferrer" data-original-title="CÔNG TY TNHH KCC (VIỆT NAM NHƠN TRẠCH">{{ $item->nameBusiness }}</a>
+                                    </p>
                                 </div>
-                                <div class="body">
-                                    <div class="content">
-                                        <div class="ml-auto">
-                                            <h3 class="title">
-                                                <a target="_blank" class="underline-box-job"
-                                                    href="https://www.topcv.vn/viec-lam/nhan-vien-ky-thuat-bao-tri-dien/886513.html?ta_source=JobSearchList"
-                                                    rel="nooppener noreferrer">
-                                                    <span class="bold transform-job-title" data-toggle="tooltip"
-                                                        title="" data-placement="top" data-container="body"
-                                                        data-original-title="">{{ $item->title }}</span>
-                                                </a>
-                                            </h3>
-                                            <p class="company underline-box-job">
-                                                <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-kcc-viet-nam-nhon-trach/128012.html"
-                                                    data-toggle="tooltip" title="" data-placement="top"
-                                                    data-container="body" target="_blank" rel="nooppener noreferrer"
-                                                    data-original-title="CÔNG TY TNHH KCC (VIỆT NAM NHƠN TRẠCH">{{ $item->nameBusiness }}</a>
-                                            </p>
-                                        </div>
-                                        <div class="mr-auto text-right">
-                                            <p class="deadline">
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="label-content ml-auto">
-                                            <label class="salary">{{ $item->wage }} {{ $item->currency }} </label>
-                                            <label class="address" data-toggle="tooltip" data-html="true"
-                                                title="" data-placement="top" data-container="body"
-                                                data-original-title="<p style='text-align: left'">{{ $item->area }}</label>
-                                        </div>
-                                        <div class="icon mr-auto">
-                                            <div id="box-save-job-886513"
-                                                class="box-save-job  box-save-job-hover   job-notsave "
-                                                style="width: 23px">
-                                                <a href="javascript:void(0)" class="btn-unsave unsave text-highlight"
-                                                    data-toggle="tooltip" title="" data-id="886513"
-                                                    data-title="Nhân Viên Kỹ Thuật Bảo Trì Điện" data-placement="top"
-                                                    data-container="body" data-original-title="Bỏ lưu">
-                                                    <span id="unsave-job-loading" style="display: none;">
-                                                        <img src="https://www.topcv.vn/v3/images/ap-loading.gif"
-                                                            style="width: 20px">
-                                                    </span>
-                                                    <i class="fa-solid fa-heart"></i>
-                                                </a>
-                                            </div>
-                                        </div>
+                                <div class="mr-auto text-right">
+                                    <p class="deadline">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="label-content ml-auto">
+                                    <label class="salary">{{ $item->wage }} {{ $item->currency }} </label>
+                                    <label class="address" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-container="body" data-original-title="<p style='text-align: left'">{{ $item->area }}</label>
+                                </div>
+                                <div class="icon mr-auto">
+                                    <div id="box-save-job-886513" class="box-save-job  box-save-job-hover   job-notsave " style="width: 23px">
+                                        <a href="javascript:void(0)" class="btn-unsave unsave text-highlight" data-toggle="tooltip" title="" data-id="886513" data-title="Nhân Viên Kỹ Thuật Bảo Trì Điện" data-placement="top" data-container="body" data-original-title="Bỏ lưu">
+                                            <span id="unsave-job-loading" style="display: none;">
+                                                <img src="https://www.topcv.vn/v3/images/ap-loading.gif" style="width: 20px">
+                                            </span>
+                                            <i class="fa-solid fa-heart"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                        </div>
+                    </div>
+                    @endforeach
                     @endif
                 </div>
                 {!! $result->withQueryString()->links() !!}
@@ -176,23 +154,16 @@
                             <div class="spotlight-image">
                                 <a href="https://www.topcv.vn/brand/chailease">
                                     <div class="spotlight-cover-wraper">
-                                        <img src="https://cdn.topcv.vn/247/company_covers/cong-ty-cho-thue-tai-chinh-tnhh-mtv-quoc-te-chailease-faaaab73a31c881be517e4d50fc0bef2-6324407085818.jpg"
-                                            data-src="https://cdn.topcv.vn/247/company_covers/cong-ty-cho-thue-tai-chinh-tnhh-mtv-quoc-te-chailease-faaaab73a31c881be517e4d50fc0bef2-6324407085818.jpg"
-                                            alt="Công ty Cho thuê tài chính TNHH MTV Quốc tế Chailease"
-                                            class="spotlight-cover">
+                                        <img src="https://cdn.topcv.vn/247/company_covers/cong-ty-cho-thue-tai-chinh-tnhh-mtv-quoc-te-chailease-faaaab73a31c881be517e4d50fc0bef2-6324407085818.jpg" data-src="https://cdn.topcv.vn/247/company_covers/cong-ty-cho-thue-tai-chinh-tnhh-mtv-quoc-te-chailease-faaaab73a31c881be517e4d50fc0bef2-6324407085818.jpg" alt="Công ty Cho thuê tài chính TNHH MTV Quốc tế Chailease" class="spotlight-cover">
                                     </div>
                                 </a>
                             </div>
                             <div class="spotlight-info">
-                                <div class="company-name"><a class="text-highlight bold text_uppercase"
-                                        style="font-size: 15px;" href="https://www.topcv.vn/brand/chailease">Công ty
+                                <div class="company-name"><a class="text-highlight bold text_uppercase" style="font-size: 15px;" href="https://www.topcv.vn/brand/chailease">Công ty
                                         Cho thuê tài chính TNHH MTV Quốc tế Chailease</a></div>
                             </div>
                             <div class="job">
-                                <a href="https://www.topcv.vn/brand/chailease/tuyen-dung/compliance-officer-j876552.html?ta_source=JobSearchList"
-                                    target="_blank" data-toggle="tooltip" title="" data-placement="top"
-                                    class="job-name text-dark-blue underline-box-job" rel="nooppener noreferrer"
-                                    data-original-title="Compliance Officer">Compliance Officer</a>
+                                <a href="https://www.topcv.vn/brand/chailease/tuyen-dung/compliance-officer-j876552.html?ta_source=JobSearchList" target="_blank" data-toggle="tooltip" title="" data-placement="top" class="job-name text-dark-blue underline-box-job" rel="nooppener noreferrer" data-original-title="Compliance Officer">Compliance Officer</a>
                                 <div class="d-flex">
                                     <div class="deadline ml-auto">
                                         <i class="fa-light fa-money-bill text-highlight"></i> Thoả thuận
@@ -203,10 +174,7 @@
                                 </div>
                             </div>
                             <div class="job">
-                                <a href="https://www.topcv.vn/brand/chailease/tuyen-dung/legal-executive-j876573.html?ta_source=JobSearchList"
-                                    target="_blank" data-toggle="tooltip" title="" data-placement="top"
-                                    class="job-name text-dark-blue underline-box-job" rel="nooppener noreferrer"
-                                    data-original-title="Legal Executive">Legal Executive</a>
+                                <a href="https://www.topcv.vn/brand/chailease/tuyen-dung/legal-executive-j876573.html?ta_source=JobSearchList" target="_blank" data-toggle="tooltip" title="" data-placement="top" class="job-name text-dark-blue underline-box-job" rel="nooppener noreferrer" data-original-title="Legal Executive">Legal Executive</a>
                                 <div class="d-flex">
                                     <div class="deadline ml-auto">
                                         <i class="fa-light fa-money-bill text-highlight"></i> Thoả thuận
@@ -217,42 +185,19 @@
                                 </div>
                             </div>
                             <div class="spotlight-count text-center">
-                                <a href="https://www.topcv.vn/brand/chailease" target="_blank"
-                                    class="text-highlight get-more" rel="nooppener noreferrer">TÌM HIỂU NGAY</a>
+                                <a href="https://www.topcv.vn/brand/chailease" target="_blank" class="text-highlight get-more" rel="nooppener noreferrer">TÌM HIỂU NGAY</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                     <div class="image">
-                        <a target="_blank" href="https://www.topcv.vn/mau-cv" rel="nooppener noreferrer"><img
-                                src="https://static.topcv.vn/manual/cv-tim-viec-topcv.png" alt="Apply việc gì cũng dễ"
-                                class="w-100"></a>
+                        <a target="_blank" href="https://www.topcv.vn/mau-cv" rel="nooppener noreferrer"><img src="https://static.topcv.vn/manual/cv-tim-viec-topcv.png" alt="Apply việc gì cũng dễ" class="w-100"></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<script>
-    $(document).ready(function() {
-
-        $(document).on('click', '.pagination a', function(event) {
-            event.preventDefault();
-            var page = $(this).attr('href').split('page=')[1];
-            var datapaging = document.getElementById('datapaging');
-            fetch_data(page);
-        });
-
-        function fetch_data(page) {
-            $.ajax({
-                url: "/ap/searchjob?page=" + page,
-                success: function(data) {
-                    $('#container').html(data);
-                }
-            });
-        }
-
-    });
-</script>
+<script src="{{ url('js/app.js') }}"></script>
 
 </html>

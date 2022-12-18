@@ -47,7 +47,6 @@
     <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
-    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
     <style>
         li {
             color: #0000;
@@ -73,7 +72,7 @@
                         <br>
                         <h2>Tìm việc phù hợp với bạn</h2>
                         <div class="form-search">
-                            <form id="frm-search-job" method="GET" action="{{ route('ap.searchjob') }}">
+                            <form id="frm-search-job" method="GET" action="{{ route('ap.searchjob') }}" target="_blank">
                                 <div class="box-search">
                                     <div class="col-input">
                                         <input name="keyword" id="keyword" class="form-control input-search ui-autocomplete-input border-hover" value="" placeholder="Tên công việc, vị trí bạn muốn ứng tuyển" id="keyword" autocomplete="off" onfocus="show()" required>
@@ -145,7 +144,7 @@
                                                         <option value="Luật/Pháp lý">Luật/Pháp lý</option>
                                                         <option value="Xây dựng">Xây dựng</option>
                                                         <option value="Xuất nhập khẩu">Xuất nhập khẩu</option>
-                                                        <option value="Y tế / Dược">Y tế / Dược</option> 
+                                                        <option value="Y tế / Dược">Y tế / Dược</option>
                                                         </option>
                                                     </select>
                                                 </div>
@@ -153,70 +152,70 @@
                                                     <select name="area" id="area" class="form-control" tabindex="-1" aria-hidden="true">
                                                         <option value="">Tỉnh thành</option>
                                                         <option value="An Giang">An Giang
-                                                            <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu
-                                                            <option value="Bắc Giang">Bắc Giang
-                                                            <option value="Bắc Kạn">Bắc Kạn
-                                                            <option value="Bạc Liêu">Bạc Liêu
-                                                            <option value="Bắc Ninh">Bắc Ninh
-                                                            <option value="Bến Tre">Bến Tre
-                                                            <option value="Bình Định">Bình Định
-                                                            <option value="Bình Dương">Bình Dương
-                                                            <option value="Bình Phước">Bình Phước
-                                                            <option value="Bình Thuận">Bình Thuận
-                                                            <option value="Bình Thuận">Bình Thuận
-                                                            <option value="Cà Mau">Cà Mau
-                                                            <option value="Cao Bằng">Cao Bằng
-                                                            <option value="Đắk Lắk">Đắk Lắk
-                                                            <option value="Đắk Nông">Đắk Nông
-                                                            <option value="Điện Biên">Điện Biên
-                                                            <option value="Đồng Nai">Đồng Nai
-                                                            <option value="Đồng Tháp">Đồng Tháp
-                                                            <option value="Đồng Tháp">Đồng Tháp
-                                                            <option value="Gia Lai">Gia Lai
-                                                            <option value="Hà Giang">Hà Giang
-                                                            <option value="Hà Nam">Hà Nam
-                                                            <option value="Hà Tĩnh">Hà Tĩnh
-                                                            <option value="Hải Dương">Hải Dương
-                                                            <option value="Hậu Giang">Hậu Giang
-                                                            <option value="Hòa Bình">Hòa Bình
-                                                            <option value="Hưng Yên">Hưng Yên
-                                                            <option value="Khánh Hòa">Khánh Hòa
-                                                            <option value="Kiên Giang">Kiên Giang
-                                                            <option value="Kon Tum">Kon Tum
-                                                            <option value="Lai Châu">Lai Châu
-                                                            <option value="Lâm Đồng">Lâm Đồng
-                                                            <option value="Lạng Sơn">Lạng Sơn
-                                                            <option value="Lào Cai">Lào Cai
-                                                            <option value="Long An">Long An
-                                                            <option value="Nam Định">Nam Định
-                                                            <option value="Nghệ An">Nghệ An
-                                                            <option value="Ninh Bình">Ninh Bình
-                                                            <option value="Ninh Thuận">Ninh Thuận
-                                                            <option value="Phú Thọ">Phú Thọ
-                                                            <option value="Quảng Bình">Quảng Bình
-                                                            <option value="Quảng Bình">Quảng Bình
-                                                            <option value="Quảng Ngãi">Quảng Ngãi
-                                                            <option value="Quảng Ninh">Quảng Ninh
-                                                            <option value="Quảng Trị">Quảng Trị
-                                                            <option value="Sóc Trăng">Sóc Trăng
-                                                            <option value="Sơn La">Sơn La
-                                                            <option value="Tây Ninh">Tây Ninh
-                                                            <option value="Thái Bình">Thái Bình
-                                                            <option value="Thái Nguyên">Thái Nguyên
-                                                            <option value="Thanh Hóa">Thanh Hóa
-                                                            <option value="Thừa Thiên Huế">Thừa Thiên Huế
-                                                            <option value="Tiền Giang">Tiền Giang
-                                                            <option value="Trà Vinh">Trà Vinh
-                                                            <option value="Tuyên Quang">Tuyên Quang
-                                                            <option value="Vĩnh Long">Vĩnh Long
-                                                            <option value="Vĩnh Phúc">Vĩnh Phúc
-                                                            <option value="Yên Bái">Yên Bái
-                                                            <option value="Phú Yên">Phú Yên
-                                                            <option value="Tp.Cần Thơ">Tp.Cần Thơ
-                                                            <option value="Tp.Đà Nẵng">Tp.Đà Nẵng
-                                                            <option value="Tp.Hải Phòng">Tp.Hải Phòng
-                                                            <option value="Tp.Hà Nội">Tp.Hà Nội
-                                                            <option value="TP  HCM">TP HCM
+                                                        <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu
+                                                        <option value="Bắc Giang">Bắc Giang
+                                                        <option value="Bắc Kạn">Bắc Kạn
+                                                        <option value="Bạc Liêu">Bạc Liêu
+                                                        <option value="Bắc Ninh">Bắc Ninh
+                                                        <option value="Bến Tre">Bến Tre
+                                                        <option value="Bình Định">Bình Định
+                                                        <option value="Bình Dương">Bình Dương
+                                                        <option value="Bình Phước">Bình Phước
+                                                        <option value="Bình Thuận">Bình Thuận
+                                                        <option value="Bình Thuận">Bình Thuận
+                                                        <option value="Cà Mau">Cà Mau
+                                                        <option value="Cao Bằng">Cao Bằng
+                                                        <option value="Đắk Lắk">Đắk Lắk
+                                                        <option value="Đắk Nông">Đắk Nông
+                                                        <option value="Điện Biên">Điện Biên
+                                                        <option value="Đồng Nai">Đồng Nai
+                                                        <option value="Đồng Tháp">Đồng Tháp
+                                                        <option value="Đồng Tháp">Đồng Tháp
+                                                        <option value="Gia Lai">Gia Lai
+                                                        <option value="Hà Giang">Hà Giang
+                                                        <option value="Hà Nam">Hà Nam
+                                                        <option value="Hà Tĩnh">Hà Tĩnh
+                                                        <option value="Hải Dương">Hải Dương
+                                                        <option value="Hậu Giang">Hậu Giang
+                                                        <option value="Hòa Bình">Hòa Bình
+                                                        <option value="Hưng Yên">Hưng Yên
+                                                        <option value="Khánh Hòa">Khánh Hòa
+                                                        <option value="Kiên Giang">Kiên Giang
+                                                        <option value="Kon Tum">Kon Tum
+                                                        <option value="Lai Châu">Lai Châu
+                                                        <option value="Lâm Đồng">Lâm Đồng
+                                                        <option value="Lạng Sơn">Lạng Sơn
+                                                        <option value="Lào Cai">Lào Cai
+                                                        <option value="Long An">Long An
+                                                        <option value="Nam Định">Nam Định
+                                                        <option value="Nghệ An">Nghệ An
+                                                        <option value="Ninh Bình">Ninh Bình
+                                                        <option value="Ninh Thuận">Ninh Thuận
+                                                        <option value="Phú Thọ">Phú Thọ
+                                                        <option value="Quảng Bình">Quảng Bình
+                                                        <option value="Quảng Bình">Quảng Bình
+                                                        <option value="Quảng Ngãi">Quảng Ngãi
+                                                        <option value="Quảng Ninh">Quảng Ninh
+                                                        <option value="Quảng Trị">Quảng Trị
+                                                        <option value="Sóc Trăng">Sóc Trăng
+                                                        <option value="Sơn La">Sơn La
+                                                        <option value="Tây Ninh">Tây Ninh
+                                                        <option value="Thái Bình">Thái Bình
+                                                        <option value="Thái Nguyên">Thái Nguyên
+                                                        <option value="Thanh Hóa">Thanh Hóa
+                                                        <option value="Thừa Thiên Huế">Thừa Thiên Huế
+                                                        <option value="Tiền Giang">Tiền Giang
+                                                        <option value="Trà Vinh">Trà Vinh
+                                                        <option value="Tuyên Quang">Tuyên Quang
+                                                        <option value="Vĩnh Long">Vĩnh Long
+                                                        <option value="Vĩnh Phúc">Vĩnh Phúc
+                                                        <option value="Yên Bái">Yên Bái
+                                                        <option value="Phú Yên">Phú Yên
+                                                        <option value="Tp.Cần Thơ">Tp.Cần Thơ
+                                                        <option value="Tp.Đà Nẵng">Tp.Đà Nẵng
+                                                        <option value="Tp.Hải Phòng">Tp.Hải Phòng
+                                                        <option value="Tp.Hà Nội">Tp.Hà Nội
+                                                        <option value="TP  HCM">TP HCM
                                                     </select>
                                                 </div>
                                                 <div class="form-group" id="form-3" style="display: none;">
@@ -297,168 +296,9 @@
 
         </div>
     </div>
+    <script src="{{ url('js/app.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        const keyword = document.getElementById('keyword');
-        hidebutton = document.getElementById('hide-button');
-        const advanced = document.getElementById('search-advanced');
-        advanced.style.display = 'none';
-        hidebutton.addEventListener('click', (event) => {
-            advanced.style.display = "none";
-        });
-
-        function hide() {
-            advanced.style.display = "none";
-        }
-
-        function show() {
-            advanced.style.display = "block";
-        }
-    </script>
-    <script>
-        $(window).on("load", function() {
-            $(".preloading").fadeOut("slow");
-        });
-        var loader = document.getElementById("preloading");
-        window.addEventListener("load", function() {
-            loader.style.display = "none";
-        })
-    </script>
-
-    <script>
-        $(document).ready(function() {
-
-            $(document).on('click', '.pagination a', function(event) {
-                event.preventDefault();
-                var page = $(this).attr('href').split('page=')[1];
-                var datapaging = document.getElementById('datapaging');
-                fetch_data(page);
-            });
-
-            function fetch_data(page) {
-                $.ajax({
-                    url: "/ap/pagination?page=" + page,
-                    success: function(data) {
-                        $('#container').html(data);
-                    }
-                });
-            }
-
-        });
-    </script>
-    <script>
-        function showhide(x) {
-            var major = document.getElementById('form-1');
-            var area = document.getElementById('form-2');
-            var rank = document.getElementById('form-3');
-            var type = document.getElementById('form-4');
-            var wage = document.getElementById('form-5');
-            var exp = document.getElementById('form-6');
-            var input = document.getElementById('keyword');
-            major.style.display = 'none';
-            area.style.display = 'none';
-            rank.style.display = 'none';
-            type.style.display = 'none';
-            wage.style.display = 'none';
-            exp.style.display = "none";
-
-            input.addEventListener("focus", function() {
-                document.getElementById('search1').checked = false;
-                document.getElementById('search2').checked = false;
-                document.getElementById('search3').checked = false;
-                document.getElementById('search4').checked = false;
-                document.getElementById('search5').checked = false;
-                document.getElementById('search6').checked = false;
-                major.style.display = 'none';
-                area.style.display = 'none';
-                rank.style.display = 'none';
-                type.style.display = 'none';
-                wage.style.display = 'none';
-                exp.style.display = 'none';
-                $("[name='major']").prop("required", false);
-                $("[name='area']").prop("required", false);
-                $("[name='rank']").prop("required", false);
-                $("[name='type']").prop("required", false);
-                $("[name='wage']").prop("required", false);
-                $("[name='exp']").prop("required", false);
-
-
-
-            });
-            input.addEventListener("focusout", function() {
-                $("#keyword").children().prop('disabled', true);
-            });
-
-            if (x == 1) {
-                major.style.display = 'block';
-                $("[name='major']").prop("required", true);;
-                $("[name='keyword']").prop("required", false);
-
-                input.value = '';
-            } else {
-                major.style.display = 'none';
-                document.getElementById('major').value = "";
-                $("[name='major']").prop("required", false);
-
-            }
-            if (x == 2) {
-                area.style.display = 'block';
-                $("[name='keyword']").prop("required", false);
-                input.value = '';
-                $("[name='area']").prop("required", true);
-            } else {
-                area.style.display = 'none';
-                document.getElementById('area').value = "";
-                $("[name='area']").prop("required", false);
-
-            }
-            if (x == 3) {
-                rank.style.display = 'block';
-                $("[name='keyword']").prop("required", false);
-                input.value = '';
-                $("[name='rank']").prop("required", true);
-            } else {
-                rank.style.display = 'none';
-                document.getElementById('rank').value = "";
-                $("[name='rank']").prop("required", false);
-
-            }
-            if (x == 4) {
-                type.style.display = 'block';
-                $("[name='keyword']").prop("required", false);
-                input.value = '';
-                $("[name='type']").prop("required", true);
-            } else {
-                type.style.display = 'none';
-                document.getElementById('type').value = "";
-                $("[name='type']").prop("required", false);
-
-            }
-            if (x == 5) {
-                wage.style.display = 'block';
-                $("[name='keyword']").prop("required", false);
-                input.value = '';
-                $("[name='wage']").prop("required", true);
-            } else {
-                wage.style.display = 'none';
-                document.getElementById('wage').value = "";
-                $("[name='wage']").prop("required", false);
-
-            }
-            if (x == 6) {
-                exp.style.display = 'block';
-                $("[name='keyword']").prop("required", false);
-                input.value = '';
-                $("[name='exp']").prop("required", true);
-            } else {
-                exp.style.display = 'none';
-                document.getElementById('exp').value = "";
-                $("[name='exp']").prop("required", false);
-
-            }
-        }
-    </script>
 </body>
 
 </html>

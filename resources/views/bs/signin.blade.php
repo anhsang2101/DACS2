@@ -176,15 +176,8 @@ body > section > div > div > div > div:nth-child(2) > div > div > div > a:hover{
 </section>
 <!-- Section: Design Block -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(window).on("load", function () {
-    $(".preloading").fadeOut("slow");
-});
-var loader = document.getElementById("preloading");
-window.addEventListener("load", function () {
-    loader.style.display = "none";
-})
-    </script>
+<script src="{{ url('js/app.js') }}"></script>
+
 </body>
 
 </html>

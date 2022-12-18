@@ -127,28 +127,24 @@
                         <div class="card">
                             <div class="card-body px-md-5">
                                 @if (session('msg'))
-                                    <div class="alert alert-success">{{ session('msg') }}</div>
+                                <div class="alert alert-success">{{ session('msg') }}</div>
                                 @endif
                                 @if ($errors->any())
-                                    <div class="alert alert-danger">Đăng ký không thành công</div>
+                                <div class="alert alert-danger">Đăng ký không thành công</div>
                                 @endif
                                 <form action="signup" method="POST" id="form-register">
                                     <span class="font-weight-bold">TÀI KHOÁN</span>
-                                    <input type="hidden" name="_token"
-                                        value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
+                                    <input type="hidden" name="_token" value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Email đăng nhập</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-envelope"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
                                             </div>
-                                            <input type="text" name="email" class="form-control"
-                                                placeholder="Nhập email của bạn" aria-label="Nhập email đăng nhập"
-                                                value="">
+                                            <input type="text" name="email" class="form-control" placeholder="Nhập email của bạn" aria-label="Nhập email đăng nhập" value="">
                                         </div>
                                         @error('email')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
@@ -157,15 +153,13 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                                             </div>
-                                            <input type="password" id="password" name="password"
-                                                class="form-control" placeholder="Nhập mật khẩu"
-                                                aria-label="Nhập mật khẩu">
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Nhập mật khẩu" aria-label="Nhập mật khẩu">
                                             <!-- <div class="input-group-prepend">
                                             <button type="button" tabindex="-1" data-input-target="#password" class="input-group-text toggle-password"></button>
                                         </div> -->
                                         </div>
                                         @error('password')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
@@ -174,15 +168,13 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                                             </div>
-                                            <input type="password" id="password_confirmation" name="confirmPassword"
-                                                class="form-control" placeholder="Nhập lại mật khẩu"
-                                                aria-label="Nhập lại mật khẩu">
+                                            <input type="password" id="password_confirmation" name="confirmPassword" class="form-control" placeholder="Nhập lại mật khẩu" aria-label="Nhập lại mật khẩu">
                                             <!-- <div class="input-group-prepend">
                                             <button type="button" tabindex="-1" data-input-target="#password_confirmation" class="input-group-text toggle-password"></button>
                                         </div> -->
                                         </div>
                                         @error('confirmPassword')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <span class="font-weight-bold">THÔNG TIN NHÀ TUYỂN DỤNG</span>
@@ -192,33 +184,29 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                                             </div>
-                                            <input type="text" name="namePersonal" class="form-control"
-                                                placeholder="Họ tên" value="">
+                                            <input type="text" name="namePersonal" class="form-control" placeholder="Họ tên" value="">
                                         </div>
                                         @error('namePersonal')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Số điện thoại cá nhân</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-phone"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
                                             </div>
-                                            <input type="text" name="phonePersonal" class="form-control"
-                                                placeholder="Số điện thoại cá nhân" value="">
+                                            <input type="text" name="phonePersonal" class="form-control" placeholder="Số điện thoại cá nhân" value="">
                                         </div>
                                         @error('phonePersonal')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Giới tính</label>
                                         <div class="input-group" style="flex-wrap: nowrap">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-neuter"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-neuter"></i></span>
                                             </div>
                                             <select name="gender" id="gender">
                                                 <option value="male">Nam</option>
@@ -231,71 +219,61 @@
                                         <label for="email" class="mb-1">Công ty</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-building"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
                                             </div>
-                                            <input type="text" name="nameBusiness" class="form-control"
-                                                placeholder="Tên công ty" value="">
+                                            <input type="text" name="nameBusiness" class="form-control" placeholder="Tên công ty" value="">
                                         </div>
                                         @error('nameBusiness')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Số điện thoại công ty</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-phone"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
                                             </div>
-                                            <input type="text" name="phoneBusiness" class="form-control"
-                                                placeholder="Số điện thoại công ty" value="">
+                                            <input type="text" name="phoneBusiness" class="form-control" placeholder="Số điện thoại công ty" value="">
                                         </div>
                                         @error('phoneBusiness')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Giới thiệu</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-info-circle "></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-info-circle "></i></span>
                                             </div>
-                                            <textarea name="introduceBusiness" class="form-control"
-                                                placeholder="Giới thiệu về công ty"></textarea>
-                                                
+                                            <textarea name="introduceBusiness" class="form-control" placeholder="Giới thiệu về công ty"></textarea>
+
                                         </div>
                                         @error('introduceBusiness')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Quy mô</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-users"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-users"></i></span>
                                             </div>
-                                            <input type="text" name="personnelSize" class="form-control"
-                                                placeholder="Quy mô nhân sự công ty" value="">
+                                            <input type="text" name="personnelSize" class="form-control" placeholder="Quy mô nhân sự công ty" value="">
                                         </div>
                                         @error('personnelSize')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Địa điểm</label>
                                         <div class="input-group ">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text"><i
-                                                        class="fa-solid fa-map-marker"></i></span>
+                                                <span class="input-group-text"><i class="fa-solid fa-map-marker"></i></span>
                                             </div>
-                                            <input type="text" name="location" class="form-control"
-                                                placeholder="Địa điểm" value="">
+                                            <input type="text" name="location" class="form-control" placeholder="Địa điểm" value="">
                                         </div>
                                         @error('location')
-                                            <span style="color: red">{{ $message }}</span>
+                                        <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
@@ -338,15 +316,8 @@
     </section>
     <!-- Section: Design Block -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(window).on("load", function () {
-    $(".preloading").fadeOut("slow");
-});
-var loader = document.getElementById("preloading");
-window.addEventListener("load", function () {
-    loader.style.display = "none";
-})
-    </script>
+    <script src="{{ url('js/app.js') }}"></script>
+
 </body>
 
 </html>

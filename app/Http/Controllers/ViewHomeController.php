@@ -16,7 +16,7 @@ class ViewHomeController extends Controller
     
     public function index(){
 
-        $listAll =  DB::table('recruitments')->paginate(15);
+        $listAll =  DB::table('recruitments')->where('isAccept', '2')->paginate(15);
         
         return view('ap.index')->with(compact('listAll'));
     }

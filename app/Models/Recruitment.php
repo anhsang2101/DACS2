@@ -21,12 +21,12 @@ class Recruitment extends Model
     }
 
     public function post($dataInsert){
-        DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`, `isAccept`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
 
     }
 
     public function listByEmail($email){
-        $list = DB::select('SELECT * FROM recruitments WHERE `email` = ?', [$email]);
+        $list = DB::select('SELECT * FROM recruitments WHERE `email` = ? and `isAccept` = "2"', [$email]);
         return $list;
     }
 
@@ -37,5 +37,14 @@ class Recruitment extends Model
     public function deleteRecruitment($id){
         return DB::delete('DELETE FROM recruitments WHERE `id`=?',[$id]);
     }
+    public function accept($id)
+    {
+        DB::update('UPDATE `recruitments` SET isAccept = 2 WHERE `id` = ?', [$id]);
+    }
+    public function reject($id)
+    {
+        DB::update('UPDATE `recruitments` SET isAccept = 0 WHERE `id` = ?', [$id]);
+    }
+
 
 }
