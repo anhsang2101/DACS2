@@ -36,7 +36,7 @@ return new class extends Migration
             $table->string('detail');
             $table->string('require');
             $table->string('benefit');
-            
+            $table->integer('isAccept');
             $table->timestamps();
         });
     }
