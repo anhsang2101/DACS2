@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use App\Models\Applicants;
 use App\Models\Business;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ class SignInController extends Controller
     {
         $this->ap = new Applicants();
         $this->bs = new Business();
+        $this->ad = new Admin();
     }
 
     public function signInAp(Request $request)
@@ -77,4 +79,38 @@ class SignInController extends Controller
             dd($request->all());
         }
     }
+
+    public function viewSignInAdOrIndex(Request $request)
+    {
+
+       if(session()->has('sessionAd')){
+            return view('ad.index');
+       }
+       else{
+        return view('ad.signin');
+       }
+
+    }
+
+
+    public function signInAd(Request $request)
+    {
+        $dataInsert = [
+            $request->email,
+            $request->password,
+        ];
+
+        if (!empty($this->ad->signIn($dataInsert))) {
+            session()->put('sessionAd', $request->email);
+            
+            return redirect()->route('ad.index')->with('msg', $request->email);
+        } else {
+            return redirect()->route('ad.index')->with('msg', 'Sai mật khẩu');
+
+            dd($request->all());
+        }
+    }
+
+    
+
 }

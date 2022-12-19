@@ -20,4 +20,10 @@ class SignOutController extends Controller
         
         return redirect()->route('bs.index');
     }
+    public function signOutAd(Request $request){
+
+        $request->session()->forget('sessionAd');
+        
+        return redirect()->route('ad.index');
+    }
 }

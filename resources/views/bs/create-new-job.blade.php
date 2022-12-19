@@ -118,15 +118,15 @@
                     <form action="/bs/postRecruitment" method="POST">
                         <div class="form-group">
                             <label for="name" class="title">Tên chiến dịch tuyển dụng</label>
-                            <input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="VD: Tuyển dụng nhân viên Design tháng 12">
+                            <input value="{{ old('name') }}" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="VD: Tuyển dụng nhân viên Design tháng 12">
                             @error('name')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="role" class="title">Vị trí tuyển dụng</label>
-                            <input name="position" type="text" class="form-control" id="role" placeholder="VD: Nhân viên Marketing, Designer, Sales">
-                            @error('role')
+                            <input value="{{ old('position') }}" name="position" type="text" class="form-control" id="role" placeholder="VD: Nhân viên Marketing, Designer, Sales">
+                            @error('position')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
@@ -206,7 +206,7 @@
                         <h3 class="h3">Thông tin đăng tuyển chi tiết</h3>
                         <div class="form-group">
                             <label for="title" class="title">Tiêu đề tin tuyển dụng</label>
-                            <input name="title" type="text" class="form-control" id="title" placeholder="VD: Nhân viên kinh doanh">
+                            <input value="{{ old('title') }}" name="title" type="text" class="form-control" id="title" placeholder="VD: Nhân viên kinh doanh">
                             @error('title')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
@@ -304,7 +304,7 @@
                             <span style="color: red">{{ $message }}</span>
                             @enderror
                             <label for="exampleInputPassword1" class="title">Lương</label> <br>
-                            <input name="wage" class="form-control" type="text">
+                            <input value="{{ old('wage') }}" name="wage" class="form-control" type="text">
                             @error('wage')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
@@ -312,21 +312,21 @@
                         <h3 class="h3">Nội dung đăng tuyển chi tiết</h3>
                         <div class="form-group">
                             <label for="name" class="title">Mô tả công việc</label> <br>
-                            <textarea class="form-control" id="des" placeholder="Nhập nội dung mô tả công việc" name="detail" rows="4" cols="140"></textarea>
+                            <textarea class="form-control" id="des" placeholder="Nhập nội dung mô tả công việc" name="detail" rows="4" cols="140">{{ old('detail') }}</textarea>
                             @error('detail')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="name" class="title">Yêu cầu ứng viên</label> <br>
-                            <textarea class="form-control" id="des" placeholder="Nhập nội dung yêu cầu ứng tuyển" name="require" rows="4" cols="140"></textarea>
+                            <textarea class="form-control" id="des" placeholder="Nhập nội dung yêu cầu ứng tuyển" name="require" rows="4" cols="140">{{ old('require') }}</textarea>
                             @error('require')
                             <span style="color: red">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="name" class="title">Quyền lợi của ứng viên</label> <br>
-                            <textarea class="form-control" id="des" placeholder="Nhập nội dung quyền lợi của ứng viên" name="benefit" rows="4" cols="140"></textarea>
+                            <textarea class="form-control" id="des" placeholder="Nhập nội dung quyền lợi của ứng viên" name="benefit" rows="4" cols="140">{{ old('benefit') }}</textarea>
                             @error('benefit')
                             <span style="color: red">{{ $message }}</span>
                             @enderror

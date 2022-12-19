@@ -8,6 +8,13 @@ use Illuminate\Support\Facades\DB;
 class Admin extends Model
 {
     use HasFactory;
+
+    public function signIn($dataInsert)
+    {
+        $signIn = DB::select('SELECT * FROM admin WHERE email=? and password=?', $dataInsert);
+        return $signIn;
+    }
+
     public function viewAccept()
     {
         $listAll = DB::table('recruitments')->where('isAccept', '2')->paginate(15);

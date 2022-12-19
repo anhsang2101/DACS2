@@ -1,6 +1,6 @@
 <html>
 <head>
-  	<title>Login 07</title>
+  	<title>Login ad</title>
       <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +59,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login #07</h2>
+					<h2 class="heading-section">Login as administrator</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -84,19 +84,22 @@
 									</p>
 								</div>
 			      	</div>
-							<form action="#" class="signin-form">
+							<form method="post" action="/ad/signin" class="signin-form">
 			      		<div class="form-group mb-3">
-			      			<label class="label" for="name">Username</label>
-			      			<input type="text" class="form-control" placeholder="Username" required>
+			      			<label class="label" for="name">Email</label>
+			      			<input name="email" type="text" class="form-control" placeholder="Email" required>
 			      		</div>
 		            <div class="form-group mb-3">
 		            	<label class="label" for="password">Password</label>
-		              <input type="password" class="form-control" placeholder="Password" required>
+		              <input name="password" type="password" class="form-control" placeholder="Password" required>
 		            </div>
 		            <div class="form-group">
 		            	<button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
 		            </div>
-		            <div class="form-group d-md-flex">
+					@if (session('msg'))
+                                        <div class="alert alert-danger">{{ session('msg') }}</div>
+					 @endif
+		            {{-- <div class="form-group d-md-flex">
 		            	<div class="w-50 text-left">
 			            	<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
 									  <input type="checkbox" checked>
@@ -106,7 +109,8 @@
 									<div class="w-50 text-md-right">
 										<a href="#">Forgot Password</a>
 									</div>
-		            </div>
+		            </div> --}}
+					@csrf
 		          </form>
 		        </div>
 		      </div>

@@ -183,12 +183,20 @@ Route::get('/', [
 
 Route::prefix('ad')->name('ad.')->group(function () {
 
-    Route::get('/', function () {
-        return view('ad.index');
-    })->name('index');
-    Route::get('/login', function () {
-        return view('ad.login');
-    })->name('login');
+    Route::get('/signout', [
+        SignOutController::class,
+        'signOutAd'
+    ]);
+
+    Route::get('/',  [
+        SignInController::class,
+        'viewSignInAdOrIndex',
+    ])->name('index');
+    
+    Route::post('/signin',  [
+        SignInController::class,
+        'signInAd',
+    ])->name('signIn');
 
     Route::get('/manage-recruitments-accept', function () {
         return view('ad.manage-recruitments-accept');
