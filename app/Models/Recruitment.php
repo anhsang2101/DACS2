@@ -26,7 +26,7 @@ class Recruitment extends Model
     }
 
     public function listByEmail($email){
-        $list = DB::select('SELECT * FROM recruitments WHERE `email` = ? and `isAccept` = "2"', [$email]);
+        $list = DB::table('recruitments')->where('email', $email)->where('isAccept', '2')->paginate(10);
         return $list;
     }
 
@@ -37,14 +37,4 @@ class Recruitment extends Model
     public function deleteRecruitment($id){
         return DB::delete('DELETE FROM recruitments WHERE `id`=?',[$id]);
     }
-    public function accept($id)
-    {
-        DB::update('UPDATE `recruitments` SET isAccept = 2 WHERE `id` = ?', [$id]);
-    }
-    public function reject($id)
-    {
-        DB::update('UPDATE `recruitments` SET isAccept = 0 WHERE `id` = ?', [$id]);
-    }
-
-
 }

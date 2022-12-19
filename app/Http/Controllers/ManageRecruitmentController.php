@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recruitment;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ManageRecruitmentController extends Controller
 {
     private $recruitment;
@@ -16,9 +16,7 @@ class ManageRecruitmentController extends Controller
     public function viewManageRecruitment(){
         if(session()->has('emailSessionBs')){
             $emailBs = session()->get('emailSessionBs');
-
-            $list = $this->recruitment->listByEmail($emailBs);
-            
+            $list = $this->recruitment->listByEmail($emailBs);            
             return view('bs.manage-recruitment')->with(compact('list'));
         }
         else{

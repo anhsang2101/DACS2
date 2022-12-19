@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Submitted;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ViewCensorshipController extends Controller
 {
@@ -18,9 +19,8 @@ class ViewCensorshipController extends Controller
     public function viewCensorship($id)
     {
         if (session()->has('emailSessionBs')) {
-            $emailBs=session()->get('emailSessionBs');
-            $list = $this->submitted->listAllByJobId1($id);
-
+            $emailBs = session()->get('emailSessionBs');
+           $list = $this->submitted->listAllByJobId1($id);
             return view('bs.censorship')->with(compact('list'));
         } else {
             return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
@@ -30,9 +30,8 @@ class ViewCensorshipController extends Controller
     public function viewCensorshipped($id)
     {
         if (session()->has('emailSessionBs')) {
-            $emailBs=session()->get('emailSessionBs');
+            $emailBs = session()->get('emailSessionBs');
             $list = $this->submitted->listAllByJobId2($id);
-
             return view('bs.censorshipped')->with(compact('list'));
         } else {
             return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
@@ -62,5 +61,4 @@ class ViewCensorshipController extends Controller
             return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
         }
     }
-
 }

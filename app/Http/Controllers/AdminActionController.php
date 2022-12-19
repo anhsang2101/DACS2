@@ -3,16 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\Admin;
-
-class AdminRecruitmentController extends Controller
+class AdminActionController extends Controller
 {
     private $admin;
     public function __construct()
     {
 
         $this->admin = new Admin();
+    }
+    public function signIn($request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ], [
+            'password.required' => 'Vui lòng nhập mật khẩu',
+            'email.required' => 'Vui lòng nhập email',
+        ]);
     }
     public function viewAccept()
     {
@@ -42,5 +50,9 @@ class AdminRecruitmentController extends Controller
     {
         $this->admin->reject($id);
         return back();
+    }
+    public function listAcc()
+    {
+        $this->admin->listAcc();
     }
 }

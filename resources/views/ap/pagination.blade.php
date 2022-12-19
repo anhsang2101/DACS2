@@ -19,10 +19,10 @@
                                         </div>
                                     </div>
                                     <div class="col-job-info">
-                                        <div class="salary text_ellipsis"><strong id="jobsalary">{{ $item->wage }} triệu </strong>
+                                        <div class="salary text_ellipsis"> <i class="fa-solid fa-coins"></i> <strong id="jobsalary">{{ $item->wage }} triệu </strong>
                                         </div>
                                         <div data-html="true" data-toggle="tooltip" title="" data-placement="top" data-container="body" class="address text_ellipsis" data-original-title="<p style='text-align: left'>Hà Nội: Cầu Giấy, Nam Từ Liêm, Hà Đông</p>">
-                                            <strong id="jobarea">{{ $item->area }}</strong>
+                                        <i class="fa-solid fa-location-pin"></i> <strong id="jobarea">{{ $item->area }}</strong>
                                         </div>
                                     </div>
                                 </div>

@@ -1,45 +1,68 @@
-<div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="873859" data-job-position="1" data-box="BoxSearchResult">
-    <div class="avatar">
-        <a target="_blank" href="" class="company-logo">
-            <img src="https://cdn.topcv.vn/80/company_logos/tuxr7PTVleqRmIydBReCkFhqToRzHqha_1668498022____cc96e66361b77c47c4d2879562f4d77d.jpeg" class="w-100" alt="De La Sól - Sunlife" title="De La Sól - Sunlife">
-        </a>
-    </div>
-    <div class="body">
-        <div class="content">
-            <div class="ml-auto">
-                <h3 class="title">
-                    <a target="_blank" class="underline-box-job" href="">
-                        <span class="bold transform-job-title" data-toggle="tooltip" title="" data-placement="top" data-container="body" data-original-title="Chuyên Viên Quản Lý Khách Hàng Cao Cấp - Thu Nhập Cố Định Từ 18 Đến 36 Triệu - Hà Nội">Chuyên Viên Quản Lý Khách Hàng Cao Cấp - Thu Nhập Cố Định Từ 18 Đến 36 Triệu - Hà Nội</span>
-                    </a>
-                </h3>
-                <p class="company underline-box-job">
-                    <a href="" data-toggle="tooltip" title="" data-placement="top" data-container="body" target="_blank" data-original-title="De La Sól - Sunlife">De La Sól - Sunlife</a>
-                </p>
-                <div class="d-flex">
-                    <div class="label-content ml-auto">
-                        <label class="salary">18-36 triệu</label>
-                        <label class="address" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-container="body" data-original-title="<p style='text-align: left'>Hà Nội: Hoàn Kiếm</p>">Hà Nội</label>
-                        <label class="time">4 giờ trước</label>
+<div class="modal-body">
+                        <div id="frm-upload">
+                            {{-- <div class="row form-group">
+                                <div class="col-sm-12 col-xs-12">
+                                    <strong class="input-label text-dark-gray">Tải lên CV từ máy tính</strong><br>
+                                    <span class="text-gray text-small">File doc, docx, pdf. Tối đa 5MB.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="jFiler jFiler-theme-dragdropbox"><input type="file" name="cv_file" id="filer_input" style="display: none; position: absolute; left: -9999px; top: -9999px; z-index: -9999;" accept="doc, docx, pdf">
+                                    <div class="jFiler-input-dragDrop">
+                                        <div class="jFiler-input-inner">
+                                            <div class="jFiler-input-icon"><i class="fa fa-upload"></i></div><input type="file" id="filecv" name="filecv">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="form-group">
+                                <label>Họ và tên<span class="text-danger">*</span> :</label>
+                                <input disabled type="text" value="{{ Session::get('sessionAccount')[0]->name }}" placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname" class="form-control input-sm" style="font-size: 12px">
+                                <p class="text-small text-danger italic" id="fullnameErrorMessage" style="margin-top: 5px; display: none"></p>
+                            </div>
+                            <div class="row">
+
+                                <input hidden type="text" value="{{ $detail[0]->id }}" placeholder="" name="jobid" class="form-control input-sm" style="font-size: 12px">
+                                <input hidden type="text" value="{{ $detailbusiness[0]->id }}" placeholder="" name="businessid" class="form-control input-sm" style="font-size: 12px">
+
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Email<span class="text-danger">*</span> :</label>
+                                        <input required disabled type="text" value="{{ Session::get('sessionAccount')[0]->email }}" placeholder="Email hiển thị với Nhà tuyển dụng" name="email" class="form-control input-sm" style="font-size: 12px">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Số điện thoại<span class="text-danger">*</span> :</label>
+                                        <input required type="text" value="" placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone" class="form-control input-sm" style="font-size: 12px">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Học vấn<span class="text-danger">*</span> :</label>
+                                        <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Kinh nghiệm<span class="text-danger">*</span> :</label>
+                                        <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Kỹ năng<span class="text-danger">*</span> :</label>
+                                        <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>Mục tiêu nghề nghiệp<span class="text-danger">*</span> :</label>
+                                        <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj" class="form-control input-sm" style="font-size: 12px"></textarea>
+                                    </div>
+                                </div>
+                                @csrf
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="icon mr-auto">
-                    </div>
-                </div>
-            </div>
-            <div class="mr-auto text-right">
-                <p class="saved_at">
-                    Đã lưu: 17/11/2022 - 13:55
-                </p>
-                <div>
-                    <div id="box-save-job-873859" class="box-save-job">
-                        <a href="javascript:void(0)" class="btn-unsave unsave text-red" data-id="873859" data-title="Chuyên Viên Quản Lý Khách Hàng Cao Cấp - Thu Nhập Cố Định Từ 18 Đến 36 Triệu - Hà Nội">
-                            <span id="save-job-loading" style="display: none;">
-                                <img src="https://www.topcv.vn/v3/images/ap-loading.gif" alt="" style="width: 20px">
-                            </span>
-                            <i class="fa-regular fa-trash"></i> Bỏ lưu
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

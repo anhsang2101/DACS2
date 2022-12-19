@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EzCV</title>
@@ -41,10 +42,13 @@
     <link href="vendors/owl-carousel/owl.carousel.min.css" rel="stylesheet">
     <link href="vendors/magnifc-popup/magnific-popup.css" rel="stylesheet">
     <!-- Boostrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <!-- AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -74,9 +78,8 @@
     </div>
 
     @include('ap.navbar')
-    
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
+
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form method="post" action="/ap/submitted">
@@ -89,22 +92,7 @@
                     </div>
                     <div class="modal-body">
                         <div id="frm-upload">
-                            {{-- <div class="row form-group">
-                                <div class="col-sm-12 col-xs-12">
-                                    <strong class="input-label text-dark-gray">Tải lên CV từ máy tính</strong><br>
-                                    <span class="text-gray text-small">File doc, docx, pdf. Tối đa 5MB.</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="jFiler jFiler-theme-dragdropbox"><input type="file" name="cv_file" id="filer_input" style="display: none; position: absolute; left: -9999px; top: -9999px; z-index: -9999;" accept="doc, docx, pdf">
-                                    <div class="jFiler-input-dragDrop">
-                                        <div class="jFiler-input-inner">
-                                            <div class="jFiler-input-icon"><i class="fa fa-upload"></i></div><input type="file" id="filecv" name="filecv">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                            <div class="form-group">
+                        <div class="form-group">
                                 <label>Họ và tên<span class="text-danger">*</span> :</label>
                                 <input disabled type="text" value="{{ Session::get('sessionAccount')[0]->name }}"
                                     placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname"
@@ -112,14 +100,12 @@
                                 <p class="text-small text-danger italic" id="fullnameErrorMessage"
                                     style="margin-top: 5px; display: none"></p>
                             </div>
-                            <div class="row">
-
-                                <input hidden type="text" value="{{ $detail[0]->id }}" placeholder=""
+                            <input hidden type="text" value="{{ $detail[0]->id }}" placeholder=""
                                     name="jobid" class="form-control input-sm" style="font-size: 12px">
                                 <input hidden type="text" value="{{ $detailbusiness[0]->id }}" placeholder=""
                                     name="businessid" class="form-control input-sm" style="font-size: 12px">
 
-                                <div class="col-xs-6">
+                                    <div class="col-xs-6">
                                     <div class="form-group">
                                         <label>Email<span class="text-danger">*</span> :</label>
                                         <input required disabled type="text"
@@ -165,8 +151,6 @@
                                     </div>
                                 </div>
                                 @csrf
-                            </div>
-
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -191,20 +175,16 @@
                         </nav>
                         <div class="box-white box-detail-job">
                             <div class="box-header">
-                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html"
-                                    title="Công ty Cổ phần MISA" class="company-logo">
+                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" title="Công ty Cổ phần MISA" class="company-logo">
                                     <div class="box-company-logo">
-                                        <img src="https://cdn.topcv.vn/80/company_logos/YVVFSY05ZUhqjlVHtBl2kOD1a189WFj0_1652947920____d78c5dd2ab820dcbb9a367b40e712067.jpg"
-                                            alt="Công ty Cổ phần MISA" class="img-responsive">
+                                        <img src="https://cdn.topcv.vn/80/company_logos/YVVFSY05ZUhqjlVHtBl2kOD1a189WFj0_1652947920____d78c5dd2ab820dcbb9a367b40e712067.jpg" alt="Công ty Cổ phần MISA" class="img-responsive">
                                     </div>
                                 </a>
                                 <div class="box-info-job">
                                     <h1 class="job-title text-highlight bold" style="overflow-wrap:break-word;">
                                         {{ $detail[0]->title }} - {{ $detail[0]->position }}
                                         <span class="icon-verified-employer level-five">
-                                            <i class="fa-solid fa-circle-check" data-toggle="tooltip"
-                                                data-html="true" title="" data-placement="top"
-                                                data-original-title="
+                                            <i class="fa-solid fa-circle-check" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-original-title="
   <b>Nhà tuyển dụng</b><span> đã được xác thực:</span><br>
   <span><i class='fa-solid fa-circle-check color-green'></i> Đã xác thực email tên miền công ty</span><br>
   <span><i class='fa-solid fa-circle-check color-green'></i> Đã xác thực số điện thoại</span><br>
@@ -213,8 +193,7 @@
   <span><i class='fa-solid fa-circle-check color-green'></i> Chưa có lịch sử bị báo cáo tin đăng</span><br>"></i></span>
                                     </h1>
                                     <div class="company-title">
-                                        <a href=""
-                                            class="text-dark-blue">{{ $detailbusiness[0]->nameBusiness }}</a>
+                                        <a href="" class="text-dark-blue">{{ $detailbusiness[0]->nameBusiness }}</a>
                                     </div>
 
                                     <div class="job-deadline">
@@ -224,8 +203,7 @@
                                 </div>
                                 <div class="box-apply-current">
                                     <div class="text-center">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#exampleModalLong">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                                             <i class="fa-regular fa-paper-plane"></i> ỨNG TUYỂN NGAY
                                         </button>
 
@@ -236,14 +214,9 @@
                                 </div>
                                 <div class="box-apply-success">
                                     <div class="text-center">
-                                        <p><a href="#"
-                                                class="btn btn-topcv-primary btn-primary-hover open-apply-modal"
-                                                data-toggle="modal"><i class="fa-solid fa-arrow-rotate-right"></i> ỨNG
+                                        <p><a href="#" class="btn btn-topcv-primary btn-primary-hover open-apply-modal" data-toggle="modal"><i class="fa-solid fa-arrow-rotate-right"></i> ỨNG
                                                 TUYỂN LẠI</a></p>
-                                        <p><a target="_blank"
-                                                href="http://candidate.topcvconnect.com/conversations/new/10649"
-                                                class="btn btn-connect btn-outline-hover"><i
-                                                    class="fa-solid fa-comments"></i> NHẮN TIN</a></p>
+                                        <p><a target="_blank" href="http://candidate.topcvconnect.com/conversations/new/10649" class="btn btn-connect btn-outline-hover"><i class="fa-solid fa-comments"></i> NHẮN TIN</a></p>
                                     </div>
                                 </div>
                             </div>
@@ -350,8 +323,7 @@
                                 <div class="">
                                     <div class="">
                                         <div class="d-flex box-btn">
-                                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#exampleModalLong">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
                                                 <i class="fa-regular fa-paper-plane"></i> ỨNG TUYỂN NGAY
                                             </button>
                                         </div>
@@ -437,20 +409,23 @@
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script src="{{ url('js/app.js') }}"></script>
+
     @if(Session::has('alertSuccess'))
-    <script>       
-            var alertSuccess = '{{Session::get('alertSuccess')}}';
-          alert(alertSuccess);
-      </script>
+    <script>
+        var alertSuccess = '{{Session::get('
+        alertSuccess ')}}';
+        alert(alertSuccess);
+    </script>
     @endif
     {{-- <script>
         var msg = '{{Session::get('alertSuccess')}}';
-        var exist = '{{Session::has('alertSuccess')}}';
-        if(exist){
-          alert(msg);
-        }
-      </script> --}}
+    var exist = '{{Session::has('alertSuccess')}}';
+    if(exist){
+    alert(msg);
+    }
+    </script> --}}
 </body>
 
 </html>

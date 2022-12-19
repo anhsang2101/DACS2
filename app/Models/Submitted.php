@@ -18,116 +18,103 @@ class Submitted extends Model
     }
 
     public function listAll($id){
-        $listAll = DB::select('SELECT
-        submitteds.id,
-        submitteds.jobid,
-        submitteds.appid,
-        submitteds.businessid,
-        submitteds.edu,
-        submitteds.exp,
-        submitteds.skill,
-        submitteds.obj,
-        submitteds.status,
-        recruitments.email,
-        recruitments.nameBusiness,
-        recruitments.name,
-        recruitments.position,
-        recruitments.area,
-        recruitments.title,
-        recruitments.major,
-        recruitments.type,
-        recruitments.gender,
-        recruitments.rank,
-        recruitments.exp AS exprequired,
-        recruitments.currency,
-        recruitments.wage,
-        recruitments.detail,
-        recruitments.require,
-        recruitments.benefit
-    FROM
-        submitteds
-    INNER JOIN recruitments ON submitteds.jobid = recruitments.id
-    WHERE
-        appid = ?', [$id]);
-        return $listAll;
+        $listAllSubmitteds = DB::table('submitteds')->join('recruitments', 'submitteds.id', '=', 'recruitments.id')->select(
+            'submitteds.id',
+            'submitteds.jobid',
+            'submitteds.appid',
+            'submitteds.businessid',
+            'submitteds.edu',
+            'submitteds.exp',
+            'submitteds.skill',
+            'submitteds.obj',
+            'submitteds.status',
+            'recruitments.email',
+            'recruitments.nameBusiness',
+            'recruitments.name',
+            'recruitments.position',
+            'recruitments.area',
+            'recruitments.title',
+            'recruitments.major',
+            'recruitments.type',
+            'recruitments.gender',
+            'recruitments.rank',
+            'recruitments.exp as exprequired',
+            'recruitments.currency',
+            'recruitments.wage',
+            'recruitments.detail',
+            'recruitments.require',
+            'recruitments.benefit'
+        )->where('appid', $id)->paginate(10);
+        return $listAllSubmitteds;
     }
 
     public function listAllByJobId1($id){
-        $listAll = DB::select('SELECT
-        submitteds.id,
-        submitteds.jobid,
-        submitteds.appid,
-        submitteds.businessid,
-        applicants.email AS emailApp,
-        applicants.name AS nameApp,
-        submitteds.edu,
-        submitteds.exp,
-        submitteds.skill,
-        submitteds.obj,
-        submitteds.status,
-        recruitments.email,
-        recruitments.nameBusiness,
-        recruitments.name,
-        recruitments.position,
-        recruitments.area,
-        recruitments.title,
-        recruitments.major,
-        recruitments.type,
-        recruitments.gender,
-        recruitments.rank,
-        recruitments.exp AS exprequired,
-        recruitments.currency,
-        recruitments.wage,
-        recruitments.detail,
-        recruitments.require,
-        recruitments.benefit
-    FROM
-        submitteds
-    INNER JOIN recruitments ON submitteds.jobid = recruitments.id INNER JOIN applicants ON applicants.id = submitteds.appid
-    WHERE
-        jobid = ? and recruitments.email=? and status = 1', [$id, session()->get('emailSessionBs')]);
-        return $listAll;
+
+        $list = DB::table('submitteds')->join('recruitments', 'submitteds.jobid', '=', 'recruitments.id')->join('applicants', 'applicants.id', '=', 'submitteds.appid')->select(
+            'submitteds.id',
+            'submitteds.jobid',
+            'submitteds.appid',
+            'submitteds.businessid',
+            'applicants.email as emailApp',
+            'applicants.name as nameApp',
+            'submitteds.edu',
+            'submitteds.exp',
+            'submitteds.skill',
+            'submitteds.obj',
+            'submitteds.status',
+            'recruitments.email',
+            'recruitments.nameBusiness',
+            'recruitments.name',
+            'recruitments.position',
+            'recruitments.area',
+            'recruitments.title',
+            'recruitments.major',
+            'recruitments.gender',
+            'recruitments.rank',
+            'recruitments.exp AS exprequired',
+            'recruitments.currency',
+            'recruitments.wage',
+            'recruitments.detail',
+            'recruitments.require',
+            'recruitments.benefit'
+        )->where('jobid', $id)->where('recruitments.email', session()->get('emailSessionBs'))->where('status', '1')->paginate(10);
+        return $list;
     }
 
     public function listAllByJobId2($id){
-        $listAll = DB::select('SELECT
-        submitteds.id,
-        submitteds.jobid,
-        submitteds.appid,
-        submitteds.businessid,
-        applicants.email AS emailApp,
-        applicants.name AS nameApp,
-        submitteds.edu,
-        submitteds.exp,
-        submitteds.skill,
-        submitteds.obj,
-        submitteds.status,
-        recruitments.email,
-        recruitments.nameBusiness,
-        recruitments.name,
-        recruitments.position,
-        recruitments.area,
-        recruitments.title,
-        recruitments.major,
-        recruitments.type,
-        recruitments.gender,
-        recruitments.rank,
-        recruitments.exp AS exprequired,
-        recruitments.currency,
-        recruitments.wage,
-        recruitments.detail,
-        recruitments.require,
-        recruitments.benefit
-    FROM
-        submitteds
-    INNER JOIN recruitments ON submitteds.jobid = recruitments.id INNER JOIN applicants ON applicants.id = submitteds.appid
-    WHERE
-        jobid = ? and status = 2', [$id]);
-        return $listAll;
+        $list = DB::table('submitteds')->join('recruitments', 'submitteds.jobid', '=', 'recruitments.id')->join('applicants', 'applicants.id', '=', 'submitteds.appid')->select(
+            'submitteds.id',
+            'submitteds.jobid',
+            'submitteds.appid',
+            'submitteds.businessid',
+            'applicants.email as emailApp',
+            'applicants.name as nameApp',
+            'submitteds.edu',
+            'submitteds.exp',
+            'submitteds.skill',
+            'submitteds.obj',
+            'submitteds.status',
+            'recruitments.email',
+            'recruitments.nameBusiness',
+            'recruitments.name',
+            'recruitments.position',
+            'recruitments.area',
+            'recruitments.title',
+            'recruitments.major',
+            'recruitments.gender',
+            'recruitments.rank',
+            'recruitments.exp AS exprequired',
+            'recruitments.currency',
+            'recruitments.wage',
+            'recruitments.detail',
+            'recruitments.require',
+            'recruitments.benefit'
+        )->where('jobid', $id)->where('recruitments.email', session()->get('emailSessionBs'))->where('status', '2')->paginate(10);
+        return $list;
     }
 
     public function submittedApplicant($dataInsert){
-        DB::insert('INSERT INTO submitteds (`jobid`,appid,businessid,edu,`exp`,skill,obj,`status`) VALUES (?,?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO submitteds (jobid,appid,businessid,edu,exp,skill,obj,status) VALUES (?,?,?,?,?,?,?,?)', $dataInsert);
     }
 
     

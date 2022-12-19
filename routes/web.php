@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminActionController;
 use App\Http\Controllers\ManageRecruitmentController;
 use App\Http\Controllers\PostRecruitmentController;
 use App\Http\Controllers\SignInController;
@@ -194,7 +195,7 @@ Route::prefix('ad')->name('ad.')->group(function () {
     })->name('manage-recruitments-accept');
 
     Route::get('/manage-recruitments-accept', [
-        AdminRecruitmentController::class,
+        AdminActionController::class,
         'viewAccept'
     ])->name('manage-recruitments-accept');
 
@@ -204,7 +205,7 @@ Route::prefix('ad')->name('ad.')->group(function () {
     })->name('manage-recruitments-wait');
 
     Route::get('/manage-recruitments-wait', [
-        AdminRecruitmentController::class,
+        AdminActionController::class,
         'viewWait'
     ])->name('manage-recruitments-accept');
 
@@ -213,18 +214,30 @@ Route::prefix('ad')->name('ad.')->group(function () {
     })->name('manage-recruitments-reject');
 
     Route::get('/manage-recruitments-reject', [
-        AdminRecruitmentController::class,
+        AdminActionController::class,
         'viewReject'
     ])->name('manage-recruitments-accept');
 
     Route::get('/accept/{id}', [
-        AdminRecruitmentController::class,
+        AdminActionController::class,
         'accept'
     ]);
     Route::get('/reject/{id}', [
-        AdminRecruitmentController::class,
+        AdminActionController::class,
         'reject'
     ]);
+
+    Route::get('/manage-account', function () {
+        return view('ad.manage-account');
+    })->name('manage-account');
+
+    Route::post('/singin', [
+        AdminActionController::class,
+        'signIn'
+    ]);
+    Route::get('/signin', function () {
+        return view('ad.signin');
+    })->name('signin');
 });
 
 Route::get('/pagination', 'PaginationController@index');
