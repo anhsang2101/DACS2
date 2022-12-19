@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class SignInController extends Controller
 {
     //
-    private $ap,$bs;
+    private $ap,$bs,$ad;
     public function __construct()
     {
         $this->ap = new Applicants();
@@ -84,8 +84,16 @@ class SignInController extends Controller
     {
 
        if(session()->has('sessionAd')){
+            // $countAp = $this->ap->count();
+            // $countBs = $this->bs->count();
+            // $count = [$countAp, $countBs];
+            // return view('ad.index')->with(compact('count'));
+
+
+
             return view('ad.index');
-       }
+
+        }
        else{
         return view('ad.signin');
        }

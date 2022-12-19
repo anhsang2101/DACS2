@@ -24,4 +24,23 @@ class Business extends Model
         $bs = DB::select('SELECT * FROM businesses WHERE email=?', [$email]);
         return $bs;
     }
+
+    public function listAll(){
+        $listAll = DB::select('SELECT * FROM businesses ');
+        return $listAll;
+    }
+    
+
+    public function editBs($dataInsert){
+        DB::update('UPDATE `businesses` SET ... WHERE `id` = ?', $dataInsert); // not yet
+    }
+
+    public function deleteBs($id){
+        return DB::delete('DELETE FROM businesses WHERE `id`=?',[$id]);
+    }
+
+    public function count(){
+        return DB::select('SELECT COUNT(*) FROM businesses');
+    
+    }
 }

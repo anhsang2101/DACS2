@@ -44,7 +44,7 @@ body{
 
 </head>
 
-@include('ap.navbar')
+@include('bs.navbar')
 <body id="page-top">
 
     <!-- Page Wrapper -->

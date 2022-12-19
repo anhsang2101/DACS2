@@ -25,5 +25,23 @@ class Applicants extends Model
 
     }
 
+    public function listAll(){
+        $listAll = DB::select('SELECT * FROM applicants');
+        return $listAll;
+    }
+
+    public function editAp($dataInsert){
+        DB::update('UPDATE `applicants` SET `name`= ?,`email` = ? ,password = ? WHERE `id` = ?', $dataInsert);
+    }
+
+    public function deleteAp($id){
+        DB::delete('DELETE FROM applicants WHERE `id`=?',[$id]);
+    
+    }
+
+    public function count(){
+        return DB::select('SELECT COUNT(*) FROM applicants');
+    
+    }
 
 }

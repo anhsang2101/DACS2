@@ -14,6 +14,7 @@ use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\ViewSubmittedController;
 use App\Http\Controllers\SearchJobController;
 use App\Http\Controllers\AdminRecruitmentController;
+use App\Http\Controllers\ManageAccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -183,6 +184,17 @@ Route::get('/', [
 
 Route::prefix('ad')->name('ad.')->group(function () {
 
+    Route::get('/delete-bs/{id}', [
+        ManageAccountController::class,
+        'deleteBusiness'
+    ]);
+
+
+    Route::get('/delete-ap/{id}', [
+        ManageAccountController::class,
+        'deleteApplicant'
+    ]);
+
     Route::get('/signout', [
         SignOutController::class,
         'signOutAd'
@@ -235,9 +247,10 @@ Route::prefix('ad')->name('ad.')->group(function () {
         'reject'
     ]);
 
-    Route::get('/manage-account', function () {
-        return view('ad.manage-account');
-    })->name('manage-account');
+    Route::get('/manage-account', [
+        ManageAccountController::class,
+        'index'
+    ])->name('manage-account');
 
     Route::post('/singin', [
         AdminActionController::class,
