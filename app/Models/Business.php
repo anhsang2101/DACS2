@@ -43,4 +43,14 @@ class Business extends Model
         return DB::select('SELECT COUNT(*) FROM businesses');
     
     }
+    public function listAllCompany()
+    {
+        $list = DB::table('businesses')->select('id', 'nameBusiness', 'introduceBusiness')->paginate(15);
+        return $list;
+    }
+    public function search($keyword)
+    {
+        $list = DB::table('businesses')->select('id', 'nameBusiness', 'introduceBusiness')->where('nameBusiness', 'like','%' . $keyword . '%')->paginate(15);
+        return $list;
+    }
 }

@@ -13,7 +13,7 @@ use App\Http\Controllers\ViewHomeController;
 use App\Http\Controllers\PaginationController;
 use App\Http\Controllers\ViewSubmittedController;
 use App\Http\Controllers\SearchJobController;
-use App\Http\Controllers\AdminRecruitmentController;
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\ManageAccountController;
 use Illuminate\Support\Facades\Route;
 
@@ -173,6 +173,21 @@ Route::prefix('ap')->name('ap.')->group(function () {
         SearchJobController::class,
         'index'
     ])->name('ap.searchjob');
+
+    Route::get('/company', function () {
+        return view('ap.company');
+    })->name('company');
+
+    Route::get('/company', [
+        BusinessController::class,
+        'index'
+    ]);
+
+    Route::get('/searchcompany', [
+        BusinessController::class,
+        'search'
+    ])->name('ap.searchcompany');
+
 });
 
 Route::get('/', [
@@ -261,8 +276,14 @@ Route::prefix('ad')->name('ad.')->group(function () {
     })->name('signin');
 });
 
+
 Route::get('/pagination', 'PaginationController@index');
 Route::get(('/searchjob'), [
     'as' => 'ap.searchjob',
     'uses' => 'App\Http\Controllers\SearchJobController@index'
+]);
+
+Route::get(('/seachcompany'), [
+    'as' => 'ap.searchcompany',
+    'uses' => 'App\Http\Controllers\BusinessController@search'
 ]);
