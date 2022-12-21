@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Admin;
+
 class AdminActionController extends Controller
 {
     private $admin;
@@ -24,20 +25,35 @@ class AdminActionController extends Controller
     }
     public function viewAccept()
     {
-        $listAll = $this->admin->viewAccept();
-        return view('ad.manage-recruitments-accept')->with(compact('listAll'));
+        if (session()->has('sessionAd')) {
+
+            $listAll = $this->admin->viewAccept();
+            return view('ad.manage-recruitments-accept')->with(compact('listAll'));
+        } else {
+            return view('ad.signin');
+        }
     }
 
     public function viewWait()
     {
-        $listAll = $this->admin->viewWait();
-        return view('ad.manage-recruitments-wait')->with(compact('listAll'));
+
+        if (session()->has('sessionAd')) {
+            $listAll = $this->admin->viewWait();
+            return view('ad.manage-recruitments-wait')->with(compact('listAll'));
+        } else {
+            return view('ad.signin');
+        }
     }
 
     public function viewReject()
     {
-        $listAll = $this->admin->viewReject();
-        return view('ad.manage-recuitments-reject')->with(compact('listAll'));
+
+        if (session()->has('sessionAd')) {
+            $listAll = $this->admin->viewReject();
+            return view('ad.manage-recuitments-reject')->with(compact('listAll'));
+        } else {
+            return view('ad.signin');
+        }
     }
 
     public function accept($id)

@@ -23,6 +23,9 @@ class SignOutController extends Controller
     public function signOutAd(Request $request){
 
         $request->session()->forget('sessionAd');
+        $request->session()->forget('countAp');
+        $request->session()->forget('countBs');
+        $request->session()->forget('countRe');
         
         return redirect()->route('ad.index');
     }

@@ -225,33 +225,22 @@ Route::prefix('ad')->name('ad.')->group(function () {
         'signInAd',
     ])->name('signIn');
 
-    Route::get('/manage-recruitments-accept', function () {
-        return view('ad.manage-recruitments-accept');
-    })->name('manage-recruitments-accept');
 
     Route::get('/manage-recruitments-accept', [
         AdminActionController::class,
         'viewAccept'
     ])->name('manage-recruitments-accept');
 
-
-    Route::get('/manage-recruitments-wait', function () {
-        return view('ad.manage-recruitments-wait');
-    })->name('manage-recruitments-wait');
-
     Route::get('/manage-recruitments-wait', [
         AdminActionController::class,
         'viewWait'
-    ])->name('manage-recruitments-accept');
+    ])->name('manage-recruitments-wait');
 
-    Route::get('/manage-recruitments-reject', function () {
-        return view('ad.manage-recruitments-reject');
-    })->name('manage-recruitments-reject');
 
     Route::get('/manage-recruitments-reject', [
         AdminActionController::class,
         'viewReject'
-    ])->name('manage-recruitments-accept');
+    ])->name('manage-recruitments-reject');
 
     Route::get('/accept/{id}', [
         AdminActionController::class,

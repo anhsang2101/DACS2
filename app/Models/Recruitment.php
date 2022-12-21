@@ -37,4 +37,9 @@ class Recruitment extends Model
     public function deleteRecruitment($id){
         return DB::delete('DELETE FROM recruitments WHERE `id`=?',[$id]);
     }
+    public function count(){
+        $list =  DB::table('recruitments')->where('isAccept', 1);
+        return $list->count();
+    
+    }
 }

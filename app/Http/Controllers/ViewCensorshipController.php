@@ -58,7 +58,7 @@ class ViewCensorshipController extends Controller
 
             return back();
         } else {
-            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
+            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi sử dụng chức năng này');
         }
     }
 }

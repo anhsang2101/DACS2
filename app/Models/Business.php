@@ -40,7 +40,9 @@ class Business extends Model
     }
 
     public function count(){
-        return DB::select('SELECT COUNT(*) FROM businesses');
+        // return DB::select('SELECT COUNT(*) FROM businesses');
+        $list = DB::table('businesses')->get();
+        return $list->count();
     
     }
     public function listAllCompany()

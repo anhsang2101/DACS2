@@ -40,7 +40,9 @@ class Applicants extends Model
     }
 
     public function count(){
-        return DB::select('SELECT COUNT(*) FROM applicants');
+        // $list = DB::select('SELECT * FROM applicants');
+        $list = DB::table('applicants')->get();
+        return $list->count();
     
     }
 
