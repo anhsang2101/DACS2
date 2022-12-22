@@ -16,7 +16,7 @@ class Business extends Model
     }
 
     public function signUp($dataInsert){
-        DB::insert('INSERT INTO businesses (email,`password`,namePersonal,phonePersonal,gender,nameBusiness,phoneBusiness,introduceBusiness,personnelSize,`location`) VALUES (?,?,?,?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO businesses (email,`password`,namePersonal,phonePersonal,gender,nameBusiness,phoneBusiness,introduceBusiness,personnelSize,`location`, `image`, cover) VALUES (?,?,?,?,?,?,?,?,?,?,?, ?)', $dataInsert);
 
     } 
 
@@ -47,12 +47,18 @@ class Business extends Model
     }
     public function listAllCompany()
     {
-        $list = DB::table('businesses')->select('id', 'nameBusiness', 'introduceBusiness')->paginate(15);
+        $list = DB::table('businesses')->select('id', 'image','cover', 'nameBusiness', 'introduceBusiness')->paginate(15);
         return $list;
     }
     public function search($keyword)
     {
         $list = DB::table('businesses')->select('id', 'nameBusiness', 'introduceBusiness')->where('nameBusiness', 'like','%' . $keyword . '%')->paginate(15);
         return $list;
+    }
+
+    public function getDetail($id)
+    {
+        $detail = DB::select('SELECT * FROM businesses WHERE `id` = ?', [$id]);
+        return $detail;
     }
 }

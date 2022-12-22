@@ -131,6 +131,12 @@ Route::prefix('ap')->name('ap.')->group(function () {
         'index'
     ])->name('detail-job');
 
+    Route::get('/detail-company/{id}', [
+        ViewDetailController::class,
+        'company'
+    ])->name('detail-company');
+
+
     Route::get('/signout', [
         SignOutController::class,
         'signOutAp'

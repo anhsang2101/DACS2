@@ -1,68 +1,49 @@
-<div class="modal-body">
-                        <div id="frm-upload">
-                            {{-- <div class="row form-group">
-                                <div class="col-sm-12 col-xs-12">
-                                    <strong class="input-label text-dark-gray">Tải lên CV từ máy tính</strong><br>
-                                    <span class="text-gray text-small">File doc, docx, pdf. Tối đa 5MB.</span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="jFiler jFiler-theme-dragdropbox"><input type="file" name="cv_file" id="filer_input" style="display: none; position: absolute; left: -9999px; top: -9999px; z-index: -9999;" accept="doc, docx, pdf">
-                                    <div class="jFiler-input-dragDrop">
-                                        <div class="jFiler-input-inner">
-                                            <div class="jFiler-input-icon"><i class="fa fa-upload"></i></div><input type="file" id="filecv" name="filecv">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
-                            <div class="form-group">
-                                <label>Họ và tên<span class="text-danger">*</span> :</label>
-                                <input disabled type="text" value="{{ Session::get('sessionAccount')[0]->name }}" placeholder="Họ tên hiển thị với Nhà tuyển dụng" name="fullname" class="form-control input-sm" style="font-size: 12px">
-                                <p class="text-small text-danger italic" id="fullnameErrorMessage" style="margin-top: 5px; display: none"></p>
-                            </div>
-                            <div class="row">
-
-                                <input hidden type="text" value="{{ $detail[0]->id }}" placeholder="" name="jobid" class="form-control input-sm" style="font-size: 12px">
-                                <input hidden type="text" value="{{ $detailbusiness[0]->id }}" placeholder="" name="businessid" class="form-control input-sm" style="font-size: 12px">
-
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label>Email<span class="text-danger">*</span> :</label>
-                                        <input required disabled type="text" value="{{ Session::get('sessionAccount')[0]->email }}" placeholder="Email hiển thị với Nhà tuyển dụng" name="email" class="form-control input-sm" style="font-size: 12px">
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label>Số điện thoại<span class="text-danger">*</span> :</label>
-                                        <input required type="text" value="" placeholder="Số điện thoại hiển thị với Nhà tuyển dụng" name="phone" class="form-control input-sm" style="font-size: 12px">
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label>Học vấn<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Học vấn" name="edu" class="form-control input-sm" style="font-size: 12px"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label>Kinh nghiệm<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Kinh nghiệm làm việc của bạn" name="exp" class="form-control input-sm" style="font-size: 12px"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label>Kỹ năng<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Kỹ năng" name="skill" class="form-control input-sm" style="font-size: 12px"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="form-group">
-                                        <label>Mục tiêu nghề nghiệp<span class="text-danger">*</span> :</label>
-                                        <textarea required type="text" value="" placeholder="Mục tiêu nghề nghiệp của bạn" name="obj" class="form-control input-sm" style="font-size: 12px"></textarea>
-                                    </div>
-                                </div>
-                                @csrf
-                            </div>
-
-                        </div>
-                    </div>
+<div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="720155" data-job-position="1" data-box="BoxRecruitmentInCompany">
+    <div class="avatar">
+        <a target="_blank" href="https://www.topcv.vn/viec-lam/nhan-vien-to-chuc-su-kien-marketing-truyen-thong/720155.html?ta_source=JobListInNormalCompany" class="company-logo">
+            <img src="https://cdn.topcv.vn/80/company_logos/cong-ty-co-phan-truyen-thong-vmark-5d6354b2d520c.jpg" class="w-100" alt="Công ty Cổ phần Truyền thông VMARK" title="Nhân Viên Tổ Chức Sự Kiện (Marketing &amp; Truyền Thông)">
+        </a>
+    </div>
+    <div class="body">
+        <div class="content">
+            <div class="ml-auto">
+                <h3 class="title">
+                    <a target="_blank" class="underline-box-job" href="https://www.topcv.vn/viec-lam/nhan-vien-to-chuc-su-kien-marketing-truyen-thong/720155.html?ta_source=JobListInNormalCompany">
+                        <span class="bold transform-job-title" data-toggle="tooltip" title="" data-placement="top" data-container="body" data-original-title="Nhân Viên Tổ Chức Sự Kiện (Marketing &amp; Truyền Thông)">Nhân Viên Tổ Chức Sự Kiện (Marketing &amp; Truyền Thông)</span>
+                    </a>
+                </h3>
+                <p class="company underline-box-job">
+                    <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-truyen-thong-vmark/25699.html" data-toggle="tooltip" title="" data-placement="top" data-container="body" target="_blank" data-original-title="Công ty Cổ phần Truyền thông VMARK">Công ty Cổ phần Truyền thông VMARK</a>
+                </p>
+            </div>
+            <div class="mr-auto text-right">
+                <p class="deadline">
+                    Còn <strong>40</strong> ngày để ứng tuyển
+                </p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="label-content ml-auto">
+                <label class="salary">9-12 triệu</label>
+                <label class="address" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-container="body" data-original-title="<p style='text-align: left'>Hà Nội: Tây Hồ</p>">Hà Nội</label>
+                <label class="time">15 giờ trước</label>
+            </div>
+            <div class="icon mr-auto">
+                <div id="box-save-job-720155" class="box-save-job  box-save-job-hover   job-notsave " style="width: 23px">
+                    <a href="javascript:void(0)" class="btn-save save" data-id="720155" data-title="Nhân Viên Tổ Chức Sự Kiện (Marketing &amp; Truyền Thông)">
+                        <span id="save-job-loading" style="display: none;">
+                            <img src="https://www.topcv.vn/v3/images/ap-loading.gif" style="width: 20px">
+                        </span>
+                        <i class="fa-light fa-heart"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="btn-unsave unsave text-highlight" data-toggle="tooltip" title="" data-id="720155" data-title="Nhân Viên Tổ Chức Sự Kiện (Marketing &amp; Truyền Thông)" data-placement="top" data-container="body" data-original-title="Bỏ lưu">
+                        <span id="unsave-job-loading" style="display: none;">
+                            <img src="https://www.topcv.vn/v3/images/ap-loading.gif" style="width: 20px">
+                        </span>
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

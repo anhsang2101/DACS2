@@ -70,7 +70,7 @@ class PostRecruitmentController extends Controller
                 $request->detail,
                 $request->require,
                 $request->benefit,
-                '1'
+                '1',
             ];
     
             $this->recruitment->post($dataInsert);

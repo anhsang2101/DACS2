@@ -140,7 +140,7 @@
                                 @if ($errors->any())
                                 <div class="alert alert-danger">Đăng ký không thành công</div>
                                 @endif
-                                <form action="signup" method="POST" id="form-register">
+                                <form action="signup" method="POST" id="form-register" enctype='multipart/form-data'>
                                     <span class="font-weight-bold">TÀI KHOÁN</span>
                                     <input type="hidden" name="_token" value="hNrWUqkhUTLsyWQw3JEhCWLAwakXf2qoocyrRSuc">
                                     <div class="form-group mb-3">
@@ -235,6 +235,33 @@
                                         <span style="color: red">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="mb-1">Logo đại diện công ty</label>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                                            </div>
+                                            <input type="file" accept="image/*" name="image" class="form-control-file" value="">
+                                        </div>
+                                        @error('photo')
+                                        <span style="color: red">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="email" class="mb-1">Ảnh cover công ty</label>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                                            </div>
+                                            <input type="file" accept="image/*" name="cover" class="form-control-file" value="">
+                                        </div>
+                                        @error('cover')
+                                        <span style="color: red">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
                                     <div class="form-group mb-3">
                                         <label for="email" class="mb-1">Số điện thoại công ty</label>
                                         <div class="input-group ">

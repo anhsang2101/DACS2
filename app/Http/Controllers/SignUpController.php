@@ -6,22 +6,25 @@ use App\Models\Applicants;
 use App\Models\Business;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 class SignUpController extends Controller
 {
     //
-    private $ap,$bs;
-    public function __construct(){
+    private $ap, $bs;
+    public function __construct()
+    {
         $this->ap = new Applicants();
         $this->bs = new Business();
     }
 
-    public function signUpAp(Request $request){
+    public function signUpAp(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|regex:/(.+)@(.+)\.(.+)/i|unique:applicants',
             'password' => 'required',
             'confirmPassword' => 'required'
-        ],[
+        ], [
             'name.required' => 'Vui lòng nhập họ tên',
             'password.required' => 'Vui lòng nhập mật khẩu',
             'email.required' => 'Vui lòng nhập email',
@@ -29,7 +32,7 @@ class SignUpController extends Controller
             'email.unique' => 'Email đã tồn tại',
             'confirmPassword.required' => 'Vui lòng nhập lại mật khẩu',
         ]);
-        
+
         $hashedPassword = Hash::make($request->password);
         $dataInsert = [
             $request->name,
@@ -41,7 +44,8 @@ class SignUpController extends Controller
         return redirect()->route('ap.signup')->with('msg', 'Đăng ký thành công');
     }
 
-    public function signUpBs(Request $request){
+    public function signUpBs(Request $request)
+    {
         $request->validate([
             'email' => 'required|regex:/(.+)@(.+)\.(.+)/i|unique:businesses',
             'password' => 'required',
@@ -57,7 +61,7 @@ class SignUpController extends Controller
             'personnelSize' => 'required',
             'location' => 'required',
 
-        ],[
+        ], [
 
             'password.required' => 'Vui lòng nhập mật khẩu',
             'email.required' => 'Vui lòng nhập email',
@@ -73,10 +77,20 @@ class SignUpController extends Controller
             'introduceBusiness.required' => 'Vui lòng nhập mô tả công ty',
             'personnelSize.required' => 'vui lòng nhập quy mô',
             'location.required' => 'Vui lòng nhập địa điểm',
-            
+
         ]);
         $hashedPassword = Hash::make($request->password);
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file_name = $file->getClientOriginalName();
+            $file->move(public_path('img/logo'), $file_name);
+        }
 
+        if ($request->hasFile('cover')) {
+            $file1 = $request->file('cover');
+            $file_name1= $file1->getClientOriginalName();
+            $file1->move(public_path('img/cover'), $file_name1);
+        }
         $dataInsert = [
             $request->email,
             $hashedPassword,
@@ -88,6 +102,8 @@ class SignUpController extends Controller
             $request->introduceBusiness,
             $request->personnelSize,
             $request->location,
+            $file_name,
+            $file_name1,
         ];
 
         $this->bs->signUp($dataInsert);

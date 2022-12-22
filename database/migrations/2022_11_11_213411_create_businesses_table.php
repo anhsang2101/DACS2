@@ -28,8 +28,8 @@ return new class extends Migration
             $table->string('introduceBusiness');
             $table->string('personnelSize');
             $table->string('location');
-
-
+            $table->string('image');
+            $table->string('cover');
             $table->timestamps();
         });
     }

@@ -175,9 +175,9 @@
                         </nav>
                         <div class="box-white box-detail-job">
                             <div class="box-header">
-                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" title="Công ty Cổ phần MISA" class="company-logo">
+                                <a href="" title="Công ty Cổ phần MISA" class="company-logo">
                                     <div class="box-company-logo">
-                                        <img src="{{url('/img/shopee.jpg')}}" alt="Công ty Cổ phần MISA" class="img-responsive">
+                                        <img src="{{asset('/img/logo/' .$detailbusiness[0]->image)}}" alt="Công ty Cổ phần MISA" class="img-responsive">
                                     </div>
                                 </a>
                                 <div class="box-info-job">

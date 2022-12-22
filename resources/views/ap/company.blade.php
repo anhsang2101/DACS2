@@ -189,20 +189,20 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="box-company item-hover">
                         <div class="company-banner">
-                            <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-giao-duc-dao-tao-imap-viet-nam/20324.html">
+                            <a href="/ap/detail-company/{{ $item->id }}">
                                 <div class="cover-wraper">
-                                    <img src="https://static.topcv.vn/company_covers/cong-ty-co-phan-giao-duc-amp-dao-tao-imap-viet-nam-00e5c5f8d6dcba97c61d6f9f309d1896-5f6abe680ae0d.jpg" alt="Công ty Cổ phần Giáo dục &amp; Đào tạo IMAP Việt Nam" class="img-fluid">
+                                    <img src="{{asset('/img/cover/' .$item->cover)}}" alt="Công ty Cổ phần Giáo dục &amp; Đào tạo IMAP Việt Nam" class="img-fluid">
                                 </div>
                             </a>
                             <div class="company-logo">
-                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-giao-duc-dao-tao-imap-viet-nam/20324.html">
-                                    <img class="img-fluid" src="https://static.topcv.vn/company_logos/cong-ty-co-phan-giao-duc-dao-tao-imap-viet-nam-5da97e1f22484.jpg" alt="Công ty Cổ phần Giáo dục &amp; Đào tạo IMAP Việt Nam">
+                                <a href="/ap/detail-company/{{ $item->id }}">
+                                    <img class="img-fluid" src="{{asset('/img/logo/' .$item->image)}}" alt="Công ty Cổ phần Giáo dục &amp; Đào tạo IMAP Việt Nam">
                                 </a>
                             </div>
                         </div>
                         <div class="company-info">
                             <h3>
-                                <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-giao-duc-dao-tao-imap-viet-nam/20324.html" class="company-name" target="_blank">{{ $item->nameBusiness }}</a>
+                                <a href="/ap/detail-company/{{ $item->id }}" class="company-name" target="_blank">{{ $item->nameBusiness }}</a>
                             </h3>
                             <div class="company-description">
                                 <p>{{ $item->introduceBusiness }}</p>
