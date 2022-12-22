@@ -133,4 +133,16 @@ class Submitted extends Model
     public function setStatusNo($id){
         DB::update('UPDATE `submitteds` SET status = 0 WHERE `id` = ?', [$id]);
     }
+
+    public function getIn4ToMail($id){
+        $email = DB::table('submitteds')->join('recruitments', 'submitteds.jobid', '=', 'recruitments.id')->join('applicants', 'applicants.id', '=', 'submitteds.appid')->select(
+            'applicants.email',
+            'applicants.name',
+            'recruitments.position',
+            'recruitments.nameBusiness',
+            'recruitments.rank',
+        )->where('submitteds.id', $id)->get();
+        // dd($email);
+        return $email;
+    }
 }

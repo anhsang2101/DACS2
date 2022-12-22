@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendMail;
 use App\Models\Submitted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ViewCensorshipController extends Controller
 {
@@ -23,7 +25,7 @@ class ViewCensorshipController extends Controller
            $list = $this->submitted->listAllByJobId1($id);
             return view('bs.censorship')->with(compact('list'));
         } else {
-            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
+            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khidùng chức năng này');
         }
     }
 
@@ -34,7 +36,7 @@ class ViewCensorshipController extends Controller
             $list = $this->submitted->listAllByJobId2($id);
             return view('bs.censorshipped')->with(compact('list'));
         } else {
-            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
+            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi dùng chức năng này');
         }
     }
 
@@ -45,9 +47,18 @@ class ViewCensorshipController extends Controller
 
             $this->submitted->setStatusYes($id);
 
+            $in4 = $this->submitted->getIn4ToMail($id);
+
+            $mailData = [
+                'title' => 'Xin chào '.$in4[0]->name,
+                'body' => 'Bạn đã được duyệt đơn xin vào vị trí '.$in4[0]->position.', chức vụ '.$in4[0]->rank.' ở '.$in4[0]->nameBusiness
+            ];
+             
+            Mail::to($in4[0]->email)->send(new SendMail($mailData));
+
             return back();
         } else {
-            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi ứng tuyển');
+            return redirect()->route('bs.signin')->with('msg', 'Bạn phải đăng nhập trước khi dùng chức năng này');
         }
     }
     public function censorshipNo($id)
@@ -55,6 +66,15 @@ class ViewCensorshipController extends Controller
         if (session()->has('emailSessionBs')) {
 
             $this->submitted->setStatusNo($id);
+
+            $in4 = $this->submitted->getIn4ToMail($id);
+
+            $mailData = [
+                'title' => 'Xin chào '.$in4[0]->name,
+                'body' => 'Bạn không được duyệt đơn xin vào vị trí '.$in4[0]->position.', chức vụ '.$in4[0]->rank.' ở '.$in4[0]->nameBusiness
+            ];
+             
+            Mail::to($in4[0]->email)->send(new SendMail($mailData));
 
             return back();
         } else {
