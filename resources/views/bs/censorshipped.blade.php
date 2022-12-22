@@ -50,7 +50,7 @@
 
 <body id="page-top">
 
-    @include('ap.navbar')
+    @include('bs.navbar')
     <!-- Page Wrapper -->
     <div id="wrapper">
 
