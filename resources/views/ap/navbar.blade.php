@@ -16,7 +16,7 @@
                     Việc làm
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/ap/job"><i class="icon fa-light fa-radar"></i>Tìm việc làm</a>
+                    <!-- <a class="dropdown-item" href="/ap/job"><i class="icon fa-light fa-radar"></i>Tìm việc làm</a> -->
                     <a class="dropdown-item" href="/ap/submitted">Việc làm đã ứng tuyển</a>
                     <a class="dropdown-item" href="/ap/favoritesjob">Việc làm đã lưu</a>
                     <a class="dropdown-item" href="/ap/job-it">Việc làm IT</a>
