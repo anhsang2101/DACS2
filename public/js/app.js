@@ -182,10 +182,7 @@ var datetime =
 console.log(datetime);
 function addfvr(id) {
     console.log(id);
-    var like = "like" + id;
-    var unlike = "unlike" + id;
-    document.getElementById().style.display = "none";
-    document.getElementById().style.display = "block";
+    document.getElementById(id).textContent='Đã lưu';
     var id = id;
     var jobname = document.getElementById("jobname").textContent;
     var businessname = document.getElementById("businessname").textContent;
@@ -230,12 +227,12 @@ function showfvr() {
             '<div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="891088" data-job-position="1" data-box="BoxSearchResult">' +
                 '<div class="avatar">' +
                 '<a target="_blank" href="https://www.topcv.vn/viec-lam/chuyen-vien-dich-vu-cham-soc-hoc-vien-thu-nhap-10-20-trieu-thang/891088.html" class="company-logo">' +
-                '<img src="https://cdn.topcv.vn/80/company_logos/RbJ9FYs5xgk3u1JBX7C2yKshm0eR1QoX_1669364788____df1ca19345c25306e78c6441441981ca.png" class="w-100" alt="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL" title="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL">' +
+                '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiIy3sN0GAZvZvQ6PvCPZgKSk_YNVa4oK3pcQYf7F62p1Iehg3EhOX7EmXmZJKpynfbVE&usqp=CAU" class="w-100" alt="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL" title="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL">' +
                 "</a>" +
                 "</div>" +
                 '<div class="body">' +
                 '<div class="content">' +
-                '<div class="ml-auto">' +
+                '<div class="ml">' +
                 '<h3 class="title">' +
                 '<a target="_blank" class="underline-box-job" href="https://www.topcv.vn/viec-lam/chuyen-vien-dich-vu-cham-soc-hoc-vien-thu-nhap-10-20-trieu-thang/891088.html">' +
                 '<span class="bold transform-job-title" data-toggle="tooltip" title="" data-placement="top" data-container="body" data-original-title="' +
@@ -269,13 +266,13 @@ function showfvr() {
                 "</div>" +
                 "</div>" +
                 "</div>" +
-                '<div class="mr-auto text-right">' +
+                '<div class="mr-auto text-right" style="margin-left: 450px">' +
                 '<p class="saved_at">' +
                 datetime +
                 "</p>" +
                 "<div>" +
                 '<div id="box-save-job-873859" class="box-save-job">' +
-                '<button onclick="removefvr(' +
+                '<button id="unsave" onclick="removefvr(' +
                 id +
                 ')">' +
                 '<i class="fa-solid fa-trash"></i> Bỏ lưu' +

@@ -155,7 +155,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-cancel btn-sm" data-dismiss="modal">Đóng lại</button>
-                        <button type="submit" class="btn btn-primary btn-sm" id="btn-apply">Nộp CV</button>
+                        <button type="submit" class="btn btn-primary btn-sm" id="btn-apply">Nộp</button>
                     </div>
                 </form>
             </div>
@@ -177,11 +177,11 @@
                             <div class="box-header">
                                 <a href="https://www.topcv.vn/cong-ty/cong-ty-co-phan-misa/3786.html" title="Công ty Cổ phần MISA" class="company-logo">
                                     <div class="box-company-logo">
-                                        <img src="https://cdn.topcv.vn/80/company_logos/YVVFSY05ZUhqjlVHtBl2kOD1a189WFj0_1652947920____d78c5dd2ab820dcbb9a367b40e712067.jpg" alt="Công ty Cổ phần MISA" class="img-responsive">
+                                        <img src="{{url('/img/shopee.jpg')}}" alt="Công ty Cổ phần MISA" class="img-responsive">
                                     </div>
                                 </a>
                                 <div class="box-info-job">
-                                    <h1 class="job-title text-highlight bold" style="overflow-wrap:break-word;">
+                                    <h1 class="job-title text-highlight bold" id="jobname" style="overflow-wrap:break-word;">
                                         {{ $detail[0]->title }} - {{ $detail[0]->position }}
                                         <span class="icon-verified-employer level-five">
                                             <i class="fa-solid fa-circle-check" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-original-title="
@@ -193,7 +193,7 @@
   <span><i class='fa-solid fa-circle-check color-green'></i> Chưa có lịch sử bị báo cáo tin đăng</span><br>"></i></span>
                                     </h1>
                                     <div class="company-title">
-                                        <a href="" class="text-dark-blue">{{ $detailbusiness[0]->nameBusiness }}</a>
+                                        <a href="" class="text-dark-blue" id="businessname">{{ $detailbusiness[0]->nameBusiness }}</a>
                                     </div>
 
                                     <div class="job-deadline">
@@ -207,7 +207,7 @@
                                             <i class="fa-regular fa-paper-plane"></i> ỨNG TUYỂN NGAY
                                         </button>
 
-                                        <button type="button" class="btn btn-save">
+                                        <button type="button" onclick="addfvr(this.id)" id="{{$detail[0]->id}}" class="btn btn-save">
                                             <i class="fa-regular fa-heart"></i> LƯU TIN
                                         </button>
                                     </div>
@@ -243,16 +243,16 @@
                                     <i class="fa-solid fa-coins"></i>
                                     <div>
                                         <strong>Mức lương </strong> <br>
-                                        <span>
-                                            {{ $detail[0]->wage }} {{ $detail[0]->currency }}
-                                        </span>
+                                        <span id="jobsalary">
+                                            {{ $detail[0]->wage }}
+                                        </span> {{ $detail[0]->currency }}
                                     </div>
                                 </div>
                                 <div class="box-item">
                                     <i class="fa-solid fa-map-marker"></i>
                                     <div>
                                         <strong>Khu vực</strong> <br>
-                                        <span>{{ $detail[0]->area }}</span>
+                                        <span id="jobarea">{{ $detail[0]->area }}</span>
                                     </div>
                                 </div>
                                 <div class="box-item">
@@ -338,7 +338,7 @@
                             <h3>Chia sẻ tin tuyển dụng</h3>
                             <p>Sao chép đường dẫn</p>
                             <div class="box-copy">
-                                <div class="url-copy">https://www.topcv.vn/viec-lam/truong-tram-giao-nhan-mien-nam/866144.html</div>
+                                <div class="url-copy"></div>
                                 <div class="btn-copy">
                                     <button class="btn-secondary-hover" onclick="copyToClipboard('.url-copy')"><i class="fa-regular fa-copy"></i></button>
                                 </div>
@@ -349,7 +349,7 @@
                             <h3>Chia sẻ tin tuyển dụng</h3>
                             <p>Sao chép đường dẫn</p>
                             <div class="box-copy">
-                                <div class="url-copy">https://www.topcv.vn/viec-lam/truong-tram-giao-nhan-mien-nam/866144.html</div>
+                                <div class="url-copy"></div>
                                 <div class="btn-copy">
                                     <button class="btn-secondary-hover" onclick="copyToClipboard('.url-copy')"><i class="fa-regular fa-copy"></i></button>
                                 </div>
@@ -360,7 +360,7 @@
                             <h3>Chia sẻ tin tuyển dụng</h3>
                             <p>Sao chép đường dẫn</p>
                             <div class="box-copy">
-                                <div class="url-copy">https://www.topcv.vn/viec-lam/truong-tram-giao-nhan-mien-nam/866144.html</div>
+                                <div class="url-copy"></div>
                                 <div class="btn-copy">
                                     <button class="btn-secondary-hover" onclick="copyToClipboard('.url-copy')"><i class="fa-regular fa-copy"></i></button>
                                 </div>
@@ -376,8 +376,6 @@
             <div class="box-info-company box-white">
                 <div class="box-title">
                     <h2 class="box-name">{{ $detailbusiness[0]->nameBusiness }}</h2>
-                    <a href="https://www.topcv.vn/cong-ty/cong-ty-tnhh-shopee-express/51172.html" target="_blank">Xem
-                        trang công ty <i class="fa-solid fa-arrow-up-right"></i></a>
                 </div>
                 <div class="box-info">
                     <div class="box-item">

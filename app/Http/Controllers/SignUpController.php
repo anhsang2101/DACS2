@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Applicants;
 use App\Models\Business;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 class SignUpController extends Controller
 {
     //
@@ -18,22 +18,23 @@ class SignUpController extends Controller
     public function signUpAp(Request $request){
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:applicants',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i|unique:applicants',
             'password' => 'required',
             'confirmPassword' => 'required'
         ],[
             'name.required' => 'Vui lòng nhập họ tên',
             'password.required' => 'Vui lòng nhập mật khẩu',
             'email.required' => 'Vui lòng nhập email',
+            'email.regex' => 'Vui lòng nhập đúng định dạng email',
             'email.unique' => 'Email đã tồn tại',
             'confirmPassword.required' => 'Vui lòng nhập lại mật khẩu',
         ]);
         
-
+        $hashedPassword = Hash::make($request->password);
         $dataInsert = [
             $request->name,
             $request->email,
-            $request->password,
+            $hashedPassword,
         ];
 
         $this->ap->signUp($dataInsert);
@@ -42,7 +43,7 @@ class SignUpController extends Controller
 
     public function signUpBs(Request $request){
         $request->validate([
-            'email' => 'required|unique:businesses',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i|unique:businesses',
             'password' => 'required',
             'confirmPassword' => 'required',
 
@@ -60,6 +61,7 @@ class SignUpController extends Controller
 
             'password.required' => 'Vui lòng nhập mật khẩu',
             'email.required' => 'Vui lòng nhập email',
+            'email.regex' => 'Vui lòng nhập đúng định dạng email',
             'email.unique' => 'Email đã tồn tại',
             'confirmPassword.required' => 'Vui lòng nhập lại mật khẩu',
             'namePersonal.required' => 'Vui lòng nhập họ tên nhà tuyển dụng',
@@ -73,11 +75,11 @@ class SignUpController extends Controller
             'location.required' => 'Vui lòng nhập địa điểm',
             
         ]);
-        
+        $hashedPassword = Hash::make($request->password);
 
         $dataInsert = [
             $request->email,
-            $request->password,
+            $hashedPassword,
             $request->namePersonal,
             $request->phonePersonal,
             $request->gender,

@@ -72,7 +72,7 @@
     <div id="main">
         <div class="container" id="box-save-job">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="box-white">
                         <div class="banner">
                             <h1 class="title">Việc làm đã lưu</h1>
@@ -83,54 +83,6 @@
 
                         </div>
                         <div class="lists" id="lists">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 right-box">
-                    <div class="interested">
-                        <div class="box box-white box-no-padding" id="company-spotlight">
-                            <h3 class="title-spotlight">Có thể bạn quan tâm</h3>
-                            <div class="spotlight-company">
-                                <div class="spotlight-image">
-                                    <a href="https://www.topcv.vn/brand/chailease">
-                                        <div class="spotlight-cover-wraper">
-                                            <img src="https://cdn.topcv.vn/247/company_covers/cong-ty-cho-thue-tai-chinh-tnhh-mtv-quoc-te-chailease-faaaab73a31c881be517e4d50fc0bef2-6324407085818.jpg" data-src="https://cdn.topcv.vn/247/company_covers/cong-ty-cho-thue-tai-chinh-tnhh-mtv-quoc-te-chailease-faaaab73a31c881be517e4d50fc0bef2-6324407085818.jpg" alt="Công ty Cho thuê tài chính TNHH MTV Quốc tế Chailease" title="Công ty Cho thuê tài chính TNHH MTV Quốc tế Chailease" class="spotlight-cover">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="spotlight-info">
-                                    <div class="company-name"><a class="text-highlight bold text_uppercase" style="font-size: 15px;" href="https://www.topcv.vn/brand/chailease">Công ty Cho thuê tài chính TNHH MTV Quốc tế Chailease</a></div>
-                                </div>
-                                <div class="job">
-                                    <a href="https://www.topcv.vn/brand/chailease/tuyen-dung/thuc-tap-sinh-quan-he-khach-hang-doanh-nghiep-tu-van-tai-chinh-j882447.html?ta_source=JobSearchList" target="_blank" data-toggle="tooltip" title="" data-placement="top" class="job-name text-dark-blue underline-box-job" data-original-title="Thực Tập Sinh Quan Hệ Khách Hàng Doanh Nghiệp (Tư Vấn Tài Chính)">Thực Tập Sinh Quan Hệ Khách Hàng Doanh Nghiệp (Tư Vấn Tài Chính)</a>
-                                    <div class="d-flex">
-                                        <div class="deadline ml-auto">
-                                            <i class="fa-light fa-money-bill text-highlight"></i> Tới 5 triệu
-                                        </div>
-                                        <div class="salary mr-auto">
-                                            <i class="fa-light fa-timer text-highlight"></i> 29/12/2022
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="job">
-                                    <a href="https://www.topcv.vn/brand/chailease/tuyen-dung/legal-executive-j876573.html?ta_source=JobSearchList" target="_blank" data-toggle="tooltip" title="" data-placement="top" class="job-name text-dark-blue underline-box-job" data-original-title="Legal Executive">Legal Executive</a>
-                                    <div class="d-flex">
-                                        <div class="deadline ml-auto">
-                                            <i class="fa-light fa-money-bill text-highlight"></i> Thoả thuận
-                                        </div>
-                                        <div class="salary mr-auto">
-                                            <i class="fa-light fa-timer text-highlight"></i> 23/12/2022
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="spotlight-count text-center">
-                                    <a href="https://www.topcv.vn/brand/chailease" target="_blank" class="text-highlight get-more btn-primary-hover">TÌM HIỂU NGAY</a>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        <div class="image box-white">
-                            <a href="https://www.topcv.vn/mau-cv" target="_blank"><img src="" data-src="" class="img-responsive" style="width: 100%;"></a>
                         </div>
                     </div>
                 </div>
