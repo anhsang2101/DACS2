@@ -177,12 +177,12 @@
                             <div class="box-header">
                                 <a href="" title="Công ty Cổ phần MISA" class="company-logo">
                                     <div class="box-company-logo">
-                                        <img src="{{asset('/img/logo/' .$detailbusiness[0]->image)}}" alt="Công ty Cổ phần MISA" class="img-responsive">
+                                        <img id="image-logo" src="{{asset('/img/logo/' .$detailbusiness[0]->image)}}" alt="Công ty Cổ phần MISA" class="img-responsive">
                                     </div>
                                 </a>
                                 <div class="box-info-job">
                                     <h1 class="job-title text-highlight bold" id="jobname" style="overflow-wrap:break-word;">
-                                        {{ $detail[0]->title }} - {{ $detail[0]->position }}
+                                        {{ $detail[0]->title }}
                                         <span class="icon-verified-employer level-five">
                                             <i class="fa-solid fa-circle-check" data-toggle="tooltip" data-html="true" title="" data-placement="top" data-original-title="
   <b>Nhà tuyển dụng</b><span> đã được xác thực:</span><br>
@@ -197,7 +197,7 @@
                                     </div>
 
                                     <div class="job-deadline">
-                                        <i class="fa-regular fa-clock"></i>Ngành nghề & lĩnh vực:
+                                        <i class="fa-regular fa-clock"></i> Ngành nghề & lĩnh vực:
                                         {{ $detail[0]->major }}
                                     </div>
                                 </div>

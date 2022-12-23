@@ -132,41 +132,7 @@ window.addEventListener("load", function () {
     loader.style.display = "none";
 });
 
-$(document).ready(function () {
-    $(document).on("click", ".pagination a", function (event) {
-        event.preventDefault();
-        var page = $(this).attr("href").split("page=")[1];
-        var datapaging = document.getElementById("datapaging");
-        fetch_data(page);
-    });
 
-    function fetch_data(page) {
-        $.ajax({
-            url: "/ap/pagination?page=" + page,
-            success: function (data) {
-                $("#container").html(data);
-            },
-        });
-    }
-});
-
-$(document).ready(function () {
-    $(document).on("click", ".pagination a", function (event) {
-        event.preventDefault();
-        var page = $(this).attr("href").split("page=")[1];
-        var datapaging = document.getElementById("datapaging");
-        fetch_data(page);
-    });
-
-    function fetch_data(page) {
-        $.ajax({
-            url: "/ap/searchjob?page=" + page,
-            success: function (data) {
-                $("#container").html(data);
-            },
-        });
-    }
-});
 var currentdate = new Date();
 var datetime =
     "Đã lưu: " +
@@ -184,6 +150,8 @@ function addfvr(id) {
     console.log(id);
     document.getElementById(id).textContent='Đã lưu';
     var id = id;
+    var url = document.getElementById('image-logo').src;
+    console.log(url);
     var jobname = document.getElementById("jobname").textContent;
     var businessname = document.getElementById("businessname").textContent;
     var jobsalary = document.getElementById("jobsalary").textContent;
@@ -194,6 +162,7 @@ function addfvr(id) {
         businessname: businessname,
         jobsalary: jobsalary,
         jobarea: jobarea,
+        url : url
     };
     if (localStorage.getItem("data") == null) {
         localStorage.setItem("data", "[]");
@@ -222,12 +191,13 @@ function showfvr() {
         var businessname = data[i].businessname;
         var jobsalary = data[i].jobsalary;
         var jobarea = data[i].jobarea;
-        console.log(id);
+        var url = data[i].url;
+        console.log(url);
         $("#lists").append(
             '<div class="job-item  bg-highlight  job-ta result-job-hover" data-job-id="891088" data-job-position="1" data-box="BoxSearchResult">' +
                 '<div class="avatar">' +
                 '<a target="_blank" href="https://www.topcv.vn/viec-lam/chuyen-vien-dich-vu-cham-soc-hoc-vien-thu-nhap-10-20-trieu-thang/891088.html" class="company-logo">' +
-                '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiIy3sN0GAZvZvQ6PvCPZgKSk_YNVa4oK3pcQYf7F62p1Iehg3EhOX7EmXmZJKpynfbVE&usqp=CAU" class="w-100" alt="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL" title="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL">' +
+                '<img src="'+url+'" class="w-100" alt="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL" title="CÔNG TY CP CÔNG NGHỆ GIÁO DỤC TRƯỜNG HỌC TRỰC TUYẾN - ONSCHOOL">' +
                 "</a>" +
                 "</div>" +
                 '<div class="body">' +
@@ -288,16 +258,3 @@ function showfvr() {
     }
     console.log(data);
 }
-
-function copy() {
-    // Get the text field
-    var copyText = document.getElementById("text");
-  
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
-  
-     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-
-  }

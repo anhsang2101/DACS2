@@ -15,11 +15,11 @@
                                                 <strong class="underline-box-job" id="jobname" style="font-weight: bold;">{{ $item->title }}</strong>
                                             </a> <a href="/ap/detail-job/{{ $item->id }}" data-toggle="tooltip" title="" id="businessname" data-placement="top" data-container="body" class="text-silver company text_ellipsis underline-box-job" data-original-title="CÔNG TY CỔ PHẦN CÔNG NGHỆ &amp; SÁNG TẠO TRẺ TEKY HOLDINGS" tabindex="-1">{{ $item->nameBusiness }}</a>
                                         </div>
-                                        <div class="col-like"><button onclick="addfvr(this.id)" id=" {{ $item->id }}" class="addtofvr" data-id="69610" tabindex="-1"><span id="{{ $item->id }}">Lưu</span></button>
+                                        <div class="col-like"><button onclick="addfvr(this.id)" id=" {{ $item->id }}" class="addtofvr" data-id="69610" tabindex="-1" style="font-size: 12px;"><span id="{{ $item->id }}">Lưu</span></button>
                                         </div>
                                     </div>
                                     <div class="col-job-info">
-                                        <div class="salary text_ellipsis"> <i class="fa-solid fa-coins"></i> <strong id="jobsalary">{{ $item->wage }} VND </strong>
+                                        <div class="salary text_ellipsis"> <i class="fa-solid fa-coins"></i> <strong id="jobsalary">{{ $item->wage }} {{$item->currency}} </strong>
                                         </div>
                                         <div data-html="true" data-toggle="tooltip" title="" data-placement="top" data-container="body" class="address text_ellipsis" data-original-title="<p style='text-align: left'>Hà Nội: Cầu Giấy, Nam Từ Liêm, Hà Đông</p>">
                                         <i class="fa-solid fa-location-pin"></i> <strong id="jobarea">{{ $item->area }}</strong>
@@ -33,7 +33,8 @@
                         </div>
                     </div>
                 </div>
-                {!! $listAll->links() !!}
+                {!! $listAll->withQueryString()->links() !!}
+
             </div>
         </div>
     </div>

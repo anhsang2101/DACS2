@@ -77,7 +77,7 @@
                                             <th>Mã tài khoản</th>
                                             <th>Tên chủ sở hữu</th>
                                             <th>Email</th>
-                                            <th>Mật khẩu</th>
+                                            
                                             <th>Hành động</th>
 
 
@@ -90,7 +90,7 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email}}</td>
-                                            <td>{{ $item->password }}</td>
+                                          
                                             <td colspan="2">
                                                 {{-- <button id="reject"><a href="/ad/edit-ap">Edit</a></button> --}}
                                                 <button id="reject"><a href="/ad/delete-ap/{{ $item->id }}">Delete</a></button>
@@ -116,9 +116,9 @@
                                             <th>Mã tài khoản</th>
                                             <th>Tên công ty</th>
                                             <th>Email</th>
-                                            <th>Mật khẩu</th>
+                                      
                                             <th>Số điện thoại công ty</th>
-                                            <th>Giới thiệu công ty</th>
+                                            
                                             <th>Quy mô nhân sự</th>
                                             <th>Địa điểm công ty</th>
                                             <th>Tên người tạo tài khoản</th>
@@ -136,9 +136,9 @@
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->nameBusiness }}</td>
                                             <td>{{ $item->email }}</td>
-                                            <td>{{ $item->password }}</td>
+                                     
                                             <td>{{ $item->phoneBusiness }}</td>
-                                            <td>{{ $item->introduceBusiness }}</td>
+                                           
                                             <td>{{ $item->personnelSize }}</td>
                                             <td>{{ $item->location }}</td>
                                             <td>{{ $item->namePersonal }}</td>

@@ -47,12 +47,12 @@ class Business extends Model
     }
     public function listAllCompany()
     {
-        $list = DB::table('businesses')->select('id', 'image','cover', 'nameBusiness', 'introduceBusiness')->paginate(15);
+        $list = DB::table('businesses')->select('id', 'image','cover', 'nameBusiness', 'introduceBusiness')->paginate(10);
         return $list;
     }
     public function search($keyword)
     {
-        $list = DB::table('businesses')->select('id', 'nameBusiness', 'introduceBusiness')->where('nameBusiness', 'like','%' . $keyword . '%')->paginate(15);
+        $list = DB::table('businesses')->select('id', 'nameBusiness', 'location','introduceBusiness', 'image')->where('nameBusiness', $keyword)->orWhere('nameBusiness', 'like', '%' . $keyword . '%')->paginate(10);
         return $list;
     }
 

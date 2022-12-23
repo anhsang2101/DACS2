@@ -16,8 +16,10 @@ class PaginationController extends Controller
     public function index()
     {
 
-        $listAll =  DB::table('recruitments')->join('recruitments', 'businesses.email', '=', 'recruitments.email')->select('businesses.image')->where('isAccept', '2')->paginate(15);
+        $listAll =  DB::table('recruitments')->where('isAccept', '2')->paginate(10);
+
+//        $listAll =  DB::table('recruitments')->join('businesses', 'businesses.email', '=', 'recruitments.email')->select('businesses.image')->where('isAccept', '2')->paginate(15);
         //$img = DB::table('businesses')->join('recruitments', 'businesses.email', '=', 'recruitments.email')->select('businesses.image')->get();
-        return view('ap.pagination')->with(compact('listAll'))->with(compact('img'));
+        return view('ap.pagination')->with(compact('listAll'));
     }
 }

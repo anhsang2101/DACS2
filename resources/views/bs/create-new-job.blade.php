@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EzCV</title>
@@ -115,7 +115,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <form action="/bs/postRecruitment" method="POST">
+                    <form action="/bs/postRecruitment" method="POST" enctype='multipart/form-data'>
                         <div class="form-group">
                             <label for="name" class="title">Tên chiến dịch tuyển dụng</label>
                             <input value="{{ old('name') }}" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="VD: Tuyển dụng nhân viên Design tháng 12">
@@ -205,6 +205,19 @@
                         </div>
                         <h3 class="h3">Thông tin đăng tuyển chi tiết</h3>
                         <div class="form-group">
+                                        <label for="email" class="mb-1">Ảnh hiển thị tin</label>
+                                        <div class="input-group ">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                                            </div>
+                                            <input type="file" accept="image/*" name="image" class="form-control" required value="">
+                                        </div>
+                                        @error('photo')
+                                        <span style="color: red">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+
+                        <div class="form-group">
                             <label for="title" class="title">Tiêu đề tin tuyển dụng</label>
                             <input value="{{ old('title') }}" name="title" type="text" class="form-control" id="title" placeholder="VD: Nhân viên kinh doanh">
                             @error('title')
@@ -233,7 +246,7 @@
                                 <option value="Luật/Pháp lý">Luật/Pháp lý</option>
                                 <option value="Xây dựng">Xây dựng</option>
                                 <option value="Xuất nhập khẩu">Xuất nhập khẩu</option>
-                                <option value="Y tế / Dược">Y tế / Dược</option> 
+                                <option value="Y tế / Dược">Y tế / Dược</option>
                                 </option>
                             </select>
                             @error('major')

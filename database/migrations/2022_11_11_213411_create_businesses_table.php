@@ -25,7 +25,7 @@ return new class extends Migration
 
             $table->string('nameBusiness');
             $table->string('phoneBusiness');
-            $table->string('introduceBusiness');
+            $table->longText('introduceBusiness');
             $table->string('personnelSize');
             $table->string('location');
             $table->string('image');

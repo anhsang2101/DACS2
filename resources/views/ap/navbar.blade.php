@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light">
-    <a class="navbar-brand" href="/"><span class="logo-text">EZCV</span></a>
+    <a class="navbar-brand" href="/"><span class="logo-text ml-3">EZCV</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -19,8 +19,6 @@
                     <!-- <a class="dropdown-item" href="/ap/job"><i class="icon fa-light fa-radar"></i>Tìm việc làm</a> -->
                     <a class="dropdown-item" href="/ap/submitted">Việc làm đã ứng tuyển</a>
                     <a class="dropdown-item" href="/ap/favoritesjob">Việc làm đã lưu</a>
-                    <a class="dropdown-item" href="/ap/job-it">Việc làm IT</a>
-
                     <!-- <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a> -->
                 </div>

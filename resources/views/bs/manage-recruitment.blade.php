@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin EZCV</title>
+    <title>Quản lý tin tuyển dụng</title>
 
 
     <!-- Custom fonts for this template -->
@@ -320,7 +320,7 @@ body{
                         {{-- end hidden edit form --}}
                         <tr>
                             <th scope="row">{{ $item->id}}</th>
-                            <td>{{ $item->name }} - {{ $item->title }}</td>
+                            <td class="text-limit">{{ $item->title }}</td>
                             {{-- <td><a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm</a></td> --}}
                             <td><a href="/bs/view-censorship/{{ $item->id }}" class="btn btn-warning">Danh sách đang chờ</a>
                                 <a href="/bs/view-censorshipped/{{ $item->id }}" class="btn btn-success">Danh sách đã duyệt</a></td>

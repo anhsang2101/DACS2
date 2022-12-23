@@ -69,6 +69,9 @@
             margin-bottom: 0;
             list-style: none;
         }
+        .img-responsive {
+    width: 100%;
+}
     </style>
 </head>
 

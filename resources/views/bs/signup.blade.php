@@ -242,7 +242,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
                                             </div>
-                                            <input type="file" accept="image/*" name="image" class="form-control-file" value="">
+                                            <input type="file" accept="image/*" name="image" class="form-control" required value="">
                                         </div>
                                         @error('photo')
                                         <span style="color: red">{{ $message }}</span>
@@ -255,7 +255,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
                                             </div>
-                                            <input type="file" accept="image/*" name="cover" class="form-control-file" value="">
+                                            <input type="file" required accept="image/*" name="cover" class="form-control" value="">
                                         </div>
                                         @error('cover')
                                         <span style="color: red">{{ $message }}</span>

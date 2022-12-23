@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recruitment;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Hash;
 class PostRecruitmentController extends Controller
 {
     //
@@ -34,7 +34,8 @@ class PostRecruitmentController extends Controller
                 'detail' => 'required',
                 'require' => 'required',
                 'benefit' => 'required',
-    
+                'image' => 'required',
+
                 // 'email' => 'required|unique:businesses',
                 // 'phonePersonal' => 'required|regex:/(0)[0-9]{9}/',
                 // 'phoneBusiness' => 'required|regex:/(0)[0-9]{9}/',
@@ -48,12 +49,18 @@ class PostRecruitmentController extends Controller
                 'detail.required' => 'Vui lòng mô tả công việc',
                 'require.required' => 'Vui lòng nhập yêu cầu ứng viên',
                 'benefit.required' => 'Vui long nhập quyền lợi ứng viên',
+                'image.required' => 'Vui long chọn logo',
                 
+
         
             ]);
-            
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $file_name = $file->getClientOriginalName();
+                $file->move(public_path('img/logo'), $file_name);
+            }
     
-            $dataInsert = [
+            $dataInsert = [ 
                 session()->get('emailSessionBs'),
                 session()->get('nameSessionBs'),  
                 $request->name,
@@ -71,6 +78,7 @@ class PostRecruitmentController extends Controller
                 $request->require,
                 $request->benefit,
                 '1',
+                $file_name,
             ];
     
             $this->recruitment->post($dataInsert);

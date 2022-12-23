@@ -289,6 +289,33 @@
             </div>
         </section>
     </div>
+
+    <div class="container">
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{asset('/img/banner-ngang1.png')}}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('/img/banner-ngang2.png')}}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{asset('/img/banner-ngang3.png')}}" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </div>
+
     <div class="row box-jobs mt-3">
         <div class="container" id="container">
             <div class="box-header">
@@ -304,6 +331,25 @@
     <script src="{{ url('js/app.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on("click", ".pagination a", function(event) {
+                event.preventDefault();
+                var page = $(this).attr("href").split("page=")[1];
+                var datapaging = document.getElementById("datapaging");
+                fetch_data(page);
+            });
+
+            function fetch_data(page) {
+                $.ajax({
+                    url: "/ap/pagination?page=" + page,
+                    success: function(data) {
+                        $("#container").html(data);
+                    },
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

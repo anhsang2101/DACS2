@@ -30,6 +30,10 @@ a {
     font-size: 35px;
     color: #ffff;
 }
+.carousel-inner img {
+
+    max-height: 500px;
+}
 .nav.nav_menu_right li {
     margin: 0px;
     padding: 0px;
@@ -595,7 +599,7 @@ a {
     color: #4a5158 !important;
 }
 .img-responsive {
-    width: 100%;
+    width: 45px;
 }
 .feature-job-item {
     background-color: rgba(255, 255, 255, 0.2);
@@ -800,6 +804,8 @@ a {
     font-size: 22px;
     line-height: 29px;
     margin-bottom: 16px;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
 }
 .box-header .box-info-job .company-title {
     margin-bottom: 8px;
@@ -1105,7 +1111,7 @@ b {
     padding: 16px 16px 0;
 }
 .list-job .job-body .job-item.bg-highlight {
-    background-color: #f2fbf6;
+    background-color: #f5f2fb;
 }
 .list-job .job-body .job-item .avatar {
     height: 80px;
@@ -1511,10 +1517,11 @@ b {
 }
 
 .addtofvr{
-    width: 50px !important;
-    height: 50px !important;
-    background-color: #6541b9 !important;
-    color: #ffff;
+    width: 40px !important;
+    height: 40px !important;
+    background-color: #ffffff !important;
+    color: #451da0 !important;
+    font-weight: bold;
 }
 #unsave{
     background-color: #451da0 !important;
@@ -1753,3 +1760,46 @@ b {
     line-height: 24px;
     margin: initial;
 }
+
+.carousel-control-prev, .carousel-control-next{
+    background: transparent;
+    border: none;
+}
+
+
+.box-result-search-companies .box-result .result-search-company img {
+    background: #fff;
+    border: 1px solid #f7f7f7;
+    border-radius: 5px;
+    filter: drop-shadow(-1px 1px 6px rgba(0,0,0,.05));
+    height: 80px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 80px;
+}
+
+
+.box-result-search-companies .box-result .result-search-company {
+    border: 1px solid #f4f4f4;
+    border-radius: 5px;
+    box-shadow: -1px 1px 6px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding: 16px;
+}
+.box-result-search-companies .box-result .result-search-company .logo {
+    float: left;
+}
+.box-result-search-companies .box-result .result-search-company .result-search-company-info .company-intro {
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.text-limit {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

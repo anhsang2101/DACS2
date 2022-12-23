@@ -33,10 +33,11 @@ return new class extends Migration
             $table->string('currency');
             $table->string('wage');
 
-            $table->string('detail');
-            $table->string('require');
-            $table->string('benefit');
+            $table->longText('detail');
+            $table->longText('require');
+            $table->longText('benefit');
             $table->integer('isAccept');
+            $table->string('image');
             $table->timestamps();
         });
     }

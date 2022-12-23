@@ -25,7 +25,7 @@ class Recruitment extends Model
     }
 
     public function post($dataInsert){
-        DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`, `isAccept`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', $dataInsert);
+        DB::insert('INSERT INTO recruitments (`email`,`nameBusiness`,`name`,`position`,`area`,`title`,`major`,`type`,`gender`,`rank`,`exp`,`currency`,`wage`,`detail`,`require`,`benefit`, `isAccept`, `image`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)', $dataInsert);
 
     }
 
@@ -47,7 +47,7 @@ class Recruitment extends Model
         return DB::delete('DELETE FROM recruitments WHERE `id`=?',[$id]);
     }
     public function count(){
-        $list =  DB::table('recruitments')->where('isAccept', '1');
+        $list =  DB::table('recruitments')->where('isAccept', '1')->get();
         return $list->count();
     
     }
